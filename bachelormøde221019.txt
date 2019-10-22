@@ -1,0 +1,83 @@
+Rapport
+- regn med mindst 3 uger for en god rapport
+- hvad er problemerne og perspektiverne
+- aftal med vejlederen hvor lang den skal være (40-50 sider vil Dan mene (uden billeder og sådan))
+
+Planlægning
+- 2/3 planlægning, den sidste 1/3 er urørt i planlægningen (buffer)
+- planlæg alt: læsning, kodning, skrivning i de 2/3
+- husk at få sat dig ind i stoffet - vurder om man gør det under eller før projektet
+- Hav projektplanen klar før jul (grundet eksaminer i januar)
+
+Kalender (vigtigere den på learnit har rigtige datoer):
+Januar:opfølgning på aftaler (vejleder og andre aftaler)
+Primo-februar: afslutte oprettelse og indsende porjektaftale i projektbasen
+Midt-maj: aflevering på learnit
+maj/juni: mundtlig forsvar - husk at snakke med vejleder hvad der skal foregå til eksamen
+
+Kontakt:
+Formalia: 
+	sap@itu.dk
+Manglende vejleder(20.November): 
+	witzner@itu.dk (Dan kan prøve at hjælpe)
+Andet: 
+	allb@itu.dk Allette (livlinjen)
+
+
+Emne + vejleder:
+- 4 måneder = find noget DU synes er spændende
+- prioriter hvad er vigtigs? vejleder, emne, projektdomæne eller?
+	1. find emne
+	2. vejleder (tilpas jer vejlederen så man kan få mere support)
+
+Råd:
+- væsentligt at problemet er både vigtigt, svær og sjovt
+- du skal vælge hvad du vil lære
+- Hvad vil du blive bedre til?
+- god ide at vælge/udvikle et porjekt med vejlederen (der er ikke en central projektbase
+- vælg en eller flere at arbedje sammen med
+- kan arbejde med en virksomhed men du skal have en vejleder fra ITU
+	- hvis man går denne vej - vær klar om hvad der skal laves og hav evt. data fra starten
+	- det er ikke gratis software til virksomheden
+
+Andet:
+- koden er vores ( hvis virksomheden ønsker andet skal det aftales på forhånd)
+- der er ingen grund til at sidde fast, det er derfor man har en vejleder
+
+DS overlapper med os so be fast :)
+
+projekttype:
+a) softwarekonstruktionsprojekt
+b) konsulentrapport for en organisation
+c) design-opgave
+d) litteraturstudium
+e) teoretisk eller teknisk forskningsrapport
+f) beskrivelse og vurdering af ny teknologi
+
+Dan er fan af a og e med lidt d i det. fx inden for Machine Learning
+
+Projektformulering:
+- skriv løbende med vejlder for at udforme det
+	- hvad er omfanget, hvad skal leveres, hvordan og hvor fote man mødes, lav en tentativ plan og generelt sæt deadlines.
+- forventningsafstemning
+- vejleder kan sige ned til indhold
+- indholdet skal hænge sammen med projektformuleringen (vigtigt!)
+- keep vejleder in the loop optil så man ikke risikerer at de hopper fra
+- efter den er underskrevet og afleveret er det en juridisk kontrakt
+
+Projektet:
+- hvis man har meget klart dokumneteret og argumenteret i process og ender med noget der fx kun virker 50% (ML example) så er det ok.
+- lad være med at sidde i 4 uger fast uden at kopntakte vejleder
+- hvis det er manglende forståelse og arbejdstid så er det noget helt andet
+- ingen krav, det er op til vejlederen (kun på tid grundet 15 ects)
+- læringen kan også være en del af projektet (evt. i formuleringen)
+
+Vejleder tid:
+- der er noget minimumskrav, men det er svært at måle (ca. 5 timer per studerende)
+- det inkluderer dog læsning, rettelse, forberedelse etc.
+- der skal lave en supervisor agreement (nyt krav)
+
+
+
+Jens Schmidt
+Louise Barkhuus
