@@ -1,0 +1,31 @@
+Lidt om os:
+
+Kurser (disse er fælles for begge):
+1. Semester
+- Grundlæggende Programmering
+- Diskret Matematik
+- Projekt arbejde og kommunikation
+2. Semester
+- 1.års projekt (Danmarkskort projekt i Java og Swing)
+- Algoritmer og Datastrukturer
+- Systematisk Design af Brugegrænseflader (eksamensprojekt React App)
+3. Semester
+- Mobile og distribuerede systemer
+- Introduktion til Databasedesign
+- Analyse, Design og Software arkitektur (eksamensprojekt i C# og brugergrænseflade Xaml)
+4. Semester
+- Funktionel programmering
+- 2. års project (eksamensprojekt i samarbejde med Danfoss, en chatbot lavet med Microsofts Bot Framework)
+- System development and project organization
+- Valgfag: Intelligent System Programming
+5. Semester
+- Operativ Systemer og C
+- Programmer som Data
+Johannes har også Forretiningsprocesser og Organization
+Birgitte har fået overført merit fra tidligere uddannelse
+
+Andre erfaringer:
+Johannes har lavet flere hjemmesider i WordPress bl.a. for sit arbejde i Tang Sko.
+Birgitte arbejder som studenterudvikler i Saxo Bank (backend).
+
+Som du kan se har vi ikke arbejdet ret meget med app development igennem uddannelsen, men vil rigtig gerne lære mere om det. Det er bl.a. også derfor vi har fundet frem til dig når vi har kigget efter vejledere.
