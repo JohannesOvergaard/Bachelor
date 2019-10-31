@@ -1,6 +1,8 @@
 Vejledere:
 
-- Ny i Dk ide - centralt sted for info til hjælp af integration og trivsel i Danmark
+https://wiki.itu.dk/computerscience/index.php/Supervisors_for_projects_and_theses#Jens_Schmidt 
+
+- Ny i Dk ide - centralt sted for info til hjÃ¦lp af integration og trivsel i Danmark
 - fx webpage or app - alternative to facebook group
 
 Jens Schmidt
@@ -8,12 +10,12 @@ Government IT. IT Projects. Software Engineering.
 
 Claus Brabrand
 - Programming languages, program analysis, CS education
-- læringsapp, evt. grunlæggende programmering i app form/ website gamification
+- lÃ¦ringsapp, evt. grunlÃ¦ggende programmering i app form/ website gamification
 
 
 Louise Barkhuus
 Social science studies of technology, privacy, qualitative and quantitative methods, mobile social technologies, human-computer interfaces (HCI)
 
-Jørgen Staustrup 1.
+JÃ¸rgen Staustrup 1.
 
 Fabriciu
