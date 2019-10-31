@@ -18,4 +18,6 @@ Løsning:
 - Long term - people with a lot of contributions = admins
 - Requests for contents by expats (anonymized, due to the exposure on i.e. facebook and with your friends)
 - Det større perspektiv: give en bedre mulighed for at integrere nemmere og uden for mange gener
--
+
+Outcome:
+- App der kan hjælpe udlændinge med at integrere bedre i Danmark og ikke blive discouraged by the many small but significant hassles which comes with moving to a foreign country
