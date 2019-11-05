@@ -20,3 +20,4 @@ Jørgen Staustrup 1.
 
 Nynne Just Christoffersen
 - Underviser: Frameworks and Architectures for the Web
+nych@itu.dk
