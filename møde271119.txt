@@ -6,10 +6,56 @@ Spørgsmål:
 Generelt praktisk:
 - pensum (læsning etc)?
 	- market research (brugerundersøgelser, fra ide til koncept)
+Jørgen har en bog i tankerne
 - at lave en webapplikation:
 	- js - meget vanilla
+w3 school til det
+net communication kommer jørgen evt med senere, lær ikke biblotekerne men concepterne
+applab
 - antal sider?
+Er der en offficel måde man skal registrere det
+
+Eksamensform:
+mundtlig eksamen: presentation af noget mundtligt + diskussion om rapporten og præsentationen (1t 20m), begge til stedet
+
+Sprog:
+vi diskuterer det, man kan lave eksamen på engelsk og mundtligt på dansk
 
 Spørgsmål til selve projektet
 - Hvor starter vi altså: fx mødes med målgruppe
 	- evt. et kort spørgeskema på diverse fb grupper for at spore os lidt mere ind før fysisk møde med fokusgruppe i december/januar (regner vi med)
+
+
+To do:
+- projektbeskrivelse (udfyldes på learnit)
+- Hvad skal der stå i den?
+- få lavet en plan inden vi går i gang 
+
+Målet styrer processen
+- prototype til færdig produkt (kørende)
+- baseret på input fra rigtige kunder/brugere
+- bruge december januar arbejde hen mod målet og fokus
+- der vil være nogle valg at træfffe i forghold til prioritering af prototypen og undersøgelser
+- 
+
+Endelig mål : prototype baseret på input
+delmal:
+- fx ting der skal være i applikationen fx fra brugerinput
+- er der noget teknologi vi gerne vil trække ind i projektet
+- er der noget i js vi gerne vil lære fx håndterign af db
+- hvordan virker noget egentlig
+- sikkerhed 
+
+Find ud af det undervejs inden projektbeskrivelsen er på plads
+
+I starten må vi godt have for meget og for drømmende og så siger vejlder til hvis det er for meget.
+
+ud og snak med folk.
+
+Jørgen borrer i krav.
+Kan begynde på udkast af projektbeskrivelse.
+
+todo:
+snak med folk
+finde på flere ideer (måske)
+tegninger etc.
