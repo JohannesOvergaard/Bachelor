@@ -3,6 +3,7 @@ Motivation:
 - Personlig erfaring fra expat netværk
 - Expats in Copenhagen and Brasileiros na Dinamarca eksempler
 - Man er ekstremt exposed/ vulnerable når man poster på Facebook i dag eller der kan være en barrier i form af en frygt for at stille "dumme" spørgsmål i sit netværk. Der mangler et sted man kan forblive anonym.
+- Luftet ideen for nogle venner og bekendte (lidt blandet oprindelse: Brasilien, Litauen, Hong Kong, Indien)
 - Rigtig mange af de samme opslag går i gennem
 - Mange typer spørgsmål: kulturelle, praktiske, anbefaliger:
 
@@ -13,10 +14,19 @@ Eksempler:
 
 Løsning:
 - En app der samler information der er behov for at hjælpe
-- Contributions through experience by other expats and Danes
+Evt. setups
+- Contributions through experience by other expats and Danes.
+1.
 - Content must be approved before posted
 - Long term - people with a lot of contributions = admins
 - Requests for contents by expats (anonymized, due to the exposure on i.e. facebook and with your friends)
+
+2.
+Stack overflow stil - styret forum
+
+3.
+Menu med spørgsmål og svar
+
 - Det større perspektiv: give en bedre mulighed for at integrere nemmere og uden for mange gener
 
 Outcome:

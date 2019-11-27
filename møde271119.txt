@@ -1,0 +1,15 @@
+﻿møde med Jørgen 27/11/2019
+
+
+Spørgsmål:
+
+Generelt praktisk:
+- pensum (læsning etc)?
+	- market research (brugerundersøgelser, fra ide til koncept)
+- at lave en webapplikation:
+	- js - meget vanilla
+- antal sider?
+
+Spørgsmål til selve projektet
+- Hvor starter vi altså: fx mødes med målgruppe
+	- evt. et kort spørgeskema på diverse fb grupper for at spore os lidt mere ind før fysisk møde med fokusgruppe i december/januar (regner vi med)
