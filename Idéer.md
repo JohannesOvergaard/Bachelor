@@ -1,4 +1,4 @@
-# Idéer / problem
+# Ideas/problem and learning goals
 
 Appen skal hjælpe udlændinge med mødet med Danmark, herunder det offetnlige, kultur, dagligdag og andet praktisk.
 
@@ -31,3 +31,18 @@ Appen skal hjælpe udlændinge med mødet med Danmark, herunder det offetnlige, 
 - Transport, offentlig transport, cykel, køb af bil
 - Banklån
 - Hvor køber man møbler
+
+------
+
+# Learning goals
+
+- Javascript
+- Framework for database (Use and understand how it works)
+- Working with the database on the phone and how it works
+- Progress from user input to finished product
+- Working based on user input
+- Search bar (how to make content searchable)
+
+
+
+% communication between users (no chats and such)
