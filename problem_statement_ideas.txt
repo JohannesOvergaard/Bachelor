@@ -1,0 +1,33 @@
+Råd og vejledning:
+
+- Usually while writing the problem statement, researchers use the 5 “W”s (Who, What, Where, When, and Why).
+
+Things to consider:
+- To identify, define and delimit a problem within information technology.
+
+- To identify and analyse relevant means for solving the problem, such as academic theories, methods, literature, tools and other sources, as well as existing solutions to the problem.
+
+- To combine the selected means, develop them further if necessary, and apply them in a concerted effort towards the solution of the problem.
+
+- To evaluate the achieved solution.
+
+- To report in a coherent and stringent way the problem, the background research, the work towards the solution, the achieved solution, the evaluation, and other relevant material, while adhering to the academic standards.
+
+- To reflect upon the problem, the chosen approach, the achieved solution, and other findings.
+
+Eksempler:
+- Hvordan produceres målrettet og anvendelig systemdokumentation, som bedre
+understøtter systemudviklingen, systemets anvendelse og dets fremtidige
+vedligeholdelse?
+
+- Med et teorektisk udgangspunkt i A User-Centred Approach to Functions in Excel af Blackwell, Burnett, Peyton Jones (2003) (JBB03) og praktisk udgangspunkt i anvendte regneark er det da muligt at implementere og i praksis drage nytte af brugerdefinerede funktioner i regneark? 
+
+- Hvordan opfatter virksomheder forretningsværdi af it-investeringer og hvorfor er det svært at realisere denne?
+
+- Hvordan kan vi redesigne HFH’s hjemmeside, så det tilgodeser behovet hos de normaltseende brugere,
+mere specifikt de pårørende til de synshandicappede, uden at kompromittere brugen af hjemmesiden for
+blinde brugere, der benytter skærmlæsere? 
+
+Ideer til udkast
+- Hvordan kan en app konstrueres for og målrettes mod at hjælpe og støtte udlændinges første møde med Danmark, herunder, kultur, det offentlige, dagligdag og andre praktiske gøremål.
+
