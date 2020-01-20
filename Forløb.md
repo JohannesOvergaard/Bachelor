@@ -14,7 +14,7 @@
 6. Buffer - uge 18 til 20 
 7. Aflever - 15/5 2020 uge 20
 
-# Hvornår sidder vi sammen og arbejder?
-Mandag 10-16
-Tirsdag 14-17
-Fredag 9-16 
+### Hvornår sidder vi sammen og arbejder?
+- Mandag 10-16
+- Tirsdag 14-17
+- Fredag 9-16 
