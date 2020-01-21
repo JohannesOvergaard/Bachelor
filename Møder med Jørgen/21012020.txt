@@ -1,0 +1,84 @@
+Dagsorden
+- Project description
+	- eksamensform
+	- problem formulering
+	- metode (herunder læringsmål)
+	- Hvad skal afleveres? 
+	- supervisor agreement
+	
+Andre spørgsmål
+- Hvilket framework skal vi bruge? Hvis vi skal bruge et?
+  - ReactJs er en sideaktivitet
+  - skriv under metode at vi vil sætte os ind i reactive
+  - forpligt ikke til for meget af denne del
+- Forudsætninger, ved du hvor detaljeret det skal være?
+	-forventning om at man når længere jo mere erfaring man skriver på
+- Efter mødes og afleveret
+
+Eksamensform
+- aflever på engelsk og eksamen på dansk
+- kan muligvis ikke vælge
+- 1/3 på rapporten / præsentation - tag det vigtigste ud, derefter dialog (starter gerne med spørgsmål til præs)
+- præsenterer lidt hvert
+- spørgsmål stilles til alle men kan godt spørge de individuelle direkte
+
+Problem formulering:
+Kontekst og så problem formulering 
+- behøver ikke gå ind i langt analyse om det
+- forstå problemet og hvad vi agter at gøre ved det 
+- hold det åbent istedet for at rette til
+- så vil Jørgen rette os ind hvis vi går for bredt
+
+Supervisor kan altid kontaktes på email
+mødes efter intervaller (ca 8-14. dag)
+næste møde efter næste interval 
+vi vælger hvad vi vil have feedback på
+tag gerne på et tidspunkt med et kapitel der er færdigt og få feedback på det.
+
+Metode
+- Konstruktion
+- bruger interview
+- bullet points 6-7 om hvad arbejde vi vil lave
+- indledende fokusgrupper, test af wireframes
+- kom gerne tilbage til de samme
+- lille gruppe vi fokuserer på da det er tidskrævende
+- overordnet også hvilke test ok men ikke hvilke værkjtøjer
+- læringsmål: udsagnsord og styrke et par stykker
+
+Hvad skal afleveres:
+- App:
+- Kildekode: github og link til dette i rapporten så man kan gå tilbage til denne
+	- Brugerinterview - lav referat (vi har brug for det på den korte bane)
+		- det kan evt. ligge på github da det tæller som kilde materiale
+		- markante ting kan bygges ind i rapporten
+		- gerne meget transparent
+		- optag gerne
+- Rapport:
+	- hvad adressere rapporten
+	ca 20-30 sider (ekstra er en dårlig ide)
+	- bruger manual er ikke afgørende, hvis appen er bruger klar kan man vælge at gøre det fordi da skal man tænke over hvordan man instruerer disse brugere
+
+14 uger
+- 7-8 punkter
+- med intervaller hvor der skal laves noget
+- så reviderer planen hvis der er ændringer
+- lav en overordnet plan 
+- feedback - efter hver interval har vi møde hvor det diskuteres
+- opdel wireframes
+- rapport skrivning flettes ind
+- skriv fx 5 sider efter møde med grupperne fx
+- flet tid ind til at skrive rapport
+- fjerne barrieren til at skrive hvis man gør det undervejs
+- skriv sammen så det ikke bliver for forskelligt
+
+kode:
+- hjemmeside der kan åbnes på telefonen
+- udviklet på computeren men skal tilpasses telefonen.
+- nemmere at tage en fungerende hjemmeside og cutte den ned til telefonen
+
+fokusgrupper:
+- start med det samme 
+- udvikle hvordan det skal udføres
+- men behøver ikke fokuserer på metoder generelt fordi det ikke er det der er fokus 
+- hav noget konkret papir at vise
+
