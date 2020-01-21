@@ -9,8 +9,8 @@
    1. Lav wireframes  og valider dem med fokusgruppen - uge 7 og 8
    2. Skriv afsnit i rapport
 4. Lav appen
-   2. Skriv kode , løbende unit-test - uge 9-13
-   3. Skriv afsnit i rapport
+   1. Skriv kode , løbende unit-test - uge 9-13
+   2. Skriv afsnit i rapport
 5. Test - Uge 14 til 15
    1. Test med fokusgruppe (individuelt) 
    2. Bug-fixing
