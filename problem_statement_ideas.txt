@@ -31,3 +31,9 @@ blinde brugere, der benytter skærmlæsere?
 Ideer til udkast
 - Hvordan kan en app konstrueres for og målrettes mod at hjælpe og støtte udlændinges første møde med Danmark, herunder, kultur, det offentlige, dagligdag og andre praktiske gøremål.
 
+I dette projekt vil vi designe en web baseret app i JavaScript baseret på brugerundersøgelser. App'en har til formål at hjælpe udlændinge der kommer til Danmark med at loaklisere information om at bo i landet.
+På nuværende tidspunkt findes der ikke en fast centraliseret service der samler disse informationer. Inledende snakke med flere nye i Danmark tegner et klart billede af at det er svært at loaklisere information uden eat have et netværk. 
+Yderligere er mange sider med praktisk information på dansk og udlændinge er således afhængige af oversættelses services såsom Google Translater. 
+App'en skal baseres på input fra slutbrugerne så den kan have mest muligt gavn for egentlige brugere.
+
+Med udgangspunkt i indledende brugerundersøgelser af udlændinges behov ved mødes med Danmark, hvordan kan en app konstrueres for at imødekomme disse behov?
