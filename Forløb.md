@@ -4,14 +4,16 @@
 2. Møde mennesker - uge 6 og 7
    1. Opstil "krav" for at en person kan deltage i fokusgruppen
    2. Fokusgruppe hvor vi får bruger input og behov. "Vi vil gerne lave en app, der kan hjælpe jer og andre udlænginge med mødet med Danmark. Hvordan ser den app ud?"
+   3. Skriv afsnit i rapport
 3. Lav appen - uge 8 til 13
-   1. Wireframes , prototyper og valider dem med fokusgruppen
-   2. Skriv kode
-   3. løbende unit-test
+   1. Wireframes , prototyper og valider dem med fokusgruppen - uge 8 og 9
+   2. Skriv kode , løbende unit-test - uge 10-13
+   3. Skriv afsnit i rapport
 4. Test - Uge 14 til 15
    1. Test med fokusgruppe (individuelt) 
    2. Bug-fixing
-5. Skriv rapport - uge 16 til 17
+   3. Skriv afsnit i rapport
+5. Færdigskriv rapport - uge 16 til 17
 6. Buffer - uge 18 til 20 
 7. Aflever - 15/5 2020 uge 20
 
