@@ -6,7 +6,8 @@
    2. Fokusgruppe hvor vi får bruger input og behov. "Vi vil gerne lave en app, der kan hjælpe jer og andre udlænginge med mødet med Danmark. Hvordan ser den app ud?"
 3. Lav appen - uge 8 til 13
    1. Wireframes , prototyper og valider dem med fokusgruppen
-   2. Skriv kode , løbende unit-test
+   2. Skriv kode
+   3. løbende unit-test
 4. Test - Uge 14 til 15
    1. Test med fokusgruppe (individuelt) 
    2. Bug-fixing
