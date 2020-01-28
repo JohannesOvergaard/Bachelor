@@ -13,6 +13,7 @@ Appen skal hjælpe udlændinge med mødet med Danmark, herunder det offetnlige, 
 ### Kultur
 
 - Mærkedage, hvorfor har mange studenterhuer på i slutningen af Juni, hvorfor er der flag på bussen
+- Bank holidays (helligdage), lukkelov.
 - Traditioner
 - Normer
 - Mad

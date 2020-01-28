@@ -9,6 +9,9 @@
 ## Interview
 
 - Age, country of origin, occupation and time in Denmark?
+
+Germany
+
 - Why did you come to Denmark?
 - When you think back, what was some of your first challenges when you came to Denmark? 
   - How did you solve it?
