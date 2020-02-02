@@ -1,4 +1,4 @@
-# Interview Guide
+﻿# Interview Guide
 
 ## Briefing 
 
@@ -10,11 +10,11 @@
 
 - ***Age, country of origin, occupation and time in Denmark?***
 
-Monica, Brazil living in Portugal for 15 years, 27 years old, lived in denmark for 3 years, **job?? before**, Student at ITU, EU passport (Portugal) 
+Monica, Brazil living in Portugal for 15 years, 37 years old, lived in denmark for 3 years, **job?? before**, Student at ITU, EU passport (Portugal) 
 
 - ***Why did you come to Denmark?***
 
-
+To study
 
 - ***When you think back, what was some of your first challenges when you came to Denmark?*** 
 
@@ -26,21 +26,23 @@ Banking, Danske Bank
 
 Job contract, gym contract, rent contract all in Danish
 
+Some websites have a summary page in English but the tasks etc. are still in Danish
+
 - ***How did you solve it?***
 
-Had a Brazilian community, had a cosin who new someone
+Had a Brazilian community, had a cousin who new someone living in DK for 20 years
 
 Mostly used friends to solve issues
 
 Called the gym to solve issue
 
-Used the International House
+Used the International House and KEA
 
 #### More specific (open Idéer.md)
 
 - ***How did you find information regarding public institutions? Challenges and successes?***
 
-Okay, because she had helped from the university (agency in Portugal) , they translated documents , at this time she studied at KEA and the had a program to helped exchange students. 
+Okay, because she had helped from the university (and an agency in Portugal) , they translated documents , at this time she studied at KEA and they had a program to helped exchange students. 
 
 - ***How did you find information about danish culture? Challenges and successes?***
 
@@ -61,6 +63,8 @@ Transportation was hard until she know about rejseplanen , they translate some p
   - ***In which situation would you have used it?***
 
   She would had used it for sure, mostly in the begining , no place to live , stayed for 15 dayes in hostel , different culture in the way you find a job
+
+Now after some time in Denmark she would use it for everyday life - solving bank stuff, tax stuff, look for gym, be part of a dance activity etc.
 
   - ***(Short description) What does this app look like? Articles, Q&A, searchable content?*** 
 
