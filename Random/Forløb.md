@@ -20,6 +20,7 @@
 8. Aflever - 15/5 2020 uge 20
 
 ### Hvornår sidder vi sammen og arbejder?
-- Mandag 10-16
-- Tirsdag 14-17
+- Mandag 12-16
+- Tirsdag 12-17
 - Fredag 9-16 
+
