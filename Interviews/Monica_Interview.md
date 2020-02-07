@@ -1,4 +1,4 @@
-﻿# Interview Guide
+# Interview Guide
 
 ## Briefing 
 
@@ -20,7 +20,7 @@ To study
 
 Language
 
-Gorverment, Skat, IDA, websites in Danish (only summery in English), ITU-website
+Gorverment, Skat, IDA, websites in Danish (only summery in English), SU-website
 
 Banking, Danske Bank
 

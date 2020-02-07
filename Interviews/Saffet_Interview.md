@@ -41,7 +41,7 @@ Skat, he does not understand Skat and use time every year, 50 minuts in line.
 
 Custumor service in public institusions is not great, but better than where he come from
 
-About hospitalt, you have to call 1313 first is not common knowledge, 
+About hospitalt, you have to call 1813 first is not common knowledge, 
 
 he also mention that people need information about how the doctor works. That you have to go trough your own doctor to get in contact with a specialist. 
 
@@ -61,7 +61,7 @@ He have a good understanding now, but it was an "experiment", where he tried dif
 
 Launguage is a big barrier still, he mention an bad experience he had with a doctor
 
-He have not thougt about insurence but it could be relevant for the app
+He have not thougt about insurance but it could be relevant for the app
 
 #### The app
 

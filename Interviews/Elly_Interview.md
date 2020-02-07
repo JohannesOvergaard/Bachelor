@@ -1,4 +1,4 @@
-﻿# Interview Guide
+# Interview Guide
 
 ## Briefing 
 
@@ -25,7 +25,7 @@ Disapoinded with Studying in Netherland, to study.
 Find a place to live, has to show up in person to get an room, expensive start in Denmark (think because she got a hotel room for 3 weeks), agencies have huge deposit
 Took 2 months to find a place
 
-Restinece perrmit and other documents, some in danish, some in English (many requires Danish)
+Residence permit and other documents, some in danish, some in English (many requires Danish)
 
 Could not find job from September to Marts. 
 
@@ -84,7 +84,7 @@ Got help from Danish friends
   Links to websites where you need to make the appointment 
   
   Job bank for expats
- 
+
   Tips and tricks for the Danish job market as it is different. How to find a job in differnet fields.
   
   - ***Maybe show our sketches afterwards and get feedback/reactions on them***

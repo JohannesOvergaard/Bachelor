@@ -1,4 +1,4 @@
-﻿- # Interview Guide
+- # Interview Guide
 
   ## Briefing 
 
@@ -89,11 +89,11 @@
   The app has to prove helpful then there is a better guarantee people will use it again.
   
     - ***(Short description) What does this app look like? Articles, Q&A, searchable content?*** 
-    
+  
      Tiles with different aspects, some dry topics first like taxes, how to get cpr etc.
    Other tiles with fun stuff like try these danish dishes and this danish activity in your spare time.
   First time you open it there should be a walk through of the app. When she opens it the first time, it would nice to have a couple of questions which personalises the application. I.e. do you have housing already otherwise here is some help, did you register for cpr otherwise here is what to do.
-    
+  
     - ***Maybe show our sketches afterwards and get feedback/reactions on them***
   
   ## Debriefing
