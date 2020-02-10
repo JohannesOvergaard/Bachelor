@@ -26,6 +26,8 @@
 |                       Changing address                       |      |        |        |   x    |
 |                        Danish culture                        |  x   |        |   x    |   x    |
 
+
+
 ### UI
 
 |         UI elements         | Elly | Monica | Saffet | Nadine |
@@ -40,5 +42,4 @@
 |          Seach bar          |      |        |   x    |        |
 |         Walktrough          |      |        |        |   x    |
 |        Notifications        |      |        |        |   x    |
-|                             |      |        |        |        |
 

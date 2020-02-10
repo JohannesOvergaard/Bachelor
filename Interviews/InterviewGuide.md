@@ -24,7 +24,6 @@
 - If there was an app with all this information
   - In which situation would you have used it?
   - (Short description) What does this app look like? Articles, Q&A, searchable content? 
-  - Maybe show our sketches afterwards and get feedback/reactions on them.
 
 ## Debriefing
 
