@@ -13,5 +13,6 @@ You will be recorded going through the app. You are encouraged by us to think al
 This is not a real app it is the sketches so there is some functionality missing for example you will not be able to scroll or input tekst.
 The blue boxes that might appear are the places you are allowed to press.
 Try to keep in mind that this is intended for you phone so it should be with that mindset.
+You are more than welcome to ask questions during the test.
 Is it clear what we want from you?
 Any questions?
