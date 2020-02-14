@@ -4,7 +4,9 @@ Spørgsmål:
 - What was good?
 - What would change (and how)?
 - What did you think of the difference between accommodation and culture?
+- What did you think of the first question in Culture compared to the other two?
 - What did you think of the public sector category?
+	- Follow up with a question of having multiple sub categories under a main.
 - What do you think was missing?
 
 
