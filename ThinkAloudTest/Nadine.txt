@@ -1,0 +1,46 @@
+Spørgsmål:
+- What is your overall impression?
+Content is key
+NEeds to be fun
+look nice and inviting
+Content needs to be nice otherwise design does not matter
+- How reliable do you find the site?
+Want it to be from an official organisation, to udnerstand who is realiable
+This is the authors, about us, little badges saying i.e. this was approved by xyz organisation.
+- What was good?
+Join dk tile, let through the process, information is out there but not like this
+- What would change (and how)?
+- What did you think of the difference between accommodation and culture?
+Keep it to one page, to keep it in a consistent way, when it is necessary to have a quick overview
+- What did you think of the first question in Culture compared to the other two?
+Did not like to scroll
+Read more - confusion about what links are in the app and which are sending you somewhere else, might be too many clicks
+- What did you think of the public sector category?
+	- Follow up with a question of having multiple sub categories under a main.
+- What do you think was missing?
+
+
+Design:
+no colors - very dull, needs to be more catchy.
+font - hard to read, pictures makes it harder to read
+bar - settings and home are on the same level
+- if it was centered it would be more intuitive
+Walkthrough of the app when you first open it
+More information in join dk
+CPR - link to get there, opening hours etc. whatever you can have doubts about
+Order of things - very important, need to have trust in the order of things i.e. in JoinDK
+Timeline with stuff i.e. cpr need to be here 
+A last step i.e. now you have done all the paperwork here is some fun
+Accommodation - crosslink between the tiles
+Transportation - not culture 
+Language school - has its own tile or maybe education tile, studying and learning in general
+Culture - events, summer activities, what to do on a rainy day etc., some facts about danes
+Public sector - sounds like high level stuff, scares of the user
+some info about the tiles
+Accommodation si exactly as she would expect
+Insurance as a whole topic
+A starting screen, like hi welcome to denmark, small danish easter eggs
+The starter tile is a bit confusing as it is on the same level
+visual aid going to taxes
+THe search for a new user might not be that necessary as they do not know what the different things like cpr and su are.
+
