@@ -42,3 +42,6 @@ Like that if it is a big category that it have an other page with more tiles.
 
 What do you think was missing?
 Future idea: You could login with NemID in other to have easy access / synchronises data with public sites. NemID requires CPR so that is a not, he said.
+
+
+Main findings:
