@@ -1,4 +1,4 @@
-Intro: You will be recorded going through the app. You are encouraged by us to think aloud to the extent you find comfortable, as we will not be recording your expressions it is important for us to get some verbal insight into your impressions. This is not a real app it is the sketches so there is some functionality missing for example you will not be able to scroll or input tekst. The blue boxes that might appear are the places you are allowed to press. Try to keep in mind that this is intended for you phone so it should be with that mindset. You are more than welcome to ask questions during the test. Is it clear what we want from you? Any questions?
+﻿Intro: You will be recorded going through the app. You are encouraged by us to think aloud to the extent you find comfortable, as we will not be recording your expressions it is important for us to get some verbal insight into your impressions. This is not a real app it is the sketches so there is some functionality missing for example you will not be able to scroll or input tekst. The blue boxes that might appear are the places you are allowed to press. Try to keep in mind that this is intended for you phone so it should be with that mindset. You are more than welcome to ask questions during the test. Is it clear what we want from you? Any questions?
 
 
 Spørgsmål:
@@ -42,3 +42,29 @@ Like that if it is a big category that it have an other page with more tiles.
 
 What do you think was missing?
 Future idea: You could login with NemID in other to have easy access / synchronises data with public sites. NemID requires CPR so that is a not, he said.
+
+
+other notes:
+- He would move the search bar higher on the front page (similar to other pages)
+- Remove some of the space between the tiles. 
+- In the drop down if it is a link to an internal link he would prefer this setup. But not if it is to an external link.
+- Like that if it is a big category that it have an other page with more tiles.
+- "The way you use the images are quite smart"
+
+
+- likes icons
+- likes joindk
+- likes the open ended questions
+- looks legit
+- makes sense to have Join dk as the first
+- likes purple
+-likes the boxes - rounded
+- likes the images - associative visual ques, do not necessariyl have to read the text
+- search bar higher, logo beneath the search function. put the search bar on top
+- remove spacing between the categories, closer to instagram
+- really like the idea of not opening an external link
+- prefer the drop down, to not loose the flow
+- highlight the redirect link in join dk
+- looks legit, looks clean, looks like something the kommune would develop
+- looks like an app from borger.dk but with more stuff
+- likes the colors just inconsistent
