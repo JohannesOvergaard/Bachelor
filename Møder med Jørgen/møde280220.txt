@@ -1,0 +1,12 @@
+Vejleder møde 28 02 2020
+
+Join Denmark er det vigtige i vores app. Jørgen forslår at appen skal filtrere lidt ud fra nogle valg brugeren tager. 
+Vi behøver ikke at uddybe alle kategorier men det er vigtigt at vi har nogle kategorier i detaljer. 
+Vi skal ikke uddybe alt men vi skal vælge nogle ting, hvor vi kan vise noget der er bedre end en linksamling.
+Jørgen forslår fx at uddybe studievalg. Der forstår vi alle begreberne og kender til Danmark. Hvad styrer studerendes valg af universitet. For eksempel merit, geografi, fritid.
+
+Dårlig hjemmeside: StudyinDenmark
+
+Jørgen forslå at vi snakker om hvad er det vi kan tilbyde? Hvad kan vores app tilbyde?
+
+Jørgen forslå at vi allerede går igang med at kigge på database-setup. Han siger at ITU's database er forholdvis primitiv og forslår at vi også kigger på databaser som amazon eller google tilbyde.
