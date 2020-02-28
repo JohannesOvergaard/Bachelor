@@ -5,7 +5,7 @@ export function NavBar(props) {
   return (
     <div className="navbar">
       <p className="settings">Settings</p>
-      <h7 className="title">{props.state.title}</h7>
+      <p className="title">{props.state.title}</p>
       <p className="search">Search</p>
     </div>
   );
