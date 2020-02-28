@@ -1,5 +1,19 @@
 .tile {
-  border: 3px;
-  border-style: solid;
-  border-color: black;
+  padding: 1rem;
+  background: linear-gradient(#5864ba, #7b297d);
+  position: relative;
+  padding: 3px;
+  margin: 10px;
+  width: 40%;
+  border-radius: 15px;
+}
+
+h2 {
+  background: white;
+}
+
+.innertile {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
 }

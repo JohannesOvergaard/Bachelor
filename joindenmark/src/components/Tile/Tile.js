@@ -6,7 +6,9 @@ export function Tile(props) {
 
   return (
     <div className="tile">
-      <h2>{title}</h2>
+      <div className="innertile">
+        <h2>{title}</h2>
+      </div>
     </div>
   );
 }
