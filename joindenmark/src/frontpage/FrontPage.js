@@ -6,7 +6,14 @@ export function FrontPage() {
   return (
     <div>
       <h1>Welcome to Join Denmark</h1>
-      <Link to="/page">
+      <Link
+        to={{
+          pathname: "/page",
+          state: {
+            title: "Public Sector"
+          }
+        }}
+      >
         <Tile state={{ title: "Public Sector" }} />
       </Link>
       <Tile state={{ title: "Accommodation" }} />
