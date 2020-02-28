@@ -1,12 +1,14 @@
 import React from "react";
 import "./Page.css";
+import { NavBar } from "../components/navbar/NavBar";
 
 export function Page(props) {
   // const [title, setTitle] = props.location.title;
   //
   return (
     <div>
-      <h1>{props.location.state.title}</h1>
+      <NavBar state={{ title: props.location.state.title }}></NavBar>
+      <h1>text</h1>
     </div>
   );
 }

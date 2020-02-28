@@ -1,0 +1,16 @@
+.navbar {
+  background: white;
+  height: 50px;
+}
+
+.settings {
+  float: left;
+}
+
+.search {
+  float: right;
+}
+
+.title {
+  text-align: center;
+}
