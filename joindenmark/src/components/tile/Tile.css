@@ -1,0 +1,23 @@
+.tile {
+  background: linear-gradient(#5864ba, #7b297d);
+  position: relative;
+  padding: 0.5%;
+  margin: 1%;
+  width: 47%;
+  border-radius: 15px;
+  float: left;
+}
+
+.innertile {
+  background: white;
+  border-radius: 12px;
+  padding-top: 30%;
+  padding-bottom: 30%;
+}
+
+
+h2 {
+  background: white;
+  text-align: center;
+}
+
