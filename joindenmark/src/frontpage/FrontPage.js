@@ -9,7 +9,10 @@ export function FrontPage() {
       <NavBar state={{ title: "" }} />
       <h1>Join Denmark - step by step</h1>
       <Link
-        to={{ pathname: "/publicsector", state: { title: "Public Sector" } }}
+        to={{
+          pathname: "/publicsector",
+          state: { title: "Public Sector", prev: "" }
+        }}
       >
         <Tile state={{ title: "Public Sector" }} />
       </Link>
