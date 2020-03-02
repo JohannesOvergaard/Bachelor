@@ -1,6 +1,7 @@
 import React from "react";
 import "./Page.css";
 import { NavBar } from "../components/navbar/NavBar";
+import { HomeButton } from "../components/homebutton/HomeButton";
 
 export function Page(props) {
   // const [title, setTitle] = props.location.title;
@@ -8,7 +9,8 @@ export function Page(props) {
   return (
     <div>
       <NavBar state={{ title: props.location.state.title }}></NavBar>
-      <h1>text</h1>
+      <h1>Text</h1>
+      <HomeButton/>
     </div>
   );
 }

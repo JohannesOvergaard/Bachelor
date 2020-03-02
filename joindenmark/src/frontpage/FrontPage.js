@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Tile } from "../components/tile/Tile";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import { NavBar } from "../components/navbar/NavBar";
 
 export function FrontPage() {
   return (
     <div>
-      <h1>Welcome to Join Denmark</h1>
+      <NavBar state={{ title: ""}}/>
+      <h1>Join Denmark - step by step</h1>
       <Link
         to={{
           pathname: "/page",
