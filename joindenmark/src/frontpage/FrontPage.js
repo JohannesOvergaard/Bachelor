@@ -9,20 +9,51 @@ export function FrontPage() {
       <NavBar state={{ title: "" }} />
       <h1>Join Denmark - step by step</h1>
       <Link
-        to={{ pathname: "/publicsector", state: {title: "Public Sector", picture: "/images/publicSector.jpg" } }}
+        to={{
+          pathname: "/publicsector",
+          state: { title: "Public Sector", picture: "/images/publicSector.jpg" }
+        }}
       >
-        <Tile state={{ title: "Public Sector", picture: "/images/publicSector.jpg" }} />
+        <Tile
+          state={{
+            title: "Public Sector",
+            picture: "/images/publicSector.jpg"
+          }}
+        />
       </Link>
       <Link
-        to={{ pathname: "/accommodation", state: { title: "Accommodation", picture: "/images/accommodation.jpg"} }}
+        to={{
+          pathname: "/accommodation",
+          state: {
+            title: "Accommodation",
+            picture: "/images/accommodation.jpg"
+          }
+        }}
       >
-        <Tile state={{ title: "Accommodation" , picture: "/images/accommodation.jpg"}} />
+        <Tile
+          state={{
+            title: "Accommodation",
+            picture: "/images/accommodation.jpg"
+          }}
+        />
       </Link>
-      <Link to={{ pathname: "/jobmarket", state: { title: "Job Market" , picture: "/images/jobMarket.jpg"} }}>
-        <Tile state={{ title: "Job Market" , picture: "/images/jobMarket.jpg"}} />
+      <Link
+        to={{
+          pathname: "/jobmarket",
+          state: { title: "Job Market", picture: "/images/jobMarket.jpg" }
+        }}
+      >
+        <Tile
+          state={{ title: "Job Market", picture: "/images/jobMarket.jpg" }}
+        />
       </Link>
-      <Link to={{ pathname: "/culture", state: { title: "Culture" , picture: "/images/culture.jpg"} }}>
-        <Tile state={{ title: "Culture" , picture: "/images/culture.jpg"}} />
+      <Link
+        to={{
+          pathname: "/culture",
+          state: { title: "Culture", picture: "/images/culture.jpg" }
+        }}
+      >
+        <Tile state={{ title: "Culture", picture: "/images/culture.jpg" }} />
       </Link>
     </div>
   );
