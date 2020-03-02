@@ -1,6 +1,6 @@
 .navbar {
   background: white;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   overflow: hidden;
@@ -8,12 +8,16 @@
 }
 
 .settings {
-  text-align: left;
+  float: left;
+  width: 33.33%;
 }
 
 .search {
-  text-align: right;
+  float: left;
+  width: 33.33%;
 }
 
 .title {
+  float: left;
+  width: 33.33%;
 }
