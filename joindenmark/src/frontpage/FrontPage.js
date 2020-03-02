@@ -1,12 +1,10 @@
 import React from "react";
 import { Tile } from "../components/tile/Tile";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import { NavBar } from "../components/navbar/NavBar";
 
 export function FrontPage() {
   return (
     <div>
-      <NavBar state={{ title: "" }} />
       <h1>Join Denmark - step by step</h1>
       <Link
         to={{
