@@ -2,10 +2,11 @@
   padding: 1rem;
   background: linear-gradient(#5864ba, #7b297d);
   position: relative;
-  padding: 3px;
-  margin: 10px;
-  width: 40%;
+  padding: 0.5%;
+  margin: 1%;
+  width: 47%;
   border-radius: 15px;
+  float: left;
 }
 
 h2 {
@@ -15,5 +16,5 @@ h2 {
 .innertile {
   background: white;
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 11px;
 }

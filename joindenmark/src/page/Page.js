@@ -8,6 +8,7 @@ export function Page(props) {
   return (
     <div>
       <NavBar state={{ title: props.location.state.title }}></NavBar>
+      <h1>Text</h1>
     </div>
   );
 }
