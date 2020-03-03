@@ -4,40 +4,37 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import {db} from "../firebase"
 
 const dataFromDB = db.collection("tile").get();
+const tiles = [];
 
 function makeTiles(){
   dataFromDB.then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
-      //console.log(doc.id, " => ", doc.data());
-      return(
-      <Link
-        to={{
-          pathname: "/publicsector",
-          state: { title: "doc.data.title()", picture: "/images/publicSector.jpg" }
-        }}
-      >
-        <Tile
-          state={{
-            title: "Public Sector",
-            picture: "/images/publicSector.jpg"
+      console.log(doc.id, " => ", doc.data());
+      tiles.push(
+        <Link
+          to={{
+            pathname: "/jobmarket",
+            state: { title: "Job Market", picture: "/images/jobMarket.jpg" }
           }}
-        />
+        >
+          <Tile
+            state={{ title: "Job Market", picture: "/images/jobMarket.jpg" }}
+          />
       </Link>
-      );
-    }).catch(function(error) {
-      console.log("Error getting document:", error);
+        );
     });
-    })
-  }
-
+  });
+  console.log(tiles);
+  return tiles[0];
+}
 
 export function FrontPage() {
-  return (
+  return (    
     <div>
       <h1>Join Denmark - step by step</h1>
-      
+      {makeTiles()}
     
-      {/* <Link
+      <Link
         to={{
           pathname: "/publicsector",
           state: { title: "Public Sector", picture: "/images/publicSector.jpg" }
@@ -83,7 +80,7 @@ export function FrontPage() {
         }}
       >
         <Tile state={{ title: "Culture", picture: "/images/culture.jpg" }} />
-      </Link> */}
+      </Link>
     </div>
   );
 }
