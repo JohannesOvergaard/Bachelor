@@ -1,7 +1,9 @@
-.search {
-  float: right;
-}
-
 .settings {
   float: left;
+  width: 50%;
+}
+
+.search {
+  float: left;
+  width: 50%;
 }
