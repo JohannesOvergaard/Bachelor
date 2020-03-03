@@ -3,21 +3,41 @@ import { Tile } from "../components/tile/Tile";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import {db} from "../firebase"
 
-export function FrontPage() {
-  const [dataFromDB, setDataFromDB] = useState("test");
-  
-  const docRef = db.collection("tile").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-      console.log(doc.id, " => ", doc.data());
-    });
-  }).catch(function(error) {
-    console.log("Error getting document:", error);
-  });
+const dataFromDB = db.collection("tile").get();
 
+function makeTiles(){
+  dataFromDB.then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+      //console.log(doc.id, " => ", doc.data());
+      return(
+      <Link
+        to={{
+          pathname: "/publicsector",
+          state: { title: "doc.data.title()", picture: "/images/publicSector.jpg" }
+        }}
+      >
+        <Tile
+          state={{
+            title: "Public Sector",
+            picture: "/images/publicSector.jpg"
+          }}
+        />
+      </Link>
+      );
+    }).catch(function(error) {
+      console.log("Error getting document:", error);
+    });
+    })
+  }
+
+
+export function FrontPage() {
   return (
     <div>
       <h1>Join Denmark - step by step</h1>
-      <Link
+      
+    
+      {/* <Link
         to={{
           pathname: "/publicsector",
           state: { title: "Public Sector", picture: "/images/publicSector.jpg" }
@@ -63,8 +83,7 @@ export function FrontPage() {
         }}
       >
         <Tile state={{ title: "Culture", picture: "/images/culture.jpg" }} />
-      </Link>
-      <h1>{dataFromDB}</h1>
+      </Link> */}
     </div>
   );
 }
