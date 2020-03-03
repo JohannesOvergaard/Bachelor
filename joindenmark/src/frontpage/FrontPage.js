@@ -1,23 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tile } from "../components/tile/Tile";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import {db} from "../firebase"
 
 export function FrontPage() {
-  var citiesRef = db.collection("cities");
-
-  const docRef = db.collection("title").doc("xgaIk6n7lse4fDSTOlB9")
+  const [dataFromDB, setDataFromDB] = useState("test");
+  
+  const docRef = db.collection("tile").doc("tile1");
 
   docRef.get().then(function(doc) {
     if (doc.exists) {
+        setDataFromDB(doc.data().title);
         console.log("Document data:", doc.data());
     } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
     }
-}).catch(function(error) {
+  }).catch(function(error) {
     console.log("Error getting document:", error);
-});
+  });
 
   return (
     <div>
@@ -69,6 +70,7 @@ export function FrontPage() {
       >
         <Tile state={{ title: "Culture", picture: "/images/culture.jpg" }} />
       </Link>
+      <h1>{dataFromDB}</h1>
     </div>
   );
 }
