@@ -38,7 +38,6 @@ export function FrontPage() {
   return (    
     <div>
       <h1>Join Denmark - step by step</h1>
-      {console.log(tiles)}
       {tiles}
     </div>
   );
