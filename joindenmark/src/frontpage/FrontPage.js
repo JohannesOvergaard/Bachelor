@@ -1,8 +1,24 @@
 import React from "react";
 import { Tile } from "../components/tile/Tile";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import {db} from "../firebase"
 
 export function FrontPage() {
+  var citiesRef = db.collection("cities");
+
+  const docRef = db.collection("title").doc("xgaIk6n7lse4fDSTOlB9")
+
+  docRef.get().then(function(doc) {
+    if (doc.exists) {
+        console.log("Document data:", doc.data());
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+
   return (
     <div>
       <h1>Join Denmark - step by step</h1>
