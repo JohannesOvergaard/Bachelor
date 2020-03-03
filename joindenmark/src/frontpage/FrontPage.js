@@ -6,16 +6,10 @@ import {db} from "../firebase"
 export function FrontPage() {
   const [dataFromDB, setDataFromDB] = useState("test");
   
-  const docRef = db.collection("tile").doc("tile1");
-
-  docRef.get().then(function(doc) {
-    if (doc.exists) {
-        setDataFromDB(doc.data().title);
-        console.log("Document data:", doc.data());
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
+  const docRef = db.collection("tile").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+      console.log(doc.id, " => ", doc.data());
+    });
   }).catch(function(error) {
     console.log("Error getting document:", error);
   });
