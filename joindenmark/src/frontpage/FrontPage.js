@@ -1,10 +1,16 @@
 import React from "react";
 import { Tile } from "../components/tile/Tile";
+import "./FrontPage.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export function FrontPage() {
   return (
     <div>
+      <FontAwesomeIcon icon={faCog} className="settings" />
+      <FontAwesomeIcon icon={faSearch} className="search" />
+
       <h1>Join Denmark - step by step</h1>
       <Link
         to={{
