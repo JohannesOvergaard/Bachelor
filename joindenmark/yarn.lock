@@ -1154,7 +1154,6 @@
   dependencies:
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"
->>>>>>> develop
 
 "@hapi/address@2.x.x":
   version "2.1.4"
