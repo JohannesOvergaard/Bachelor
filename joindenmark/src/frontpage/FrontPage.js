@@ -6,6 +6,10 @@ import {db} from "../firebase"
 const dataFromDB = db.collection("tile").get();
 const tiles = [];
 
+function convertToPath(title){
+  return "/" + title.replace(/ /g,'').toLowerCase()
+}
+
 function makeTiles(){
   dataFromDB.then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
@@ -13,66 +17,29 @@ function makeTiles(){
       tiles.push(
         <Link
           to={{
-            pathname: "/jobmarket",
-            state: { title: "Job Market", picture: "/images/jobMarket.jpg" }
+            pathname: convertToPath(doc.data().title),
+            state: { title: doc.data().title, picture: doc.data().picture }
           }}
         >
           <Tile
-            state={{ title: "Job Market", picture: "/images/jobMarket.jpg" }}
+            state={{ title: doc.data().title, picture: doc.data().picture }}
           />
       </Link>
         );
     });
   });
   console.log(tiles);
-  return tiles[0];
+  return tiles;
 }
 
 export function FrontPage() {
   return (    
     <div>
-      <h1>Join Denmark - step by step</h1>
+    
       {makeTiles()}
     
-      <Link
-        to={{
-          pathname: "/publicsector",
-          state: { title: "Public Sector", picture: "/images/publicSector.jpg" }
-        }}
-      >
-        <Tile
-          state={{
-            title: "Public Sector",
-            picture: "/images/publicSector.jpg"
-          }}
-        />
-      </Link>
-      <Link
-        to={{
-          pathname: "/accommodation",
-          state: {
-            title: "Accommodation",
-            picture: "/images/accommodation.jpg"
-          }
-        }}
-      >
-        <Tile
-          state={{
-            title: "Accommodation",
-            picture: "/images/accommodation.jpg"
-          }}
-        />
-      </Link>
-      <Link
-        to={{
-          pathname: "/jobmarket",
-          state: { title: "Job Market", picture: "/images/jobMarket.jpg" }
-        }}
-      >
-        <Tile
-          state={{ title: "Job Market", picture: "/images/jobMarket.jpg" }}
-        />
-      </Link>
+      <h1>Join Denmark - step by step</h1>
+      
       <Link
         to={{
           pathname: "/culture",
