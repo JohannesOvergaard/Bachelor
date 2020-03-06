@@ -1,23 +1,29 @@
 .navbar {
   background: white;
-  position: sticky;
-  top: 0;
+  position: fixed;
   width: 100%;
   overflow: hidden;
-  text-align: center;
 }
 
 .back {
   float: left;
-  width: 33.33%;
-}
-
-.search {
-  float: left;
-  width: 33.33%;
+  width: 25.33%;
+  padding: 4%;
+  text-align: left;
 }
 
 .title {
   float: left;
-  width: 33.33%;
+  width: 29.33%;
+  padding: 2%;
+  text-align: center;
 }
+
+.find {
+  float: left;
+  width: 25.33%;
+  padding: 4%;
+  text-align: right;
+}
+
+
