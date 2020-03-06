@@ -6,14 +6,23 @@ import { HomeButton } from "../components/homebutton/HomeButton";
 
 export function Page(props) {
   const [title, setTitle] = useState(props.location.state.title);
-  const [headline, setHeadline] = useState('');
+  const [headlines, setHeadlines] = useState([]);
+  const [articles, setArticles] = useState(new Map());
   const dataFromDB = db.collection(title.toLowerCase()).get();
 
   function getContentFromDB() {
+    const head = [];
     dataFromDB.then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc){
-        setHeadline(doc.data().headline)
+      querySnapshot.forEach(function(doc) {
+        let data = doc.data();
+        head.push(<h1 key={data.headline}>{data.headline}</h1>);
+        articles.set(data.headline, {
+          subheading: data.subheading,
+          body: data.body,
+          author: data.author
+        });
       });
+      setHeadlines(head);
     });
   }
 
@@ -24,9 +33,9 @@ export function Page(props) {
   return (
     <div>
       <NavBar state={{ title: title }}></NavBar>
-      <img className="pagePicture" src={props.location.state.picture}/>
-      <p>{headline}</p>
-      <HomeButton/>
+      <img className="pagePicture" src={props.location.state.picture} />
+      {headlines}
+      <HomeButton />
     </div>
   );
 }
