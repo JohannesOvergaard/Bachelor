@@ -18,7 +18,12 @@ export function Page(props) {
         content.push(
           <DropTile
             key={data.headline}
-            state={{ headline: data.headline, subheading: data.subheading }}
+            state={{
+              headline: data.headline,
+              author: data.author,
+              subheading: data.subheading,
+              body: data.body
+            }}
           />
         );
       });
