@@ -26,9 +26,16 @@ export function DropTile(props) {
     readMore = <div>{props.state.body}</div>;
   }
 
+  function onTileClick() {
+    if (showSubHeading === true) {
+      setIsClicked(!isClicked);
+    }
+    setSubHeading(!showSubHeading);
+  }
+
   return (
     <div>
-      <h1 onClick={() => setSubHeading(!showSubHeading)}>{headline}</h1>
+      <h1 onClick={() => onTileClick()}>{headline}</h1>
       {showSubHeading && (
         <div>
           <h4 key={headline}>
