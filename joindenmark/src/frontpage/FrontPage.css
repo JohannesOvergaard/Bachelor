@@ -1,9 +1,15 @@
 .settings {
   float: left;
-  width: 50%;
+  width: 42%;
+  padding: 4%;
+  text-align: left;
 }
 
 .search {
   float: left;
-  width: 50%;
+  width: 42%;
+  padding: 4%;
+  text-align: right;
 }
+
+

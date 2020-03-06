@@ -1,16 +1,16 @@
 .tileBoarder {
   background: linear-gradient(#5864ba, #7b297d);
   position: relative;
-  padding: 0.5%;
-  margin: 1%;
-  width: 47%;
+  padding: 1vw;
+  margin: 1vw;
+  width: 46vw;
   border-radius: 15px;
   float: left;
 }
 
 .tilePicture {
-  height: 200px;
-  width: 200px;
+  width: 46vw;
+  height: 46vw;
   border-radius: 12px;
 }
 

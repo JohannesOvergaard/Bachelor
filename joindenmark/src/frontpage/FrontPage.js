@@ -42,9 +42,13 @@ export function FrontPage() {
 
   return (
     <div>
-      <FontAwesomeIcon icon={faCog} className="settings" />
-      <FontAwesomeIcon icon={faSearch} className="search" />
-
+      <div className="settings" >
+        <FontAwesomeIcon icon={faCog} />
+      </div>
+      <div className="search">
+        <FontAwesomeIcon icon={faSearch} />
+      </div>
+      <br/>
       <h1>Join Denmark - step by step</h1>
       {tiles}
     </div>
