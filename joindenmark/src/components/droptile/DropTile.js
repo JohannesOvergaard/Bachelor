@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./DropTile.css";
 
 export function DropTile(props) {
-  const [showText, setShowText] = useState(false);
+  const [showSubHeading, setSubHeading] = useState(false);
   const [showFullArticle, setShowFullArticle] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   let readMore;
@@ -28,8 +28,8 @@ export function DropTile(props) {
 
   return (
     <div>
-      <h1 onClick={() => setShowText(!showText)}>{headline}</h1>
-      {showText && (
+      <h1 onClick={() => setSubHeading(!showSubHeading)}>{headline}</h1>
+      {showSubHeading && (
         <div>
           <h4 key={headline}>
             <i>by {props.state.author}</i>
