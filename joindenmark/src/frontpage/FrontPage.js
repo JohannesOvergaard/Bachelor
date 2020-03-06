@@ -15,8 +15,8 @@ export function FrontPage() {
   }
 
   function makeTiles() {
+    const arr = [];
     dataFromDB.then(function(querySnapshot) {
-      const arr = [];
       querySnapshot.forEach(function(doc) {
         arr.push(
           <Link
