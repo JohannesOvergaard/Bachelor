@@ -38,9 +38,9 @@ export function Page(props) {
   return (
     <div>
       <NavBar state={{ title: title }}></NavBar>
+      <HomeButton/>
       <img className="pagePicture" src={props.location.state.picture} />
       {articles}
-      <HomeButton />
     </div>
   );
 }
