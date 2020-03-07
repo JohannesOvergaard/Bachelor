@@ -3,7 +3,8 @@
 
 .dropTileText{
   float: left;
-  width: 80vw;
+  padding-left: 5vw;
+  width: 75vw;
 }
 
 .dropTileIcon{
