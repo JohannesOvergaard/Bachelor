@@ -3,11 +3,12 @@
   position: fixed;
   width: 100%;
   overflow: hidden;
+  font-size: 18px;
 }
 
 .back {
   float: left;
-  width: 25.33%;
+  width: 27.33%;
   padding: 4%;
   text-align: left;
 }
@@ -15,13 +16,12 @@
 .title {
   float: left;
   width: 29.33%;
-  padding: 2%;
   text-align: center;
 }
 
 .find {
   float: left;
-  width: 25.33%;
+  width: 27.33%;
   padding: 4%;
   text-align: right;
 }

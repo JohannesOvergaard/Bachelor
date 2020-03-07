@@ -1,3 +1,17 @@
+.dropTile{
+}
+
+.dropTileText{
+  float: left;
+  width: 80vw;
+}
+
+.dropTileIcon{
+  float: left;
+  width: 8vw;
+  margin: 6vw;
+}
+
 .inlinediv {
   display: inline-block;
 }
