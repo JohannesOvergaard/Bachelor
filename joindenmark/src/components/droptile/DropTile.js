@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import "./DropTile.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 
 export function DropTile(props) {
   const [showSubHeading, setSubHeading] = useState(false);
   const [showFullArticle, setShowFullArticle] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
   let readMore;
   const headline = props.state.headline;
 
-  if (!isClicked) {
+  if (!isReadMoreClicked) {
     readMore = (
       <div className="inlinediv">
         <span
           onClick={
             (() => setShowFullArticle(!showFullArticle),
-            () => setIsClicked(!isClicked))
+            () => setIsReadMoreClicked(!isReadMoreClicked))
           }
         >
           Read more
@@ -27,15 +29,19 @@ export function DropTile(props) {
   }
 
   function onTileClick() {
-    if (showSubHeading === true) {
-      setIsClicked(!isClicked);
+    if (isReadMoreClicked === true) {
+      setIsReadMoreClicked(!isReadMoreClicked);
     }
     setSubHeading(!showSubHeading);
   }
 
   return (
-    <div>
-      <h1 onClick={() => onTileClick()}>{headline}</h1>
+    <div className="dropTile">
+      <h3 className="dropTileText" onClick={() => onTileClick()}>{headline}</h3>
+      <div className="dropTileIcon" onClick={() => onTileClick()}>
+        {showSubHeading && <FontAwesomeIcon icon={faChevronUp}/>}
+        {!showSubHeading && <FontAwesomeIcon icon={faChevronDown}/>}
+      </div>
       {showSubHeading && (
         <div>
           <h4 key={headline}>
@@ -44,6 +50,7 @@ export function DropTile(props) {
           {props.state.subheading} {readMore}
         </div>
       )}
+      <hr/>
     </div>
   );
 }
