@@ -10,15 +10,7 @@ function App() {
   return (
     <div>
       <Switch>
-<<<<<<< HEAD
-        <Route exact path="/" exact component={FrontPage} />
-        <Route exact path="/joindenmark" exact component={JoinDenmarkPage} />
-        <Route exact path="/publicsector" exact component={SubTilePage} />
-        <Route exact path="/accommodation" exact component={Page} />
-        <Route exact path="/culture" exact component={Page} />
-        <Route exact path="/jobmarket" exact component={Page} />
-=======
-        <Route exact path="/"component={FrontPage} />
+        <Route exact path="/" component={FrontPage} />
 
         {/* Routes from Home page */}
         <Route path="/accommodation" component={Page} />
@@ -27,11 +19,10 @@ function App() {
         <Route exact path="/publicsector" component={SubTilePage} />
 
         {/* Routes from Public sector */}
-        <Route path="/publicsector/taxes" component={Page}/>
-        <Route path="/publicsector/su" component={Page}/>
-        <Route path="/publicsector/cpr" component={Page}/>
-        <Route path="/publicsector/residencepermit" component={Page}/>
->>>>>>> develop
+        <Route path="/publicsector/taxes" component={Page} />
+        <Route path="/publicsector/su" component={Page} />
+        <Route path="/publicsector/cpr" component={Page} />
+        <Route path="/publicsector/residencepermit" component={Page} />
       </Switch>
     </div>
   );
