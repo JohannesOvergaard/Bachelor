@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Tile } from "../components/tile/Tile";
 import "./FrontPage.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import { convertToPath} from "../Util/Helpers";
 import { db } from "../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -9,10 +10,6 @@ import { faCog, faSearch } from "@fortawesome/free-solid-svg-icons";
 export function FrontPage() {
   const dataFromDB = db.collection("tile").get();
   const [tiles, setTiles] = useState([]);
-
-  function convertToPath(title) {
-    return "/" + title.replace(/ /g, "").toLowerCase();
-  }
 
   function makeTiles() {
     const arr = [];
