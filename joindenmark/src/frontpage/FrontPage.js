@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Tile } from "../components/tile/Tile";
 import "./FrontPage.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import { convertToPath} from "../Util/Helpers";
+import { convertToPath, trim } from "../Util/Helpers";
 import { db } from "../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { JoinDkTile } from "../components/joindktile/JoinDkTile";
 
 export function FrontPage() {
   const dataFromDB = db.collection("tile").get();
   const [tiles, setTiles] = useState([]);
+  const joinDkTitle = "Join Denmark";
 
   function makeTiles() {
     const arr = [];
@@ -39,14 +41,22 @@ export function FrontPage() {
 
   return (
     <div>
-      <div className="settings" >
+      <div className="settings">
         <FontAwesomeIcon icon={faCog} />
       </div>
       <div className="search">
         <FontAwesomeIcon icon={faSearch} />
       </div>
-      <br/>
-      <h1>Join Denmark - step by step</h1>
+      <br />
+      <Link
+        key={trim(joinDkTitle)}
+        to={{
+          pathname: convertToPath(joinDkTitle),
+          state: { title: joinDkTitle }
+        }}
+      >
+        <JoinDkTile state={{ title: joinDkTitle }} />
+      </Link>
       {tiles}
     </div>
   );
