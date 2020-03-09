@@ -9,11 +9,19 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" exact component={FrontPage} />
-        <Route exact path="/publicsector" exact component={SubTilePage} />
-        <Route exact path="/accommodation" exact component={Page} />
-        <Route exact path="/culture" exact component={Page} />
-        <Route exact path="/jobmarket" exact component={Page} />
+        <Route exact path="/"component={FrontPage} />
+
+        {/* Routes from Home page */}
+        <Route path="/accommodation" component={Page} />
+        <Route path="/culture" component={Page} />
+        <Route path="/jobmarket" component={Page} />
+        <Route exact path="/publicsector" component={SubTilePage} />
+
+        {/* Routes from Public sector */}
+        <Route path="/publicsector/taxes" component={Page}/>
+        <Route path="/publicsector/su" component={Page}/>
+        <Route path="/publicsector/cpr" component={Page}/>
+        <Route path="/publicsector/residencepermit" component={Page}/>
       </Switch>
     </div>
   );

@@ -17,7 +17,6 @@ export function SubTilePage(props) {
     }, []);
 
     function generateTiles(tileTitles) {
-        console.log(tileTitles.docs);
         return(
             tileTitles.docs &&
             tileTitles.docs.length > 0 &&
@@ -27,7 +26,7 @@ export function SubTilePage(props) {
                     <Link
                         key={data.title}
                         to={{
-                        pathname: convertToPath(data.title),
+                        pathname: convertToPath(title + "/" + data.title),
                         state: { title: data.title, picture: data.picture }
                         }}
                     >
