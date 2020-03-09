@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react";
 import "./Page.css";
-import { db } from "../firebase";
 import { NavBar } from "../components/navbar/NavBar";
 import { HomeButton } from "../components/homebutton/HomeButton";
 import { DropTile } from "../components/droptile/DropTile";
+import { getContent } from "../services/ContentService";
 
 export function Page(props) {
   const [title, setTitle] = useState(props.location.state.title);
-  const [articles, setArticles] = useState([]);
-  const dataFromDB = db.collection(title.toLowerCase()).get();
+  const [articles, setArticles] = useState({});
 
-  function getContentFromDB() {
-    const content = [];
-    dataFromDB.then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-        let data = doc.data();
-        content.push(
+  useEffect(() => {
+    getContent(title.toLowerCase()).then(setArticles);
+  }, []);
+
+  function generateDropTiles(articles) {
+    return (
+      articles.docs &&
+      articles.docs.length > 0 &&
+      articles.docs.map(article => {
+        const data = article.data();
+        return (
           <DropTile
             key={data.headline}
             state={{
@@ -26,21 +30,15 @@ export function Page(props) {
             }}
           />
         );
-      });
-      setArticles(content);
-    });
+      })
+    );
   }
-
-  useEffect(() => {
-    getContentFromDB();
-  }, []);
-
   return (
     <div>
       <NavBar state={{ title: title }}></NavBar>
-      <HomeButton/>
+      <HomeButton />
       <img className="pagePicture" src={props.location.state.picture} />
-      {articles}
+      {generateDropTiles(articles)}
     </div>
   );
 }
