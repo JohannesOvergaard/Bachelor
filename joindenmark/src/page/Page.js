@@ -13,7 +13,7 @@ export function Page(props) {
     getContent(title.toLowerCase()).then(setArticles);
   }, []);
 
-  function generateTiles(articles) {
+  function generateDropTiles(articles) {
     return (
       articles.docs &&
       articles.docs.length > 0 &&
@@ -38,7 +38,7 @@ export function Page(props) {
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
       <img className="pagePicture" src={props.location.state.picture} />
-      {generateTiles(articles)}
+      {generateDropTiles(articles)}
     </div>
   );
 }
