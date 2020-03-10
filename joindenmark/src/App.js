@@ -4,7 +4,7 @@ import { FrontPage } from "./frontpage/FrontPage";
 import { Page } from "./page/Page";
 import { SubTilePage } from "./subtilepage/SubTilePage";
 import { JoinDenmarkPage } from "./joindkpage/JoinDenmarkPage";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { SettingsPage } from "./settingspage/SettingsPage";
 
 function App() {

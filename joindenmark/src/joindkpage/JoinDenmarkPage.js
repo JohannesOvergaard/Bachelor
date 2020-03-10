@@ -6,7 +6,7 @@ import { DropTile } from "../components/droptile/DropTile";
 import { getContent } from "../services/ContentService";
 
 export function JoinDenmarkPage(props) {
-  const [title, setTitle] = useState(props.location.state.title);
+  const [title] = useState(props.location.state.title);
   const [articles, setArticles] = useState({});
 
   useEffect(() => {
