@@ -43,7 +43,7 @@ export function DropTile(props) {
           {!showSubHeading && <FontAwesomeIcon icon={faChevronDown}/>}
         </div>
         {showSubHeading && (
-          <div className="dropTileText">
+          <div className="dropTileBody">
             <h4 key={headline}>
               <i>by {props.state.author}</i>
             </h4>
