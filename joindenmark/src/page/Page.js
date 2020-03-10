@@ -6,11 +6,12 @@ import { DropTile } from "../components/droptile/DropTile";
 import { getContent } from "../services/ContentService";
 
 export function Page(props) {
-  const [title, setTitle] = useState(props.location.state.title);
+  const [title] = useState(props.location.state.title);
   const [articles, setArticles] = useState({});
 
   useEffect(() => {
     getContent(title.toLowerCase()).then(setArticles);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function generateDropTiles() {
@@ -38,7 +39,7 @@ export function Page(props) {
     <div>
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
-      <img className="pagePicture" src={props.location.state.picture} />
+      <img className="pagePicture" src={props.location.state.picture} alt="" />
       {generateDropTiles()}
     </div>
   );
