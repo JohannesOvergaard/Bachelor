@@ -14,17 +14,7 @@ export function JoinDenmarkPage(props) {
   }, []);
 
   function formatHeadline(step, headline) {
-    console.log(step);
-    switch (step) {
-      case "step1":
-        return "Step 1 - " + headline;
-        break;
-      case "step2":
-        return "Step 2 - " + headline;
-        break;
-      default:
-        return "Step x - " + headline;
-    }
+    return `Step  ${step.replace(/\D/g, "")} - ${headline}`;
   }
   function generateDropTiles() {
     return (
