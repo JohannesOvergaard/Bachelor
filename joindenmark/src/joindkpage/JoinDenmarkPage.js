@@ -3,14 +3,14 @@ import "./JoinDenmarkPage.css";
 import { NavBar } from "../components/navbar/NavBar";
 import { HomeButton } from "../components/homebutton/HomeButton";
 import { DropTile } from "../components/droptile/DropTile";
-import { getContent } from "../services/ContentService";
+import { getContentSnapShot } from "../services/ContentService";
 
 export function JoinDenmarkPage(props) {
   const [title] = useState(props.location.state.title);
   const [articles, setArticles] = useState({});
 
   useEffect(() => {
-    getContent(title.toLowerCase()).then(setArticles);
+    getContentSnapShot(title.toLowerCase()).then(setArticles);
   }, []);
 
   function formatHeadline(step, headline) {
