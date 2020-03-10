@@ -21,7 +21,7 @@ export function Page(props) {
         const data = article.data();
         return (
           <DropTile
-            key={data.headline}
+            key={article.id}
             state={{
               headline: data.headline,
               author: data.author,
