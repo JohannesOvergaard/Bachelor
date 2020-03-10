@@ -27,7 +27,9 @@ export function Setting(props) {
 
   return (
     <div>
-      <span className="settingSpan">{settingId}</span>
+      <span className="settingSpan">
+        {settingId[0].toUpperCase() + settingId.slice(1)}
+      </span>
       <Switch
         className="settingSwitch"
         onChange={() => changeSetting()}
