@@ -5,6 +5,7 @@ import { Page } from "./page/Page";
 import { SubTilePage } from "./subtilepage/SubTilePage";
 import { JoinDenmarkPage } from "./joindkpage/JoinDenmarkPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { SettingsPage } from "./settingspage/SettingsPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/accommodation" component={Page} />
         <Route path="/culture" component={Page} />
         <Route path="/jobmarket" component={Page} />
+        <Route path="/settings" component={SettingsPage}/>
         <Route exact path="/publicsector" component={SubTilePage} />
 
         {/* Routes from Public sector */}
