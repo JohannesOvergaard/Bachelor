@@ -13,6 +13,7 @@ function App() {
         <Route exact path="/" component={FrontPage} />
 
         {/* Routes from Home page */}
+        <Route path="/joindenmark" component={JoinDenmarkPage} />
         <Route path="/accommodation" component={Page} />
         <Route path="/culture" component={Page} />
         <Route path="/jobmarket" component={Page} />
