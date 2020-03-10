@@ -1,48 +1,43 @@
 import React, { useState, useEffect } from "react";
+import Switch from "react-switch";
 import "./SettingsPage.css";
 import { NavBar } from "../components/navbar/NavBar";
-import { db } from "../firebase";
 import { HomeButton } from "../components/homebutton/HomeButton";
-import Switch from "react-switch";
+import { Setting } from "../components/setting/Setting";
+import { getNonCacheContent } from "../services/ContentService";
 
 export function SettingsPage(props) {
   const [title, setTitle] = useState(props.location.state.title);
-  const [checked, setChecked] = useState(true);
+  const [settings, setSettings] = useState({});
 
-  function writeSettingToDb(settingId, enabled) {
-    db.collection("settings")
-      .doc(settingId)
-      .set({
-        enabled: enabled
-      })
-      .then(function() {
-        console.log("Document successfully written!");
-      })
-      .catch(function(error) {
-        console.error("Error writing document: ", error);
-      });
-  }
+  useEffect(() => {
+    getNonCacheContent(title).then(setSettings);
+  }, []);
 
-  function changeSetting(settingName) {
-    writeSettingToDb(settingName, !checked);
-    setChecked(!checked);
+  function generateSettings() {
+    return (
+      settings.docs &&
+      settings.docs.length > 0 &&
+      settings.docs.map(setting => {
+        const data = setting.data();
+        return (
+          <Setting
+            key={setting.id}
+            state={{
+              checked: data.enabled,
+              settingId: setting.id
+            }}
+          />
+        );
+      })
+    );
   }
 
   return (
     <div>
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
-      <div>
-        <span className="settingSpan">Student</span>
-        <Switch
-          className="settingSwitch"
-          onChange={() => changeSetting("student")}
-          checked={checked}
-          onColor="#5864BA"
-          offColor="#E87888"
-        />
-        <hr />
-      </div>
+      {generateSettings()}
     </div>
   );
 }
