@@ -4,7 +4,7 @@ import { FrontPage } from "./frontpage/FrontPage";
 import { Page } from "./page/Page";
 import { SubTilePage } from "./subtilepage/SubTilePage";
 import { JoinDenmarkPage } from "./joindkpage/JoinDenmarkPage";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { SettingsPage } from "./settingspage/SettingsPage";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         <Route exact path="/" component={FrontPage} />
 
         {/* Routes from Home page */}
+        <Route path="/joindenmark" component={JoinDenmarkPage} />
         <Route path="/accommodation" component={Page} />
         <Route path="/culture" component={Page} />
         <Route path="/jobmarket" component={Page} />

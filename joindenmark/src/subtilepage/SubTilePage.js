@@ -5,10 +5,10 @@ import { HomeButton } from "../components/homebutton/HomeButton";
 import { Tile } from "../components/tile/Tile";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { convertToPath } from "../Util/Helpers";
-import { getContentSnapShot } from "../services/ContentService";
+import { getContent } from "../services/ContentService";
 
 export function SubTilePage(props) {
-  const [title, setTitle] = useState(props.location.state.title);
+  const [title] = useState(props.location.state.title);
   const [tileTitles, setTileTitles] = useState({});
 
   useEffect(() => {
@@ -40,7 +40,13 @@ export function SubTilePage(props) {
     <div>
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
+<<<<<<< HEAD
       <div>{generateTiles(tileTitles)}</div>
+=======
+      <div>
+        {generateTiles(tileTitles)}
+      </div>
+>>>>>>> develop
     </div>
   );
 }

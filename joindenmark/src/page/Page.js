@@ -6,7 +6,7 @@ import { DropTile } from "../components/droptile/DropTile";
 import { getContentSnapShot } from "../services/ContentService";
 
 export function Page(props) {
-  const [title, setTitle] = useState(props.location.state.title);
+  const [title] = useState(props.location.state.title);
   const [articles, setArticles] = useState({});
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export function Page(props) {
     <div>
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
-      <img className="pagePicture" src={props.location.state.picture} />
+      <img className="pagePicture" src={props.location.state.picture} alt="" />
       {generateDropTiles()}
     </div>
   );
