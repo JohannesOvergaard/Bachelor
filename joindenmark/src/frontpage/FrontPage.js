@@ -42,10 +42,12 @@ export function FrontPage() {
   return (
     <div>
       <div className="settings">
-        <Link to={{
-          pathname: "/settings",
-          state: {title: "Settings"}
-        }}>
+        <Link
+          to={{
+            pathname: "/settings",
+            state: { title: "Settings" }
+          }}
+        >
           <FontAwesomeIcon icon={faCog} />
         </Link>
       </div>

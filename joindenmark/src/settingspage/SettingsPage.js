@@ -3,14 +3,14 @@ import "./SettingsPage.css";
 import { NavBar } from "../components/navbar/NavBar";
 import { HomeButton } from "../components/homebutton/HomeButton";
 import { Setting } from "../components/setting/Setting";
-import { getNonCacheContent } from "../services/ContentService";
+import { getContent } from "../services/ContentService";
 
 export function SettingsPage(props) {
   const [title] = useState(props.location.state.title);
   const [settings, setSettings] = useState({});
 
   useEffect(() => {
-    getNonCacheContent(title).then(setSettings);
+    getContent(title).then(setSettings);
   }, []);
 
   function generateSettings() {
