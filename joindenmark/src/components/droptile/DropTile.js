@@ -36,21 +36,23 @@ export function DropTile(props) {
   }
 
   return (
-    <div className="dropTile">
-      <h3 className="dropTileText" onClick={() => onTileClick()}>{headline}</h3>
-      <div className="dropTileIcon" onClick={() => onTileClick()}>
-        {showSubHeading && <FontAwesomeIcon icon={faChevronUp}/>}
-        {!showSubHeading && <FontAwesomeIcon icon={faChevronDown}/>}
-      </div>
-      {showSubHeading && (
-        <div>
-          <h4 key={headline}>
-            <i>by {props.state.author}</i>
-          </h4>
-          {props.state.subheading} {readMore}
+    <div>
+      <div className="dropTile">
+        <h3 className="dropTileHeadline" onClick={() => onTileClick()}>{headline}</h3>
+        <div className="dropTileIcon" onClick={() => onTileClick()}>
+          {showSubHeading && <FontAwesomeIcon icon={faChevronUp}/>}
+          {!showSubHeading && <FontAwesomeIcon icon={faChevronDown}/>}
         </div>
-      )}
-      <hr/>
+        {showSubHeading && (
+          <div>
+            <h4 key={headline}>
+              <i>by {props.state.author}</i>
+            </h4>
+            {props.state.subheading} {readMore}
+          </div>
+        )}
+      </div>
+    <hr/>
     </div>
   );
 }

@@ -1,10 +1,14 @@
 .dropTile{
+  width: 100vw;
+  padding: 5vw;
+  padding-top: 1vw;
 }
 
-.dropTileText{
+.dropTileHeadline{
   float: left;
-  padding-left: 5vw;
-  width: 75vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  width: 80vw;
 }
 
 .dropTileIcon{
