@@ -19,7 +19,7 @@ export function FrontPage() {
       querySnapshot.forEach(function(doc) {
         arr.push(
           <Link
-            key={doc.data().title}
+            key={doc.id}
             to={{
               pathname: convertToPath(doc.data().title),
               state: { title: doc.data().title, picture: doc.data().picture }
