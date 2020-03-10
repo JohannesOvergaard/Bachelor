@@ -1,0 +1,11 @@
+.settingSpan{
+    width: 70vw;
+    float: left;
+    margin: 5vw;
+}
+
+.settingSwitch{
+    width: 10vw;
+    float: left;
+    margin: 5vw;
+}
