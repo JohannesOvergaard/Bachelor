@@ -44,8 +44,6 @@ export function SubTilePage(props) {
             <NavBar state={{ title: title }}></NavBar>
             <HomeButton />
             <div>
-                {/*TODO: Delete <br/> and replace with css*/}
-                <br/><br/><br/><br/>
                 {generateTiles(tileTitles)}
             </div>
         </div>
