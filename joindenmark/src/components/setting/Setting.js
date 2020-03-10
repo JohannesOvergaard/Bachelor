@@ -25,14 +25,11 @@ export function Setting(props) {
     setChecked(!checked);
   }
 
-  function formatSettingName(setting) {
-    const string = setting;
-    return string[0].toUpperCase() + string.slice(1);
-  }
-
   return (
     <div>
-      <span className="settingSpan">{formatSettingName(settingId)}</span>
+      <span className="settingSpan">
+        {settingId[0].toUpperCase() + settingId.slice(1)}
+      </span>
       <Switch
         className="settingSwitch"
         onChange={() => changeSetting()}
