@@ -1,40 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { Tile } from "../components/tile/Tile";
 import "./HomePage.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { convertToPath, trim } from "../Util/Helpers";
-import { db } from "../firebase";
+import { JoinDkTile } from "../components/joindktile/JoinDkTile";
+import { Tile } from "../components/tile/Tile";
+import { getContentSnapShot } from "../services/ContentService";
+import { Search} from "../components/search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { JoinDkTile } from "../components/joindktile/JoinDkTile";
-import { Search} from "../components/search/Search";
 
 export function HomePage() {
-  const dataFromDB = db.collection("tile").get();
-  const [tiles, setTiles] = useState([]);
+  const [tiles, setTiles] = useState({});
   const joinDkTitle = "Join Denmark";
   const [showSearch, setShowSearch] = useState(false);
 
-  function makeTiles() {
-    const arr = [];
-    dataFromDB.then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-        arr.push(
+  useEffect(() => {
+    getContentSnapShot("tile").then(setTiles);
+  }, []);
+
+  function generateTiles() {
+    return (
+      tiles.docs &&
+      tiles.docs.length > 0 &&
+      tiles.docs.map(tile => {
+        const data = tile.data();
+        return (
           <Link
-            key={doc.id}
+            key={tile.id}
             to={{
-              pathname: convertToPath(doc.data().title),
-              state: { title: doc.data().title, picture: doc.data().picture }
+              pathname: convertToPath(data.title),
+              state: { title: data.title, picture: data.picture }
             }}
           >
-            <Tile
-              state={{ title: doc.data().title, picture: doc.data().picture }}
-            />
+            <Tile state={{ title: data.title, picture: data.picture }} />
           </Link>
         );
-      });
-      setTiles(arr);
-    });
+      })
+    );
   }
 
   function generateNavbar(){
@@ -65,10 +67,6 @@ export function HomePage() {
     }
   }
 
-  useEffect(() => {
-    makeTiles();
-  }, []);
-
   return (
     <div>
       {generateNavbar()}
@@ -82,7 +80,7 @@ export function HomePage() {
       >
         <JoinDkTile state={{ title: joinDkTitle }} />
       </Link>
-      {tiles}
+      {generateTiles()}
     </div>
   );
 }
