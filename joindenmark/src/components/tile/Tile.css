@@ -1,22 +1,36 @@
 .tileBoarder {
   background: linear-gradient(#5864ba, #7b297d);
   position: relative;
-  padding: 0.5%;
-  margin: 1%;
-  width: 47%;
+  padding: 1vw;
+  margin: 1vw;
+  width: 46vw;
+  height: 46vw;
   border-radius: 15px;
   float: left;
 }
 
-.tilePicture {
-  height: 200px;
-  width: 200px;
+.tilePictureBackground{
+  background: #EAE8E5;
+  width: 46vw;
+  height: 46vw;
   border-radius: 12px;
 }
 
+.tilePicture {
+  width: 46vw;
+  height: 46vw;
+  border-radius: 12px;
+  opacity: 40%;
+}
 
-h2 {
+.tileText {
   text-align: center;
-  color: #EAE8E5;
+  position: absolute;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 

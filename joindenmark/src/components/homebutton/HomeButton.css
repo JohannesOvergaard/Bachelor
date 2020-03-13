@@ -1,10 +1,16 @@
 .homebutton {
     background-color: #7b297d;
+    position: fixed;
+    overflow: hidden;
     color:#EAE8E5;
+    font-size: 18px;
     border-radius: 50%;
     text-align: center;
-    height: 100px;
-    width: 100px;
+    height: 14vw;
+    width: 14vw;
+    margin-left: 43vw;
+    margin-right: 43vw;
+    bottom:3vw;
 }
 
 .homebutton:hover{
