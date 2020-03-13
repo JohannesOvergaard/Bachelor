@@ -7,11 +7,13 @@ import { db } from "../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { JoinDkTile } from "../components/joindktile/JoinDkTile";
+import { Search} from "../components/search/Search";
 
 export function HomePage() {
   const dataFromDB = db.collection("tile").get();
   const [tiles, setTiles] = useState([]);
   const joinDkTitle = "Join Denmark";
+  const [showSearch, setShowSearch] = useState(false);
 
   function makeTiles() {
     const arr = [];
@@ -35,25 +37,41 @@ export function HomePage() {
     });
   }
 
+  function generateNavbar(){
+    if(!showSearch){
+      return (
+        <div>
+          <div className="settings">
+          <Link
+            to={{
+              pathname: "/settings",
+              state: { title: "Settings" }
+            }}
+          >
+            <FontAwesomeIcon icon={faCog} />
+          </Link>
+        </div>
+        <div className="search" onClick={() => setShowSearch(!showSearch)}>
+          <FontAwesomeIcon icon={faSearch} />
+        </div>
+        </div>   
+      ); 
+    } else {
+      return (
+        <div>
+          <Search setShowSearch={setShowSearch}/>
+        </div>
+      );
+    }
+  }
+
   useEffect(() => {
     makeTiles();
   }, []);
 
   return (
     <div>
-      <div className="settings">
-        <Link
-          to={{
-            pathname: "/settings",
-            state: { title: "Settings" }
-          }}
-        >
-          <FontAwesomeIcon icon={faCog} />
-        </Link>
-      </div>
-      <div className="search">
-        <FontAwesomeIcon icon={faSearch} />
-      </div>
+      {generateNavbar()}
       <br />
       <Link
         key={trim(joinDkTitle)}
