@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { FrontPage } from "./frontpage/FrontPage";
+import { HomePage } from "./homepage/HomePage";
 import { Page } from "./page/Page";
 import { SubTilePage } from "./subtilepage/SubTilePage";
 import { JoinDenmarkPage } from "./joindkpage/JoinDenmarkPage";
@@ -11,14 +11,14 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={FrontPage} />
+        <Route exact path="/" component={HomePage} />
 
         {/* Routes from Home page */}
         <Route path="/joindenmark" component={JoinDenmarkPage} />
         <Route path="/accommodation" component={Page} />
         <Route path="/culture" component={Page} />
         <Route path="/jobmarket" component={Page} />
-        <Route path="/settings" component={SettingsPage}/>
+        <Route path="/settings" component={SettingsPage} />
         <Route exact path="/publicsector" component={SubTilePage} />
 
         {/* Routes from Public sector */}

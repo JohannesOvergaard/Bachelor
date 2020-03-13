@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Tile } from "../components/tile/Tile";
-import "./FrontPage.css";
+import "./HomePage.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { convertToPath, trim } from "../Util/Helpers";
 import { db } from "../firebase";
@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { JoinDkTile } from "../components/joindktile/JoinDkTile";
 
-export function FrontPage() {
+export function HomePage() {
   const dataFromDB = db.collection("tile").get();
   const [tiles, setTiles] = useState([]);
   const joinDkTitle = "Join Denmark";
