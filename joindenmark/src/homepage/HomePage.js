@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Tile } from "../components/tile/Tile";
 import "./HomePage.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { convertToPath, trim } from "../Util/Helpers";
 import { JoinDkTile } from "../components/joindktile/JoinDkTile";
+import { Tile } from "../components/tile/Tile";
 import { getContentSnapShot } from "../services/ContentService";
+import { Search} from "../components/search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export function HomePage() {
-  const [dataFromDB, setDataFromDb] = useState({});
   const [tiles, setTiles] = useState({});
   const joinDkTitle = "Join Denmark";
+  const [showSearch, setShowSearch] = useState(false);
 
   useEffect(() => {
     getContentSnapShot("tile").then(setTiles);
@@ -38,21 +39,37 @@ export function HomePage() {
     );
   }
 
+  function generateNavbar(){
+    if(!showSearch){
+      return (
+        <div>
+          <div className="settings">
+          <Link
+            to={{
+              pathname: "/settings",
+              state: { title: "Settings" }
+            }}
+          >
+            <FontAwesomeIcon icon={faCog} />
+          </Link>
+        </div>
+        <div className="search" onClick={() => setShowSearch(!showSearch)}>
+          <FontAwesomeIcon icon={faSearch} />
+        </div>
+        </div>   
+      ); 
+    } else {
+      return (
+        <div>
+          <Search setShowSearch={setShowSearch}/>
+        </div>
+      );
+    }
+  }
+
   return (
     <div>
-      <div className="settings">
-        <Link
-          to={{
-            pathname: "/settings",
-            state: { title: "Settings" }
-          }}
-        >
-          <FontAwesomeIcon icon={faCog} />
-        </Link>
-      </div>
-      <div className="search">
-        <FontAwesomeIcon icon={faSearch} />
-      </div>
+      {generateNavbar()}
       <br />
       <Link
         key={trim(joinDkTitle)}
