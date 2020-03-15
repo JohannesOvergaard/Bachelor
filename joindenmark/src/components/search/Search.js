@@ -7,8 +7,8 @@ export function Search({setShowSearch}){
 
     return (
         <div>
-            <input type="text" className="searchInput"/>
-            <div onClick={() => setShowSearch(false)}>
+            <input className="searchInput" type="text" />
+            <div className="searchCloseIcon" onClick={() => setShowSearch(false)}>
                 <FontAwesomeIcon icon={faTimesCircle}/>
             </div>
         </div>
