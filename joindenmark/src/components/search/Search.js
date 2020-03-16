@@ -5,28 +5,35 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle} from "@fortawesome/free-solid-svg-icons";
 
 export function Search({setShowSearch}){
+    
     const searchInAccommodation = async (search) => {
+        console.log('search: ', search);
         const snapshot = await db.collection('accommodation')
             .where('keywords','array-contains', search.toLowerCase())
             .get();
-        return snapshot.docs.reduce((acc, doc) => {
+        const value = snapshot.docs.reduce((acc, doc) => {
             const data = doc.data();
-            return acc.concat(
+            return acc = (`
                 <tr>
                     <td>${data.headline}</td>
-                    {console.log(data.headline)}
-                </tr>);
-        }, '');
+                </tr>`);
+        }, '');  
+        console.log('Value: ', value);
+        return value;
     }
 
-    const textBoxSearch = document.querySelector('#searchInput');
-    const rowsSearch = document.querySelector('#rowsSearch');
-
-    //textBoxSearch.addEventListener('keyup', async (e) =>  await searchInAccommodation(e.target.value.toLowerCase()));
+    const setRows = async (e) => {
+        document.getElementById('rowsSearch').innerHTML = 
+        await searchInAccommodation(e.target.value)
+    }
     
     return (
         <div>
-            <input className="searchInput" type="text" id="searchInput" onChange={(e) => searchInAccommodation(e.target.value.toLowerCase())}/>
+            <input 
+                className="searchInput" 
+                type="text" 
+                onChange={(e) => setRows(e)}
+            />
             <div className="searchCloseIcon" onClick={() => setShowSearch(false)}>
                 <FontAwesomeIcon icon={faTimesCircle}/>
             </div>
