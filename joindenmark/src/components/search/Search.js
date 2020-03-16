@@ -7,19 +7,16 @@ import { faTimesCircle} from "@fortawesome/free-solid-svg-icons";
 export function Search({setShowSearch}){
     
     const searchInAccommodation = async (search) => {
-        console.log('search: ', search);
         const snapshot = await db.collection('accommodation')
             .where('keywords','array-contains', search.toLowerCase())
             .get();
-        const value = snapshot.docs.reduce((acc, doc) => {
+        return snapshot.docs.reduce((acc, doc) => {
             const data = doc.data();
-            return acc = (`
+            return acc.concat(`
                 <tr>
                     <td>${data.headline}</td>
                 </tr>`);
-        }, '');  
-        console.log('Value: ', value);
-        return value;
+        }, '');
     }
 
     const setRows = async (e) => {
