@@ -35,11 +35,6 @@ export function Search({setShowSearch}){
                 <FontAwesomeIcon icon={faTimesCircle}/>
             </div>
             <table>
-                <thead>
-                    <tr>
-                        <th>Headline</th>
-                    </tr>
-                </thead>
                 <tbody id="rowsSearch"/>
             </table>
         </div>
