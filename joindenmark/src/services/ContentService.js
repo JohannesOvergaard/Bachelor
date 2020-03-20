@@ -9,11 +9,10 @@ export const getContentSnapShotFilterBySettings = async title => {
   // filter not enabled settings and get related
   const disabledSettings = settings.docs
     .filter(p => !p.data().enabled)
-    .map(p => p.data().related);
+    //like  fold in f#
+    .reduce((acc, itr) => acc.concat(itr.data().related), []);
 
-  // get normal content
   const contentByTitle = await getContentSnapShot(title);
-
   // compare the two datas and return it.
   return contentByTitle.docs.filter(
     p => !disabledSettings.includes(p.data().title.toLowerCase())
