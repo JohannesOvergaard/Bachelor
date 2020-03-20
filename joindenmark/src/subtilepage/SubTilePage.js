@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./SubTilePage.css";
 import { NavBar } from "../components/navbar/NavBar";
 import { HomeButton } from "../components/homebutton/HomeButton";
-import { Tile } from "../components/tile/Tile";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import { convertToPath } from "../Util/Helpers";
 import { getContentSnapShot } from "../services/ContentService";
 import { generateTiles } from "../Util/Helpers";
 

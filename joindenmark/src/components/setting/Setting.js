@@ -9,7 +9,7 @@ export function Setting(props) {
   function writeSettingToDb(enabled) {
     db.collection("settings")
       .doc(settingId)
-      .set({
+      .update({
         enabled: enabled
       })
       .then(function() {
