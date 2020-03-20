@@ -2,22 +2,22 @@ import React, { useState, useEffect } from "react";
 import "./SubTilePage.css";
 import { NavBar } from "../components/navbar/NavBar";
 import { HomeButton } from "../components/homebutton/HomeButton";
-import { getContentSnapShot } from "../services/ContentService";
-import { generateTiles } from "../Util/Helpers";
+import { getContentSnapShotFilterBySettings } from "../services/ContentService";
+import { TilesContainer } from "../components/tilesContainer/TilesContainer";
 
 export function SubTilePage(props) {
   const [title] = useState(props.location.state.title);
   const [tileTitles, setTileTitles] = useState({});
 
   useEffect(() => {
-    getContentSnapShot(title.toLowerCase()).then(setTileTitles);
+    getContentSnapShotFilterBySettings(title.toLowerCase()).then(setTileTitles);
   }, []);
 
   return (
     <div>
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
-      <div>{generateTiles(tileTitles, title)}</div>
+      <TilesContainer tiles={tileTitles} disabled={[]} pathPrefix={title} />
     </div>
   );
 }

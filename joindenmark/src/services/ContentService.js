@@ -2,12 +2,30 @@ import { db } from "../firebase";
 import { memoize } from "../Util/memoized";
 import { trim } from "../Util/Helpers";
 
-export const getContentSnapShot = memoize(function(title) {
+export const getContentSnapShotFilterBySettings = async title => {
+  // fetch settings from db and use await for waiting promises.
+  const settings = await getContent("settings");
+
+  // filter not enabled settings and get related
+  const disabledSettings = settings.docs
+    .filter(p => !p.data().enabled)
+    .map(p => p.data().related);
+
+  // get normal content
+  const contentByTitle = await getContentSnapShot(title);
+
+  // compare the two datas and return it.
+  return contentByTitle.docs.filter(
+    p => !disabledSettings.includes(p.data().title.toLowerCase())
+  );
+};
+
+export const getContentSnapShot = memoize(async title => {
   const dataFromDB = db.collection(trim(title)).get();
   return dataFromDB;
 });
 
-export const getContent = function(title) {
+export const getContent = async title => {
   const dataFromDB = db.collection(trim(title)).get();
   return dataFromDB;
 };
