@@ -9,7 +9,6 @@ import { NavbarContainer } from "../components/navbarcontainer/NavBarContainer";
 
 export function HomePage() {
   const [tiles, setTiles] = useState({});
-  const joinDkTitle = "Join Denmark";
 
   useEffect(() => {
     getContentSnapShotFilterBySettings("tile").then(setTiles);
@@ -19,15 +18,7 @@ export function HomePage() {
     <div>
       <NavbarContainer />
       <br />
-      <Link
-        key={trim(joinDkTitle)}
-        to={{
-          pathname: convertToPath(joinDkTitle),
-          state: { title: joinDkTitle }
-        }}
-      >
-        <JoinDkTile state={{ title: joinDkTitle }} />
-      </Link>
+
       <TilesContainer
         tiles={tiles}
         disabled={[]}
