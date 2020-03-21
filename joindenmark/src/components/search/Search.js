@@ -8,14 +8,14 @@ import { getStrings} from "./SearchData";
 export function Search({setShowSearch}){
     
     const searchInAccommodation = async (search) => {
-        const snapshot = await db.collection('accommodation')
+        const snapshot = await db.collection('search')
             .where('keywords','array-contains', search.toLowerCase())
             .get();
         return snapshot.docs.reduce((acc, doc) => {
             const data = doc.data();
             return acc.concat(`
                 <tr>
-                    <td>${data.headline}</td>
+                    <td>${doc.id}</td>
                 </tr>`);
         }, '');
     }
@@ -33,7 +33,6 @@ export function Search({setShowSearch}){
                 type="text" 
                 onChange={(e) => setRows(e)}
             />
-            {getStrings()}
             <div className="searchCloseIcon" onClick={() => setShowSearch(false)}>
                 <FontAwesomeIcon icon={faTimesCircle}/>
             </div>
