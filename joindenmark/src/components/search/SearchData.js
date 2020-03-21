@@ -1,8 +1,6 @@
-import {getContentSnapShot} from '../../services/ContentService';
 import { db } from '../../firebase';
 
-const collections = ["accommodation", "culture", "jobmarket"];
-const collections2 = [];
+const collections = ["accommodation", "culture", "jobmarket", "residencepermit", "su", "taxes"];
 
 function getAllSubstrings(str) {
     var i, j, result = [];
@@ -23,12 +21,18 @@ export function getStrings(){
                 querySnapshot.forEach(
                     function(doc) {
                         const subStrings = getAllSubstrings(doc.data().headline.toLowerCase());
-                        collections2.push(subStrings);
                         console.log(c, "=>", subStrings);
+                        db.collection("search").doc(c).set({
+                            keywords: subStrings
+                        }).then(function() {
+                            console.log("Document successfully written!");
+                        })
+                        .catch(function(error) {
+                            console.error("Error writing document: ", error);
+                        });
                     }
                 );
             }
         )
     );
-    console.log(collections2);
 }
