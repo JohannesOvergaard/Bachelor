@@ -3,6 +3,7 @@ import "./Search.css";
 import {db} from "../../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle} from "@fortawesome/free-solid-svg-icons";
+import { getStrings} from "./SearchData";
 
 export function Search({setShowSearch}){
     
@@ -24,6 +25,7 @@ export function Search({setShowSearch}){
         await searchInAccommodation(e.target.value)
     }
     
+    
     return (
         <div>
             <input 
@@ -31,6 +33,7 @@ export function Search({setShowSearch}){
                 type="text" 
                 onChange={(e) => setRows(e)}
             />
+            {getStrings()}
             <div className="searchCloseIcon" onClick={() => setShowSearch(false)}>
                 <FontAwesomeIcon icon={faTimesCircle}/>
             </div>
