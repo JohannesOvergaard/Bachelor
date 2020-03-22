@@ -3,7 +3,6 @@ import "./Search.css";
 import {db} from "../../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle} from "@fortawesome/free-solid-svg-icons";
-import { getStrings} from "./SearchData";
 
 export function Search({setShowSearch}){
     
