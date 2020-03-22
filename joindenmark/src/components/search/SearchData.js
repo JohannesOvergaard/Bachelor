@@ -20,10 +20,14 @@ export function getStrings(){
             function(querySnapshot) {
                 querySnapshot.forEach(
                     function(doc) {
+                        //Convert headlines to substrings
                         const subStrings = getAllSubstrings(doc.data().headline.toLowerCase());
                         console.log(c, "=>", subStrings);
-                        db.collection("search").doc(c).set({
-                            keywords: subStrings
+
+                        //Set search
+                        db.collection("search").doc(doc.data().headline).set({
+                            keywords: subStrings,
+                            collection: c
                         }).then(function() {
                             console.log("Document successfully written!");
                         })
