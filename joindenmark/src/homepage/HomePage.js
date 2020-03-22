@@ -15,11 +15,7 @@ export function HomePage() {
     <div>
       <NavbarContainer />
       <br />
-      <TilesContainer
-        tiles={tiles}
-        disabled={[]}
-        pathPrefix=""
-      ></TilesContainer>
+      <TilesContainer tiles={tiles} pathPrefix=""></TilesContainer>
     </div>
   );
 }

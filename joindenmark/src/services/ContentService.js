@@ -13,6 +13,7 @@ export const getContentSnapShotFilterBySettings = async title => {
     .reduce((acc, itr) => acc.concat(itr.data().related), []);
 
   const contentByTitle = await getContentSnapShot(title);
+  console.log(disabledSettings);
   // compare the two datas and return it.
   return contentByTitle.docs.filter(
     p => !disabledSettings.includes(p.data().title.toLowerCase())

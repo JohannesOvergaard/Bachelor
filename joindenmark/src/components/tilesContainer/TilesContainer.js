@@ -4,7 +4,7 @@ import { Tile } from "../tile/Tile";
 import { trim, convertToPath } from "../../Util/Helpers";
 import { JoinDkTile } from "../joindktile/JoinDkTile";
 
-export const TilesContainer = ({ tiles, disabled, pathPrefix }) => {
+export const TilesContainer = ({ tiles, pathPrefix }) => {
   if (tiles.length > 0) {
     return tiles.map(tile => {
       const data = tile.data();

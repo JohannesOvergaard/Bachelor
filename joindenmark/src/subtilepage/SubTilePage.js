@@ -17,7 +17,7 @@ export function SubTilePage(props) {
     <div>
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
-      <TilesContainer tiles={tileTitles} disabled={[]} pathPrefix={title} />
+      <TilesContainer tiles={tileTitles} pathPrefix={title} />
     </div>
   );
 }
