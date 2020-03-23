@@ -2,7 +2,7 @@ import { db } from "../firebase";
 import { memoize } from "../Util/memoized";
 import { trim } from "../Util/Helpers";
 
-export const getContentSnapShotFilterBySettings = async title => {
+export const getContentFilterBySettings = async title => {
   // fetch settings from db and use await for waiting promises.
   const settings = await getContent("settings");
 

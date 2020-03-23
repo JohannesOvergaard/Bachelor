@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./HomePage.css";
-import { getContentSnapShotFilterBySettings } from "../services/ContentService";
+import { getContentFilterBySettings } from "../services/ContentService";
 import { TilesContainer } from "../components/tilesContainer/TilesContainer";
 import { NavbarContainer } from "../components/navbarcontainer/NavBarContainer";
 
@@ -8,7 +8,7 @@ export function HomePage() {
   const [tiles, setTiles] = useState({});
 
   useEffect(() => {
-    getContentSnapShotFilterBySettings("tile").then(setTiles);
+    getContentFilterBySettings("tile").then(setTiles);
   }, []);
 
   return (

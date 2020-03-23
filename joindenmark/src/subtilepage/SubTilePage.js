@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./SubTilePage.css";
 import { NavBar } from "../components/navbar/NavBar";
 import { HomeButton } from "../components/homebutton/HomeButton";
-import { getContentSnapShotFilterBySettings } from "../services/ContentService";
+import { getContentFilterBySettings } from "../services/ContentService";
 import { TilesContainer } from "../components/tilesContainer/TilesContainer";
 
 export function SubTilePage(props) {
@@ -10,7 +10,7 @@ export function SubTilePage(props) {
   const [tileTitles, setTileTitles] = useState({});
 
   useEffect(() => {
-    getContentSnapShotFilterBySettings(title.toLowerCase()).then(setTileTitles);
+    getContentFilterBySettings(title.toLowerCase()).then(setTileTitles);
   }, []);
 
   return (
