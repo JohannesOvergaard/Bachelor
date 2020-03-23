@@ -1,8 +1,10 @@
 import React, {useState} from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./Search.css";
 import {db} from "../../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle} from "@fortawesome/free-solid-svg-icons";
+import { convertToPath } from "../../Util/Helpers";
 
 export function Search({setShowSearch}){
     const [searchResults, setSearchResults] = useState([]);
@@ -15,12 +17,17 @@ export function Search({setShowSearch}){
             snapshot.docs.reduce((acc, doc) => {
                 const data = doc.data();
                 return acc.concat(
-                    <p 
-                        key={doc.id} 
-                        onClick={() => console.log(data.collection)}
+                    <Link
+                        key={doc.id}
+                        to={{
+                            pathname: convertToPath(data.collection),
+                            state: { title: data.collection, picture: ""}
+                        }}
                     >
-                        {doc.id}
-                    </p>
+                        <p>
+                            {doc.id}
+                        </p>
+                    </Link>
                 );
             }, [])
         );
