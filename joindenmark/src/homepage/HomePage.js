@@ -3,7 +3,6 @@ import "./HomePage.css";
 import { getContentFilterBySettings } from "../services/ContentService";
 import { TilesContainer } from "../components/tilesContainer/TilesContainer";
 import { NavbarContainer } from "../components/navbarcontainer/NavBarContainer";
-import { login } from "../firebase";
 
 export function HomePage() {
   const [tiles, setTiles] = useState({});
@@ -11,7 +10,6 @@ export function HomePage() {
   useEffect(() => {
     getContentFilterBySettings("tile").then(setTiles);
   }, []);
-  
 
   return (
     <div>

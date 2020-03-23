@@ -14,8 +14,8 @@ export const db = firebaseApp.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export function login() {
-  return firebase
+export async function login() {
+  return await firebase
     .auth()
     .signInWithPopup(provider)
     .then(function(result) {
@@ -28,6 +28,7 @@ export function login() {
       if (result.additionalUserInfo.isNewUser) {
         writeToDb(user.uid);
       }
+      return true;
     })
     .catch(function(error) {
       // Handle Errors here.
@@ -38,6 +39,7 @@ export function login() {
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
       // ...
+      return false;
     });
 
   function writeToDb(userid) {

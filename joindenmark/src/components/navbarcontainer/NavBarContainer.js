@@ -6,11 +6,11 @@ import { faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { login } from "../../firebase";
 
 export function NavbarContainer() {
-  const [showSearch, setShowSearch] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showSearch, setShowSearch] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState();
 
-  function onLogin(){
-    login().then(setIsLoggedIn(!isLoggedIn));
+  const onLogin = async ()  => {
+    setIsLoggedIn(await login());
   }
 
   return (
