@@ -26,7 +26,7 @@ export function login() {
       console.log("user:", user.uid, result.additionalUserInfo.isNewUser);
       // ...
       if (result.additionalUserInfo.isNewUser) {
-        writeToDb(user.uid, "joindk");
+        writeToDb(user.uid);
       }
     })
     .catch(function(error) {
@@ -40,14 +40,14 @@ export function login() {
       // ...
     });
 
-  function writeToDb(userid, settings) {
+  function writeToDb(userid) {
     db.collection("users")
       .doc(userid)
       .set({
-        settingsDisabled: settings
+        settingsDisabled: ""
       })
       .then(function() {
-        console.log("Document successfully written with value: ", settings);
+        console.log("Document successfully written with value: ");
       })
       .catch(function(error) {
         console.error("Error writing document: ", error);

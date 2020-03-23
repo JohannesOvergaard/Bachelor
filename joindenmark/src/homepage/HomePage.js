@@ -18,7 +18,6 @@ export function HomePage() {
       <NavbarContainer />
       <br />
       <TilesContainer tiles={tiles} pathPrefix=""></TilesContainer>
-      <button onClick={() => login()}>Hallo</button>
     </div>
   );
 }
