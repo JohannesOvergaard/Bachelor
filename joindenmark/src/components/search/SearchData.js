@@ -1,4 +1,5 @@
 import { db } from '../../firebase';
+import { Search } from './Search';
 
 const collections = ["accommodation", "culture", "jobmarket", "residencepermit", "su", "taxes"];
 
@@ -13,8 +14,27 @@ function getAllSubstrings(str) {
     return result;
   }
 
-export function getStrings(){
+function deleteOldSearch(){
+    db.collection("search").get().then(
+        function(querySnapshot) {
+            querySnapshot.forEach(
+                function(doc){
+                    db.collection("search").doc(doc.id).delete().then(function() {
+                        console.log("Document successfully deleted!");
+                    }).catch(function(error) {
+                        console.error("Error removing document: ", error);
+                    });
+                }
+            );
+        }
+    );
+}
+
+export function addKeywordsToSearchDB(){
     console.log("Collections : ", collections);
+    //Delete old searchresults
+    deleteOldSearch();
+    
     collections.map(
         c => db.collection(c).get().then(
             function(querySnapshot) {

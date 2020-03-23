@@ -5,6 +5,7 @@ import {db} from "../../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle} from "@fortawesome/free-solid-svg-icons";
 import { convertToPath } from "../../Util/Helpers";
+import { addKeywordsToSearchDB } from "./SearchData";
 
 export function Search({setShowSearch}){
     const [searchResults, setSearchResults] = useState([]);
