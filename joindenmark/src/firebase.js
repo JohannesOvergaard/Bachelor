@@ -28,7 +28,7 @@ export async function login() {
       if (result.additionalUserInfo.isNewUser) {
         writeToDb(user.uid);
       }
-      return true;
+      return user.uid;
     })
     .catch(function(error) {
       // Handle Errors here.

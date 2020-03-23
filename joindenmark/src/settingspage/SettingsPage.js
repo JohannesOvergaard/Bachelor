@@ -4,10 +4,15 @@ import { NavBar } from "../components/navbar/NavBar";
 import { HomeButton } from "../components/homebutton/HomeButton";
 import { Setting } from "../components/setting/Setting";
 import { getContent } from "../services/ContentService";
+import allActions from '../actions';
+import { useSelector, useDispatch} from 'react-redux';
+import { Redirect, Route } from "react-router-dom";
 
 export function SettingsPage(props) {
   const [title] = useState(props.location.state.title);
   const [settings, setSettings] = useState({});
+  const currentUser = useSelector(state => state.currentUser);
+  const dispatch = useDispatch()
 
   useEffect(() => {
     getContent(title).then(setSettings);
@@ -37,6 +42,19 @@ export function SettingsPage(props) {
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
       {generateSettings()}
+      {
+        currentUser.loggedIn ? 
+        <>
+          <p>ID: {currentUser.user.name}</p>
+          <button onClick={() => dispatch(allActions.userActions.logOut())}>Logout</button>
+        </> 
+        : 
+        <>
+        <Route>
+          <Redirect to="/"/>
+        </Route>
+        </>
+        }
     </div>
   );
 }

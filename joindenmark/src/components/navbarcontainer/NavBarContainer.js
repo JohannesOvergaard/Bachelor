@@ -4,14 +4,27 @@ import { Search } from "../search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { login } from "../../firebase";
+import allActions from '../../actions';
+import { useSelector, useDispatch} from 'react-redux';
+import { useEffect } from "react";
+
 
 export function NavbarContainer() {
+  const currentUser = useSelector(state => state.currentUser);
   const [showSearch, setShowSearch] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState();
+  const dispatch = useDispatch()
 
   const onLogin = async ()  => {
-    setIsLoggedIn(await login());
+    const id = await login();
+    dispatch(allActions.userActions.setUser({name: id}))
+    setIsLoggedIn(id);
   }
+
+  useEffect(() => {
+    console.log(currentUser.loggedIn);
+    setIsLoggedIn(currentUser.loggedIn);
+  }, []);
 
   return (
     <div>
