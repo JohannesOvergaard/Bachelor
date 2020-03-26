@@ -1,13 +1,11 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 import { Search } from "../search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { login } from "../../firebase";
 import allActions from '../../actions';
 import { useSelector, useDispatch} from 'react-redux';
-import { useEffect } from "react";
-
 
 export function NavbarContainer() {
   const currentUser = useSelector(state => state.currentUser);
