@@ -7,14 +7,18 @@ import { useSelector } from "react-redux";
 
 export function HomePage() {
   const [tiles, setTiles] = useState({});
-  const currentUser = useSelector(state => state.user);
+  const settings = useSelector(state => {
+    return state.userState.settings;
+  });
+
+  const processTiles = async () => {
+    const tiles = await getContentFilterBySettings("tile", settings);
+    setTiles(tiles);
+  };
 
   useEffect(() => {
-    getContentFilterBySettings("tile").then(
-      setTiles,
-      currentUser === undefined ? [] : currentUser.settings.settings
-    );
-  }, []);
+    processTiles();
+  }, [settings]);
 
   return (
     <div>

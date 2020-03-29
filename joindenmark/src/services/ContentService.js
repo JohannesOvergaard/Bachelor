@@ -4,18 +4,14 @@ import { trim } from "../Util/Helpers";
 import { isEmpty } from "lodash";
 
 export const getContentFilterBySettings = async (title, disabledSettings) => {
-  // fetch settings from db and use await for waiting promises.
-  // const settings = await getContent("settings");
-
-  // // filter not enabled settings and get related
-  // const disabledSettings = settings.docs
-  //   .filter(p => !p.data().enabled)
-  //   //like  fold in f#
-  //   .reduce((acc, itr) => acc.concat(itr.data().related), []);
   const contentByTitle = await getContent(title);
   if (!isEmpty(disabledSettings)) {
+    const getSettings = await getContent("settings");
+    const settings = getSettings.docs
+      .filter(doc => disabledSettings.includes(doc.id))
+      .reduce((acc, itr) => acc.concat(itr.data().related), []);
     return contentByTitle.docs.filter(
-      p => !disabledSettings.includes(p.data().title.toLowerCase())
+      p => !settings.includes(p.data().title.toLowerCase())
     );
   } else {
     return contentByTitle.docs;

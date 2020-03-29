@@ -1,8 +1,8 @@
-import currentUser from './currentUser'
-import {combineReducers} from 'redux'
+import { default as userState } from "./userReducer";
+import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    currentUser
-})
+  userState
+});
 
-export default rootReducer
+export default rootReducer;

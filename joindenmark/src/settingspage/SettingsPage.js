@@ -11,7 +11,6 @@ import { Redirect, Route } from "react-router-dom";
 export function SettingsPage(props) {
   const [title] = useState(props.location.state.title);
   const [settings, setSettings] = useState({});
-  const [userSettings, setUserSettings] = useState({});
   const currentUser = useSelector(state => state.currentUser);
   const dispatch = useDispatch();
 
@@ -24,12 +23,11 @@ export function SettingsPage(props) {
       settings.docs &&
       settings.docs.length > 0 &&
       settings.docs.map(setting => {
-        const data = setting.data();
         return (
           <Setting
             key={setting.id}
             state={{
-              checked: !currentUser.settings.settings.includes(setting.id),
+              checked: !currentUser.settings.includes(setting.id),
               settingId: setting.id
             }}
           />

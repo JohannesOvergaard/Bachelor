@@ -1,6 +1,6 @@
 const INITIAL_STATE = { user: {}, loggedIn: false, settings: [] };
 
-const currentUser = (state = INITIAL_STATE, action) => {
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "SET_USER":
       return {
@@ -12,12 +12,10 @@ const currentUser = (state = INITIAL_STATE, action) => {
     case "SET_SETTINGS":
       return {
         ...state,
-        settings: action.payload
+        settings: action.payload.settings
       };
     case "LOG_OUT":
     default:
       return state;
   }
 };
-
-export default currentUser;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Switch from "react-switch";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
@@ -24,13 +24,13 @@ export function Setting(props) {
   function updateSettings(enabled) {
     console.log(
       "settings is:",
-      currentUser.settings.settings,
+      currentUser.settings,
       " and is type:",
-      typeof currentUser.settings.settings
+      typeof currentUser.settings
     );
     const settings = updateSettingsArray(
       enabled,
-      currentUser.settings.settings,
+      currentUser.settings,
       settingId
     );
     updateUserSettings("users", currentUser.user.name, settings);
