@@ -1,22 +1,25 @@
-import { db, FieldPath } from "../firebase";
+import { db } from "../firebase";
 import { memoize } from "../Util/memoized";
 import { trim } from "../Util/Helpers";
+import { isEmpty } from "lodash";
 
-export const getContentFilterBySettings = async title => {
+export const getContentFilterBySettings = async (title, disabledSettings) => {
   // fetch settings from db and use await for waiting promises.
-  const settings = await getContent("settings");
+  // const settings = await getContent("settings");
 
-  // filter not enabled settings and get related
-  const disabledSettings = settings.docs
-    .filter(p => !p.data().enabled)
-    //like  fold in f#
-    .reduce((acc, itr) => acc.concat(itr.data().related), []);
-
-  const contentByTitle = await getContentSnapShot(title);
-  // compare the two datas and return it.
-  return contentByTitle.docs.filter(
-    p => !disabledSettings.includes(p.data().title.toLowerCase())
-  );
+  // // filter not enabled settings and get related
+  // const disabledSettings = settings.docs
+  //   .filter(p => !p.data().enabled)
+  //   //like  fold in f#
+  //   .reduce((acc, itr) => acc.concat(itr.data().related), []);
+  const contentByTitle = await getContent(title);
+  if (!isEmpty(disabledSettings)) {
+    return contentByTitle.docs.filter(
+      p => !disabledSettings.includes(p.data().title.toLowerCase())
+    );
+  } else {
+    return contentByTitle.docs;
+  }
 };
 
 export const getContentSnapShot = memoize(async title => {
@@ -43,7 +46,7 @@ export const updateUserSettings = async (collection, docid, update) => {
     .collection(collection)
     .doc(docid)
     .update({
-      settingsDisabled: update
+      settingsDisabled: update.join()
     })
     .then(function() {
       console.log("Document successfully written with value: ", update);

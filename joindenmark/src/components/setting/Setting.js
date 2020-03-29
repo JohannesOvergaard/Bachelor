@@ -10,9 +10,9 @@ export function Setting(props) {
   const currentUser = useSelector(state => state.currentUser);
   const dispatch = useDispatch();
 
-  function updateSettingsArray(array, element) {
+  function updateSettingsArray(enabled, array, element) {
     const index = array.indexOf(element);
-    if (index > -1) {
+    if (enabled) {
       array.splice(index, 1);
       return array;
     } else {
@@ -22,21 +22,24 @@ export function Setting(props) {
   }
 
   function updateSettings(enabled) {
+    console.log(
+      "settings is:",
+      currentUser.settings.settings,
+      " and is type:",
+      typeof currentUser.settings.settings
+    );
     const settings = updateSettingsArray(
+      enabled,
       currentUser.settings.settings,
       settingId
     );
-    updateUserSettings(
-      "users",
-      currentUser.user.name,
-      "settingsDisabled",
-      settings
-    );
+    updateUserSettings("users", currentUser.user.name, settings);
 
     dispatch(allActions.userActions.setSettings({ settings }));
   }
 
   function changeSetting() {
+    console.log(currentUser);
     updateSettings(!checked);
     setChecked(!checked);
   }
