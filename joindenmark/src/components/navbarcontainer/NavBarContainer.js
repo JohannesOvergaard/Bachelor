@@ -6,7 +6,6 @@ import { faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { login } from "../../firebase";
 import allActions from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { getQuery } from "../../services/ContentService";
 import { isEmpty } from "lodash";
 
@@ -29,7 +28,6 @@ export function NavbarContainer() {
     }
     const disabledUserSettings = await getQuery("users", id);
     setUserSettings(disabledUserSettings);
-    console.log("**", userSettings);
   };
   useEffect(() => {
     console.log(currentUser.loggedIn);

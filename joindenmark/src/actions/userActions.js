@@ -5,6 +5,13 @@ const setUser = userObj => {
   };
 };
 
+const setSettings = settingsObj => {
+  return {
+    type: "SET_SETTINGS",
+    payload: settingsObj
+  };
+};
+
 const logOut = () => {
   return {
     type: "LOG_OUT"

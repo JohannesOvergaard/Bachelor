@@ -30,13 +30,10 @@ export const getContent = async title => {
 };
 
 export const getQuery = async (collection, docId) => {
-  db.collection(collection)
+  const docRef = await db
+    .collection(collection)
     .doc(docId)
-    .get()
-    .then(docRef => {
-      debugger;
-      console.log(docRef.data().settingsDisabled);
-      return docRef.data().settingsDisabled;
-    })
-    .catch(error => {});
+    .get();
+
+  return docRef.data().settingsDisabled;
 };

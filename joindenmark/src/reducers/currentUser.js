@@ -9,6 +9,11 @@ const currentUser = (state = INITIAL_STATE, action) => {
         loggedIn: true,
         settings: {}
       };
+    case "SET_SETTINGS":
+      return {
+        ...state,
+        settings: action.payload
+      };
     case "LOG_OUT":
     default:
       return state;
