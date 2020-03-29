@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./Search.css";
 import {db} from "../../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimesCircle} from "@fortawesome/free-solid-svg-icons";
+import { faTimesCircle, faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import { convertToPath } from "../../Util/Helpers";
-import { addKeywordsToSearchDB } from "./SearchData";
 
 export function Search({setShowSearch}){
     const [searchResults, setSearchResults] = useState([]);
@@ -18,19 +17,25 @@ export function Search({setShowSearch}){
             snapshot.docs.reduce((acc, doc) => {
                 const data = doc.data();
                 return acc.concat(
-                    <Link
-                        key={doc.id}
-                        to={{
-                            pathname: convertToPath(data.collection),
-                            state: { title: data.collection, picture: ""}
-                        }}
-                    >
-                        <p>
-                            {doc.id}
-                        </p>
-                    </Link>
+                    <div>
+                        <Link
+                            key={doc.id}
+                            to={{
+                                pathname: convertToPath(data.collection),
+                                state: { title: data.collection, picture: ""}
+                            }}
+                        >
+                            <p className="searchResultText">
+                                {doc.id}
+                            </p>
+                            <div className="searchLinkIcon">
+                                <FontAwesomeIcon icon={faAngleRight}/>
+                            </div>
+                        </Link>
+                        <hr/>
+                    </div>
                 );
-            }, [])
+            }, [<hr/>])
         );
     }
 
@@ -44,7 +49,9 @@ export function Search({setShowSearch}){
             <div className="searchCloseIcon" onClick={() => setShowSearch(false)}>
                 <FontAwesomeIcon icon={faTimesCircle}/>
             </div>
-            {searchResults}
+            <div className="searchResult">
+                {searchResults}
+            </div>
         </div>
     );
 }
