@@ -20,5 +20,6 @@ const logOut = () => {
 
 export default {
   setUser,
+  setSettings,
   logOut
 };

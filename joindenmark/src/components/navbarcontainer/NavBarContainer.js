@@ -27,7 +27,9 @@ export function NavbarContainer() {
       console.log(id);
     }
     const disabledUserSettings = await getQuery("users", id);
-    setUserSettings(disabledUserSettings);
+    const settings = disabledUserSettings.split(",");
+    console.log(settings);
+    dispatch(allActions.userActions.setSettings({ settings }));
   };
   useEffect(() => {
     console.log(currentUser.loggedIn);

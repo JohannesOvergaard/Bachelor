@@ -7,7 +7,7 @@ const currentUser = (state = INITIAL_STATE, action) => {
         ...state,
         user: action.payload,
         loggedIn: true,
-        settings: {}
+        settings: []
       };
     case "SET_SETTINGS":
       return {

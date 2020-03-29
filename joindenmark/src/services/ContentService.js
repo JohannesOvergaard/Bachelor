@@ -37,3 +37,20 @@ export const getQuery = async (collection, docId) => {
 
   return docRef.data().settingsDisabled;
 };
+
+export const updateUserSettings = async (collection, docid, update) => {
+  return db
+    .collection(collection)
+    .doc(docid)
+    .update({
+      settingsDisabled: update
+    })
+    .then(function() {
+      console.log("Document successfully written with value: ", update);
+      return true;
+    })
+    .catch(function(error) {
+      console.error("Error writing document: ", error);
+      return false;
+    });
+};

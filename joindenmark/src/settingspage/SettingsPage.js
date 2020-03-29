@@ -29,7 +29,7 @@ export function SettingsPage(props) {
           <Setting
             key={setting.id}
             state={{
-              checked: data.enabled,
+              checked: !currentUser.settings.settings.includes(setting.id),
               settingId: setting.id
             }}
           />
