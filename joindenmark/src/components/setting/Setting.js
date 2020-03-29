@@ -7,7 +7,8 @@ import { updateUserSettings } from "../../services/ContentService";
 export function Setting(props) {
   const [checked, setChecked] = useState(props.state.checked);
   const [settingId] = useState(props.state.settingId);
-  const currentUser = useSelector(state => state.currentUser);
+  const currentUser = useSelector(state => state.userState.user);
+  const settings = useSelector(state => state.userState.settings);
   const dispatch = useDispatch();
 
   function updateSettingsArray(enabled, array, element) {
@@ -22,18 +23,8 @@ export function Setting(props) {
   }
 
   function updateSettings(enabled) {
-    console.log(
-      "settings is:",
-      currentUser.settings,
-      " and is type:",
-      typeof currentUser.settings
-    );
-    const settings = updateSettingsArray(
-      enabled,
-      currentUser.settings,
-      settingId
-    );
-    updateUserSettings("users", currentUser.user.name, settings);
+    const settingsArr = updateSettingsArray(enabled, settings, settingId);
+    updateUserSettings("users", currentUser.name, settingsArr);
 
     dispatch(allActions.userActions.setSettings({ settings }));
   }

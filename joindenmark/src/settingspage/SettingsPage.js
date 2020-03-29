@@ -11,12 +11,21 @@ import { Redirect, Route } from "react-router-dom";
 export function SettingsPage(props) {
   const [title] = useState(props.location.state.title);
   const [settings, setSettings] = useState({});
-  const currentUser = useSelector(state => state.currentUser);
+  const currentUser = useSelector(state => state.userState.user);
+  const loggedIn = useSelector(state => state.userState.loggedIn);
+  const userSettings = useSelector(state => {
+    return state.userState.settings;
+  });
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getContent(title).then(setSettings);
+    loadSettings();
   }, []);
+
+  const loadSettings = async () => {
+    const data = await getContent(title);
+    setSettings(data);
+  };
 
   function generateSettings() {
     return (
@@ -27,7 +36,7 @@ export function SettingsPage(props) {
           <Setting
             key={setting.id}
             state={{
-              checked: !currentUser.settings.includes(setting.id),
+              checked: !userSettings.includes(setting.id),
               settingId: setting.id
             }}
           />
@@ -41,9 +50,9 @@ export function SettingsPage(props) {
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
       {generateSettings()}
-      {currentUser.loggedIn ? (
+      {loggedIn ? (
         <>
-          <p>ID: {currentUser.user.name}</p>
+          <p>ID: {currentUser.name}</p>
           <button onClick={() => dispatch(allActions.userActions.logOut())}>
             Logout
           </button>

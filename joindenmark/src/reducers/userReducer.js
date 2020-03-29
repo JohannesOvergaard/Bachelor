@@ -16,6 +16,6 @@ export default (state = INITIAL_STATE, action) => {
       };
     case "LOG_OUT":
     default:
-      return state;
+      return INITIAL_STATE;
   }
 };
