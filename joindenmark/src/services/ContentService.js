@@ -1,4 +1,4 @@
-import { db } from "../firebase";
+import { db, FieldPath } from "../firebase";
 import { memoize } from "../Util/memoized";
 import { trim } from "../Util/Helpers";
 
@@ -27,4 +27,16 @@ export const getContentSnapShot = memoize(async title => {
 export const getContent = async title => {
   const dataFromDB = db.collection(trim(title)).get();
   return dataFromDB;
+};
+
+export const getQuery = async (collection, docId) => {
+  db.collection(collection)
+    .doc(docId)
+    .get()
+    .then(docRef => {
+      debugger;
+      console.log(docRef.data().settingsDisabled);
+      return docRef.data().settingsDisabled;
+    })
+    .catch(error => {});
 };
