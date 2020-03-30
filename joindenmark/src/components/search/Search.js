@@ -17,9 +17,8 @@ export function Search({setShowSearch}){
             snapshot.docs.reduce((acc, doc) => {
                 const data = doc.data();
                 return acc.concat(
-                    <div>
+                    <div key={doc.id}>
                         <Link
-                            key={doc.id}
                             to={{
                                 pathname: convertToPath(data.collection),
                                 state: { title: data.collection, picture: ""}
@@ -35,7 +34,7 @@ export function Search({setShowSearch}){
                         <hr/>
                     </div>
                 );
-            }, [<hr/>])
+            }, [<hr key="hr"/>])
         );
     }
 
