@@ -10,3 +10,24 @@
     right: 5vw;
     top: 5vw;
 }
+
+.searchResult{
+    position: absolute;
+    z-index: 1;
+    background-color: #EAE8E5;
+}
+
+.searchResultText{
+    margin-top: 5vw;
+    padding-left: 5vw;
+    width: 77vw;
+    color: black;
+    float: left;
+}
+
+.searchLinkIcon{
+    float: left;
+    width: 8vw;
+    margin: 5vw;
+    color: black;
+}

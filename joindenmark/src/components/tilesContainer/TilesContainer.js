@@ -5,11 +5,13 @@ import { trim, convertToPath } from "../../Util/Helpers";
 import { JoinDkTile } from "../joindktile/JoinDkTile";
 
 export const TilesContainer = ({ tiles, pathPrefix }) => {
+  var retTiles = [];
   if (tiles.length > 0) {
-    return tiles.map(tile => {
+    tiles.map(tile => {
       const data = tile.data();
       if (data.title === "Join Denmark") {
-        return (
+        const tempRetTiles = retTiles;
+        retTiles = [
           <Link
             key={trim(data.title)}
             to={{
@@ -18,10 +20,10 @@ export const TilesContainer = ({ tiles, pathPrefix }) => {
             }}
           >
             <JoinDkTile state={{ title: data.title }} />
-          </Link>
-        );
+          </Link>]
+          retTiles.push([tempRetTiles]);
       } else {
-        return (
+        retTiles.push(
           <Link
             key={tile.id}
             to={{
@@ -30,10 +32,9 @@ export const TilesContainer = ({ tiles, pathPrefix }) => {
             }}
           >
             <Tile state={{ title: data.title, picture: data.picture }} />
-          </Link>
-        );
+          </Link>);
       }
     });
   }
-  return <></>;
+  return retTiles;
 };
