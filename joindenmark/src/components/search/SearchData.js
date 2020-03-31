@@ -1,8 +1,8 @@
 import { db } from '../../firebase';
-import { Search } from './Search';
 
 const collections = ["accommodation", "culture", "jobmarket", "residencepermit", "su", "taxes"];
 
+//Copy from https://stackoverflow.com/questions/40818769/get-all-substrings-of-a-string-in-javascript
 function getAllSubstrings(str) {
     var i, j, result = [];
   
