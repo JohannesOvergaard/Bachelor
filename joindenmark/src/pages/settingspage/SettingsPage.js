@@ -8,8 +8,7 @@ import allActions from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
 
-export function SettingsPage(props) {
-  const [title] = useState(props.location.state.title);
+export function SettingsPage() {
   const [settings, setSettings] = useState({});
   const currentUser = useSelector(state => state.userState.user);
   const loggedIn = useSelector(state => state.userState.loggedIn);
@@ -23,7 +22,7 @@ export function SettingsPage(props) {
   }, []);
 
   const loadSettings = async () => {
-    const data = await getContent(title);
+    const data = await getContent("settings");
     setSettings(data);
   };
 
@@ -47,7 +46,7 @@ export function SettingsPage(props) {
 
   return (
     <div>
-      <NavBar state={{ title: title }}></NavBar>
+      <NavBar state={{ title: "Settings" }}></NavBar>
       <HomeButton />
       {generateSettings()}
       {loggedIn ? (
@@ -58,11 +57,9 @@ export function SettingsPage(props) {
           </button>
         </>
       ) : (
-        <>
-          <Route>
-            <Redirect to="/" />
-          </Route>
-        </>
+        <Route>
+          <Redirect to="/" />
+        </Route>
       )}
     </div>
   );
