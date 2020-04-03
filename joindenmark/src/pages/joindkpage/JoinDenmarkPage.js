@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./JoinDenmarkPage.css";
-import { NavBar } from "../components/navbar/NavBar";
-import { HomeButton } from "../components/homebutton/HomeButton";
-import { DropTile } from "../components/droptile/DropTile";
-import { getContentSnapShot } from "../services/ContentService";
+import { NavBar } from "../../components/navbar/NavBar";
+import { HomeButton } from "../../components/homebutton/HomeButton";
+import { DropTile } from "../../components/droptile/DropTile";
+import { getContentSnapShot } from "../../services/ContentService";
 
 export function JoinDenmarkPage(props) {
   const [title] = useState(props.location.state.title);

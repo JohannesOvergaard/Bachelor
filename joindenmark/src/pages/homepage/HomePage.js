@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./HomePage.css";
-import { getContentFilterBySettings } from "../services/ContentService";
-import { TilesContainer } from "../components/tilesContainer/TilesContainer";
-import { NavbarContainer } from "../components/navbarcontainer/NavBarContainer";
+import { getContentFilterBySettings } from "../../services/ContentService";
+import { TilesContainer } from "../../components/tilesContainer/TilesContainer";
+import { NavbarContainer } from "../../components/navbarcontainer/NavBarContainer";
 import { useSelector } from "react-redux";
 
 export function HomePage() {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./SubTilePage.css";
-import { NavBar } from "../components/navbar/NavBar";
-import { HomeButton } from "../components/homebutton/HomeButton";
-import { getContentFilterBySettings } from "../services/ContentService";
-import { TilesContainer } from "../components/tilesContainer/TilesContainer";
+import { NavBar } from "../../components/navbar/NavBar";
+import { HomeButton } from "../../components/homebutton/HomeButton";
+import { getContentFilterBySettings } from "../../services/ContentService";
+import { TilesContainer } from "../../components/tilesContainer/TilesContainer";
 import { useSelector } from "react-redux";
 
 export function SubTilePage(props) {

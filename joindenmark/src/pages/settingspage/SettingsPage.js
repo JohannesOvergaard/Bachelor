@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./SettingsPage.css";
-import { NavBar } from "../components/navbar/NavBar";
-import { HomeButton } from "../components/homebutton/HomeButton";
-import { Setting } from "../components/setting/Setting";
-import { getContent } from "../services/ContentService";
-import allActions from "../actions";
+import { NavBar } from "../../components/navbar/NavBar";
+import { HomeButton } from "../../components/homebutton/HomeButton";
+import { Setting } from "../../components/setting/Setting";
+import { getContent } from "../../services/ContentService";
+import allActions from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
 
