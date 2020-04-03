@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./JoinDenmarkPage.css";
 import { NavBar } from "../../components/navbar/NavBar";
 import { HomeButton } from "../../components/homebutton/HomeButton";
-import { DropTile } from "../../components/droptile/DropTile";
-import { getContentSnapShot } from "../../services/ContentService";
+import { StepTile } from "../../components/steptile/StepTile";
+import { getContent } from "../../services/ContentService";
 
 export function JoinDenmarkPage(props) {
   const [title] = useState(props.location.state.title);
   const [articles, setArticles] = useState({});
 
   useEffect(() => {
-    getContentSnapShot(title.toLowerCase()).then(setArticles);
+    getContent(title.toLowerCase()).then(setArticles);
   }, []);
 
   function formatHeadline(step, headline) {
@@ -23,12 +23,13 @@ export function JoinDenmarkPage(props) {
       articles.docs.map(article => {
         const data = article.data();
         return (
-          <DropTile
+          <StepTile
             key={article.id}
             state={{
               headline: formatHeadline(article.id, data.headline),
               subheading: data.subheading,
-              body: data.body
+              documents: data.documents,
+              steps: data.steps
             }}
           />
         );
