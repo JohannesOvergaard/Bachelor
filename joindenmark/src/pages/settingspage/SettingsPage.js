@@ -7,6 +7,7 @@ import { getContent } from "../../services/ContentService";
 import allActions from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
+import { logout } from "../../firebase";
 
 export function SettingsPage() {
   const [settings, setSettings] = useState({});
@@ -25,6 +26,11 @@ export function SettingsPage() {
     const data = await getContent("settings");
     setSettings(data);
   };
+
+  function lo() {
+    logout();
+    dispatch(allActions.userActions.logOut())
+  }
 
   function generateSettings() {
     return (
@@ -52,7 +58,7 @@ export function SettingsPage() {
       {loggedIn ? (
         <>
           <p>ID: {currentUser.name}</p>
-          <button onClick={() => dispatch(allActions.userActions.logOut())}>
+          <button onClick={() => lo()}>
             Logout
           </button>
         </>

@@ -13,9 +13,9 @@ const firebaseApp = firebase.initializeApp({
 export const db = firebaseApp.firestore();
 export const FieldPath = firebase.firestore().FieldPath;
 
-const provider = new firebase.auth.GoogleAuthProvider();
+export async function googleLogin() {
+  const provider = new firebase.auth.GoogleAuthProvider();
 
-export async function login() {
   return await firebase
     .auth()
     .signInWithPopup(provider)
@@ -56,4 +56,12 @@ export async function login() {
         console.error("Error writing document: ", error);
       });
   }
+}
+
+export async function logout(){
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+  });
 }
