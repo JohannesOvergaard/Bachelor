@@ -13,23 +13,37 @@ const firebaseApp = firebase.initializeApp({
 export const db = firebaseApp.firestore();
 export const FieldPath = firebase.firestore().FieldPath;
 
+function addNewUserToDB(userid) {
+  db.collection("users")
+    .doc(userid)
+    .set({
+      settingsDisabled: ""
+    })
+    .then(function() {
+      console.log("Document successfully written with value: ");
+    })
+    .catch(function(error) {
+      console.error("Error writing document: ", error);
+    });
+}
+
+function onLogin(result){
+  // The signed-in user info.
+  var userID = result.user.uid;
+  if (result.additionalUserInfo.isNewUser) {
+    addNewUserToDB(userID);
+  }
+  return userID;
+}
+
 export async function googleLogin() {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   return await firebase
     .auth()
     .signInWithPopup(provider)
-    .then(function(result) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      console.log("user:", user.uid, result.additionalUserInfo.isNewUser);
-      // ...
-      if (result.additionalUserInfo.isNewUser) {
-        writeToDb(user.uid);
-      }
-      return user.uid;
+    .then(function(result){
+      return onLogin(result);
     })
     .catch(function(error) {
       // Handle Errors here.
@@ -42,23 +56,46 @@ export async function googleLogin() {
       // ...
       return false;
     });
-
-  function writeToDb(userid) {
-    db.collection("users")
-      .doc(userid)
-      .set({
-        settingsDisabled: ""
-      })
-      .then(function() {
-        console.log("Document successfully written with value: ");
-      })
-      .catch(function(error) {
-        console.error("Error writing document: ", error);
-      });
-  }
 }
 
-export async function logout(){
+async function crateEmailUser(email,password){
+  return await firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(function(result){
+      return onLogin(result);
+    })
+    .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+}
+
+export async function emailLogin(email,password) {
+  return await firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(function(result){
+      if (!result.isNewUser){
+        return onLogin(result);
+      }
+    })
+    .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode)
+    if(errorCode === "auth/user-not-found"){
+      //Create new user
+      return crateEmailUser(email,password);
+    } else {
+      throw errorMessage
+    }
+  });
+}
+
+export async function firebaseLogout(){
   firebase.auth().signOut().then(function() {
     // Sign-out successful.
   }).catch(function(error) {
