@@ -88,7 +88,7 @@ export async function emailLogin(email,password) {
     console.log(errorCode)
     if(errorCode === "auth/user-not-found"){
       //Create new user
-      return crateEmailUser(email,password);
+      return await crateEmailUser(email,password);
     } else {
       throw errorMessage
     }
