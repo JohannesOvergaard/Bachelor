@@ -28,9 +28,6 @@ export function NavbarContainer() {
     const disabledUserSettings = await getQuery("users", id);
     const settings = disabledUserSettings.split(",");
     dispatch(allActions.userActions.setSettings({ settings }));
-    // const joinDkSteps = await getQuerySteps("users", id);
-    // const checked = joinDkSteps.split(",");
-    // dispatch(allActions.userActions.setCheckmarks({ checked }));
   };
 
   useEffect(() => {

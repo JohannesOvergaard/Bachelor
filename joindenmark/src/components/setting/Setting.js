@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Switch from "react-switch";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
-import { updateArray } from "../../Util/Helpers";
 import { updateUserSettings } from "../../services/ContentService";
 
 export function Setting(props) {
