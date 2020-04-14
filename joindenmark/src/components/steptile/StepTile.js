@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
 import { updateJoinDkChecks } from "../../services/ContentService";
@@ -11,12 +11,10 @@ export function StepTile(props) {
   const [showSteps, setShowSteps] = useState(false);
   const [showFullArticle, setShowFullArticle] = useState(false);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
-  const [checked, setChecked] = useState(props.state.checked);
   const currentUser = useSelector((state) => state.userState.user);
   const loggedIn = useSelector((state) => state.userState.loggedIn);
-  const checkMarks = useSelector((state) => {
-    return state.userState.checkmarks;
-  });
+  const checkMarks = useSelector((state) => state.userState.checkmarks);
+  const [checked, setChecked] = useState(checkMarks.includes(stepId));
   const dispatch = useDispatch();
 
   let readMore;
@@ -59,7 +57,7 @@ export function StepTile(props) {
 
   function onCheckBoxChange(checked) {
     console.log(props.state.id);
-    const checkmarksArr = updateArray(!checked, checkMarks, props.state.id);
+    const checkmarksArr = updateArray(!checked, checkMarks, stepId);
     updateJoinDkChecks(currentUser.name, checkmarksArr);
     dispatch(allActions.userActions.setCheckmarks({ checkmarks: checkMarks }));
     setChecked(checked);
@@ -73,6 +71,7 @@ export function StepTile(props) {
           <input
             type="checkbox"
             onChange={() => onCheckBoxChange(!checked)}
+            checked={checked}
             className="form-check-input"
           />
         </div>

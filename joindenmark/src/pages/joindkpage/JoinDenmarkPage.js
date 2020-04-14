@@ -9,7 +9,6 @@ import { getContent, updateJoinDkChecks } from "../../services/ContentService";
 export function JoinDenmarkPage(props) {
   const [title] = useState(props.location.state.title);
   const [articles, setArticles] = useState({});
-  const currentUser = useSelector((state) => state.userState.user);
 
   useEffect(() => {
     getContent(title.toLowerCase()).then(setArticles);
