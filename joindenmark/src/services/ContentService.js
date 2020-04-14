@@ -57,19 +57,19 @@ export const updateUserSettings = async (collection, docid, update) => {
     });
 };
 
-// export const updateJoinDkChecks = async (collection, docid, update) => {
-//   return db
-//     .collection(collection)
-//     .doc(docid)
-//     .update({
-//       checkboxes: update.join(),
-//     })
-//     .then(function () {
-//       console.log("Document successfully written with value: ", update);
-//       return true;
-//     })
-//     .catch(function (error) {
-//       console.error("Error writing document: ", error);
-//       return false;
-//     });
-// };
+export const updateJoinDkChecks = async (collection, docid, update) => {
+  return db
+    .collection(collection)
+    .doc(docid)
+    .update({
+      joindkfields: update.join(),
+    })
+    .then(function () {
+      console.log("Document successfully written with value: ", update);
+      return true;
+    })
+    .catch(function (error) {
+      console.error("Error writing document: ", error);
+      return false;
+    });
+};

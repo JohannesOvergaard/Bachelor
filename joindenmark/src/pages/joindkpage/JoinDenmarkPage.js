@@ -4,11 +4,12 @@ import "./JoinDenmarkPage.css";
 import { NavBar } from "../../components/navbar/NavBar";
 import { HomeButton } from "../../components/homebutton/HomeButton";
 import { StepTile } from "../../components/steptile/StepTile";
-import { getContent } from "../../services/ContentService";
+import { getContent, updateJoinDkChecks } from "../../services/ContentService";
 
 export function JoinDenmarkPage(props) {
   const [title] = useState(props.location.state.title);
   const [articles, setArticles] = useState({});
+  const currentUser = useSelector((state) => state.userState.user);
 
   useEffect(() => {
     getContent(title.toLowerCase()).then(setArticles);
@@ -44,6 +45,11 @@ export function JoinDenmarkPage(props) {
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
       <div className=".stepTiles">{generateDropTiles()}</div>
+      <button
+        onClick={() => updateJoinDkChecks("users", currentUser.name, ["step1"])}
+      >
+        Click here to add something
+      </button>
     </div>
   );
 }
