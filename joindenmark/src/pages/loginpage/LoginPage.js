@@ -30,17 +30,17 @@ export function LoginPage(){
               id = await emailLogin(loginService[1],loginService[2]);
               break;
           }
-          dispatch(allActions.userActions.setUser({ name: id }));
-          setIsLoggedIn(id);
+          
         }
         if (id){
+          dispatch(allActions.userActions.setUser({ name: id }));
+          setIsLoggedIn(id);
           const disabledUserSettings = await getQuery("users", id);
           const settings = disabledUserSettings.split(",");
           dispatch(allActions.userActions.setSettings({ settings }));
         }
       } catch(err) {
-        console.log(err)
-        return alert(err);
+        return alert(err)
       }
     };
 
