@@ -58,7 +58,7 @@ export async function googleLogin() {
     });
 }
 
-async function crateEmailUser(email,password){
+async function createEmailUser(email,password){
   return await firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
@@ -88,7 +88,7 @@ export async function emailLogin(email,password) {
     if(errorCode === "auth/user-not-found"){
       if (window.confirm("The user was not found. \n Do you want to create a new user?")) {
         //Create new user
-        return crateEmailUser(email,password);
+        return createEmailUser(email,password);
       }
     } else {
       throw errorMessage
