@@ -13,23 +13,38 @@ const firebaseApp = firebase.initializeApp({
 export const db = firebaseApp.firestore();
 export const FieldPath = firebase.firestore().FieldPath;
 
-const provider = new firebase.auth.GoogleAuthProvider();
+function addNewUserToDB(userid) {
+  db.collection("users")
+    .doc(userid)
+    .set({
+      settingsDisabled: "",
+      joindkfields: "",
+    })
+    .then(function () {
+      console.log("Document successfully written with value: ");
+    })
+    .catch(function (error) {
+      console.error("Error writing document: ", error);
+    });
+}
 
-export async function login() {
+function onLogin(result) {
+  // The signed-in user info.
+  var userID = result.user.uid;
+  if (result.additionalUserInfo.isNewUser) {
+    addNewUserToDB(userID);
+  }
+  return userID;
+}
+
+export async function googleLogin() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+
   return await firebase
     .auth()
     .signInWithPopup(provider)
     .then(function (result) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      console.log("user:", user.uid, result.additionalUserInfo.isNewUser);
-      // ...
-      if (result.additionalUserInfo.isNewUser) {
-        writeToDb(user.uid);
-      }
-      return user.uid;
+      return onLogin(result);
     })
     .catch(function (error) {
       // Handle Errors here.
@@ -42,19 +57,58 @@ export async function login() {
       // ...
       return false;
     });
+}
 
-  function writeToDb(userid) {
-    db.collection("users")
-      .doc(userid)
-      .set({
-        settingsDisabled: "",
-        joindkfields: "",
-      })
-      .then(function () {
-        console.log("Document successfully written with value: ");
-      })
-      .catch(function (error) {
-        console.error("Error writing document: ", error);
-      });
-  }
+async function createEmailUser(email, password) {
+  return await firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(function (result) {
+      return onLogin(result);
+    })
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
+}
+
+export async function emailLogin(email, password) {
+  return await firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(function (result) {
+      if (!result.isNewUser) {
+        return onLogin(result);
+      }
+    })
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode === "auth/user-not-found") {
+        if (
+          window.confirm(
+            "The user was not found. \n Do you want to create a new user?"
+          )
+        ) {
+          //Create new user
+          return createEmailUser(email, password);
+        }
+      } else {
+        throw errorMessage;
+      }
+    });
+}
+
+export async function firebaseLogout() {
+  firebase
+    .auth()
+    .signOut()
+    .then(function () {
+      // Sign-out successful.
+    })
+    .catch(function (error) {
+      // An error happened.
+    });
 }

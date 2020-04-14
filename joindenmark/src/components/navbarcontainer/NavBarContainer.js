@@ -3,41 +3,13 @@ import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 import { Search } from "../search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
-import { login } from "../../firebase";
-import allActions from "../../actions";
-import { useSelector, useDispatch } from "react-redux";
-import { getQuery, getQuerySteps } from "../../services/ContentService";
-import { isEmpty } from "lodash";
+import { useSelector } from "react-redux";
 
 export function NavbarContainer() {
-  const currentUser = useSelector((state) => state.userState.user);
-  const loggedIn = useSelector((state) => state.userState.loggedIn);
   const [showSearch, setShowSearch] = useState();
-  const [isLoggedIn, setIsLoggedIn] = useState();
-  const dispatch = useDispatch();
-
-  const onLogin = async () => {
-    let id = null;
-    if (!isEmpty(currentUser)) {
-      id = currentUser.name;
-    } else {
-      id = await login();
-      dispatch(allActions.userActions.setUser({ name: id }));
-      setIsLoggedIn(id);
-    }
-    const disabledUserSettings = await getQuery("users", id);
-    const settings = disabledUserSettings.split(",");
-    dispatch(allActions.userActions.setSettings({ settings }));
-
-    const checkBoxes = await getQuerySteps("users", id);
-    const checkmarks = checkBoxes.split(",");
-    dispatch(allActions.userActions.setCheckmarks({ checkmarks: checkmarks }));
-  };
-
-  useEffect(() => {
-    console.log("User is logged in:", loggedIn);
-    setIsLoggedIn(loggedIn);
-  }, []);
+  const [isLoggedIn] = useState(
+    useSelector((state) => state.userState.loggedIn)
+  );
 
   return (
     <div>
@@ -45,19 +17,14 @@ export function NavbarContainer() {
         <div>
           <div className="settings">
             {isLoggedIn && (
-              <Link
-                to={{
-                  pathname: "/settings",
-                  state: { title: "Settings" },
-                }}
-              >
+              <Link to="/settings">
                 <FontAwesomeIcon icon={faCog} />
               </Link>
             )}
             {!isLoggedIn && (
-              <div onClick={() => onLogin()}>
+              <Link to="/login">
                 <FontAwesomeIcon icon={faUser} />
-              </div>
+              </Link>
             )}
           </div>
           <div className="search" onClick={() => setShowSearch(!showSearch)}>
