@@ -7,7 +7,7 @@ const firebaseApp = firebase.initializeApp({
   projectId: "joindenmark",
   storageBucket: "joindenmark.appspot.com",
   messagingSenderId: "408739921787",
-  appId: "1:408739921787:web:dc596021cca7e6cb4b47de"
+  appId: "1:408739921787:web:dc596021cca7e6cb4b47de",
 });
 
 export const db = firebaseApp.firestore();
@@ -19,7 +19,7 @@ export async function login() {
   return await firebase
     .auth()
     .signInWithPopup(provider)
-    .then(function(result) {
+    .then(function (result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
       // The signed-in user info.
@@ -31,7 +31,7 @@ export async function login() {
       }
       return user.uid;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -47,12 +47,13 @@ export async function login() {
     db.collection("users")
       .doc(userid)
       .set({
-        settingsDisabled: ""
+        settingsDisabled: "",
+        joindkfields: "",
       })
-      .then(function() {
+      .then(function () {
         console.log("Document successfully written with value: ");
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.error("Error writing document: ", error);
       });
   }

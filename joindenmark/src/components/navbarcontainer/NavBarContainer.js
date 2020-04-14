@@ -6,12 +6,12 @@ import { faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { login } from "../../firebase";
 import allActions from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
-import { getQuery } from "../../services/ContentService";
+import { getQuery, getQuerySteps } from "../../services/ContentService";
 import { isEmpty } from "lodash";
 
 export function NavbarContainer() {
-  const currentUser = useSelector(state => state.userState.user);
-  const loggedIn = useSelector(state => state.userState.loggedIn);
+  const currentUser = useSelector((state) => state.userState.user);
+  const loggedIn = useSelector((state) => state.userState.loggedIn);
   const [showSearch, setShowSearch] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState();
   const dispatch = useDispatch();
@@ -28,6 +28,9 @@ export function NavbarContainer() {
     const disabledUserSettings = await getQuery("users", id);
     const settings = disabledUserSettings.split(",");
     dispatch(allActions.userActions.setSettings({ settings }));
+    // const joinDkSteps = await getQuerySteps("users", id);
+    // const checked = joinDkSteps.split(",");
+    // dispatch(allActions.userActions.setCheckmarks({ checked }));
   };
 
   useEffect(() => {
@@ -44,7 +47,7 @@ export function NavbarContainer() {
               <Link
                 to={{
                   pathname: "/settings",
-                  state: { title: "Settings" }
+                  state: { title: "Settings" },
                 }}
               >
                 <FontAwesomeIcon icon={faCog} />

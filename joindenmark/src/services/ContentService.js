@@ -8,33 +8,36 @@ export const getContentFilterBySettings = async (title, disabledSettings) => {
   if (!isEmpty(disabledSettings)) {
     const getSettings = await getContent("settings");
     const settings = getSettings.docs
-      .filter(doc => disabledSettings.includes(doc.id))
+      .filter((doc) => disabledSettings.includes(doc.id))
       .reduce((acc, itr) => acc.concat(itr.data().related), []);
     return contentByTitle.docs.filter(
-      p => !settings.includes(p.data().title.toLowerCase())
+      (p) => !settings.includes(p.data().title.toLowerCase())
     );
   } else {
     return contentByTitle.docs;
   }
 };
 
-export const getContentSnapShot = memoize(async title => {
+export const getContentSnapShot = memoize(async (title) => {
   const dataFromDB = db.collection(trim(title)).get();
   return dataFromDB;
 });
 
-export const getContent = async title => {
+export const getContent = async (title) => {
   const dataFromDB = db.collection(trim(title)).get();
   return dataFromDB;
 };
 
 export const getQuery = async (collection, docId) => {
-  const docRef = await db
-    .collection(collection)
-    .doc(docId)
-    .get();
+  const docRef = await db.collection(collection).doc(docId).get();
 
   return docRef.data().settingsDisabled;
+};
+
+export const getQuerySteps = async (collection, docId) => {
+  const docRef = await db.collection(collection).doc(docId).get();
+
+  return docRef.data().joindkfields;
 };
 
 export const updateUserSettings = async (collection, docid, update) => {
@@ -42,14 +45,31 @@ export const updateUserSettings = async (collection, docid, update) => {
     .collection(collection)
     .doc(docid)
     .update({
-      settingsDisabled: update.join()
+      settingsDisabled: update.join(),
     })
-    .then(function() {
+    .then(function () {
       console.log("Document successfully written with value: ", update);
       return true;
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.error("Error writing document: ", error);
       return false;
     });
 };
+
+// export const updateJoinDkChecks = async (collection, docid, update) => {
+//   return db
+//     .collection(collection)
+//     .doc(docid)
+//     .update({
+//       checkboxes: update.join(),
+//     })
+//     .then(function () {
+//       console.log("Document successfully written with value: ", update);
+//       return true;
+//     })
+//     .catch(function (error) {
+//       console.error("Error writing document: ", error);
+//       return false;
+//     });
+// };

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./JoinDenmarkPage.css";
 import { NavBar } from "../../components/navbar/NavBar";
 import { HomeButton } from "../../components/homebutton/HomeButton";
@@ -20,7 +21,7 @@ export function JoinDenmarkPage(props) {
     return (
       articles.docs &&
       articles.docs.length > 0 &&
-      articles.docs.map(article => {
+      articles.docs.map((article) => {
         const data = article.data();
         return (
           <StepTile
@@ -29,7 +30,8 @@ export function JoinDenmarkPage(props) {
               headline: formatHeadline(article.id, data.headline),
               subheading: data.subheading,
               documents: data.documents,
-              steps: data.steps
+              steps: data.steps,
+              id: article.id,
             }}
           />
         );

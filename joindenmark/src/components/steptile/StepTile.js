@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import CheckBox, { Checkbox } from "./CheckBox";
+import { useSelector, useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
@@ -6,12 +8,14 @@ export function StepTile(props) {
   const [showSteps, setShowSteps] = useState(false);
   const [showFullArticle, setShowFullArticle] = useState(false);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
+  //const checkBoxes = useSelector((state) => state.userState.checkmarks);
+  //const loggedIn = useSelector((state) => state.userState.loggedIn);
   let readMore;
   const headline = props.state.headline;
 
   function generateList(documents) {
     const arr = documents.split(",");
-    return arr.map(doc => {
+    return arr.map((doc) => {
       return <li key={doc}> {doc} </li>;
     });
   }
@@ -44,6 +48,15 @@ export function StepTile(props) {
     setShowSteps(!showSteps);
   }
 
+  // {console.log("checkboxes array: ", checkBoxes)}
+  // {loggedIn && (
+  //   <Checkbox
+  //     state={{
+  //       checked: checkBoxes.includes(props.state.id),
+  //       id: props.state.id,
+  //     }}
+  //   />
+  // )}
   return (
     <div className="dropTile">
       <h3 className="dropTileHeadline" onClick={() => onTileClick()}>
