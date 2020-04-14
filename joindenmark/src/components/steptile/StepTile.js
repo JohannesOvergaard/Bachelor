@@ -7,6 +7,7 @@ export function StepTile(props) {
   const [showSteps, setShowSteps] = useState(false);
   const [showFullArticle, setShowFullArticle] = useState(false);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
+  const [checked, setChecked] = useState(props.state.checked);
   let readMore;
   const headline = props.state.headline;
 
@@ -45,8 +46,21 @@ export function StepTile(props) {
     setShowSteps(!showSteps);
   }
 
+  function onCheckBoxChange(checked) {
+    console.log("checkbox was set to: ", checked);
+    setChecked(checked);
+  }
+
   return (
     <div className="dropTile">
+      <div>
+        {" "}
+        <input
+          type="checkbox"
+          onChange={() => onCheckBoxChange(!checked)}
+          className="form-check-input"
+        />
+      </div>
       <h3 className="dropTileHeadline" onClick={() => onTileClick()}>
         {headline}
       </h3>

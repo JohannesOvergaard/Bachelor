@@ -18,7 +18,7 @@ export function JoinDenmarkPage(props) {
   function formatHeadline(step, headline) {
     return `Step  ${step.replace(/\D/g, "")} - ${headline}`;
   }
-  function generateDropTiles() {
+  function generateStepTiles() {
     return (
       articles.docs &&
       articles.docs.length > 0 &&
@@ -44,7 +44,7 @@ export function JoinDenmarkPage(props) {
     <div>
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
-      <div className=".stepTiles">{generateDropTiles()}</div>
+      <div className=".stepTiles">{generateStepTiles()}</div>
       <button
         onClick={() => updateJoinDkChecks("users", currentUser.name, ["step1"])}
       >
