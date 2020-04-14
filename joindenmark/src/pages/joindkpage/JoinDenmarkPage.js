@@ -45,11 +45,6 @@ export function JoinDenmarkPage(props) {
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
       <div className=".stepTiles">{generateStepTiles()}</div>
-      <button
-        onClick={() => updateJoinDkChecks("users", currentUser.name, ["step1"])}
-      >
-        Click here to add something
-      </button>
     </div>
   );
 }

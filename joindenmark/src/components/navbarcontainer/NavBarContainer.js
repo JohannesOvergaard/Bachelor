@@ -28,6 +28,10 @@ export function NavbarContainer() {
     const disabledUserSettings = await getQuery("users", id);
     const settings = disabledUserSettings.split(",");
     dispatch(allActions.userActions.setSettings({ settings }));
+
+    const checkBoxes = await getQuerySteps("users", id);
+    const checkmarks = checkBoxes.split(",");
+    dispatch(allActions.userActions.setCheckmarks({ checkmarks: checkmarks }));
   };
 
   useEffect(() => {

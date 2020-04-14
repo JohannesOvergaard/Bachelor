@@ -57,9 +57,9 @@ export const updateUserSettings = async (collection, docid, update) => {
     });
 };
 
-export const updateJoinDkChecks = async (collection, docid, update) => {
+export const updateJoinDkChecks = async (docid, update) => {
   return db
-    .collection(collection)
+    .collection("users")
     .doc(docid)
     .update({
       joindkfields: update.join(),

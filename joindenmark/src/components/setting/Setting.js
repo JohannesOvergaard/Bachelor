@@ -3,6 +3,7 @@ import Switch from "react-switch";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
 import { updateUserSettings } from "../../services/ContentService";
+import { updateArray } from "../../Util/Helpers";
 
 export function Setting(props) {
   const [checked, setChecked] = useState(props.state.checked);
@@ -11,19 +12,8 @@ export function Setting(props) {
   const settings = useSelector((state) => state.userState.settings);
   const dispatch = useDispatch();
 
-  function updateSettingsArray(enabled, array, element) {
-    const index = array.indexOf(element);
-    if (enabled) {
-      array.splice(index, 1);
-      return array;
-    } else {
-      array.push(element);
-      return array;
-    }
-  }
-
   function updateSettings(enabled) {
-    const settingsArr = updateSettingsArray(enabled, settings, settingId);
+    const settingsArr = updateArray(enabled, settings, settingId);
     updateUserSettings("users", currentUser.name, settingsArr);
 
     dispatch(allActions.userActions.setSettings({ settings }));

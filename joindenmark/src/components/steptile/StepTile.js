@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import allActions from "../../actions";
+import { updateJoinDkChecks } from "../../services/ContentService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { updateArray } from "../../Util/Helpers";
 
 export function StepTile(props) {
+  const [stepId] = useState(props.state.id);
   const [showSteps, setShowSteps] = useState(false);
   const [showFullArticle, setShowFullArticle] = useState(false);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
   const [checked, setChecked] = useState(props.state.checked);
+  const currentUser = useSelector((state) => state.userState.user);
+  const loggedIn = useSelector((state) => state.userState.loggedIn);
+  const checkMarks = useSelector((state) => {
+    return state.userState.checkmarks;
+  });
+  const dispatch = useDispatch();
+
   let readMore;
   const headline = props.state.headline;
 
@@ -47,20 +58,26 @@ export function StepTile(props) {
   }
 
   function onCheckBoxChange(checked) {
-    console.log("checkbox was set to: ", checked);
+    console.log(props.state.id);
+    const checkmarksArr = updateArray(!checked, checkMarks, props.state.id);
+    updateJoinDkChecks(currentUser.name, checkmarksArr);
+    dispatch(allActions.userActions.setCheckmarks({ checkmarks: checkMarks }));
     setChecked(checked);
   }
 
   return (
     <div className="dropTile">
-      <div>
-        {" "}
-        <input
-          type="checkbox"
-          onChange={() => onCheckBoxChange(!checked)}
-          className="form-check-input"
-        />
-      </div>
+      {loggedIn && (
+        <div>
+          {" "}
+          <input
+            type="checkbox"
+            onChange={() => onCheckBoxChange(!checked)}
+            className="form-check-input"
+          />
+        </div>
+      )}
+
       <h3 className="dropTileHeadline" onClick={() => onTileClick()}>
         {headline}
       </h3>
