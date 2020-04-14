@@ -55,9 +55,9 @@ export function LoginPage(){
           {loggingInWithEmail ? (
               <div>
                   <p>Email</p>
-                  <input onChange={(e) => setEmail(e.target.value)}/>
+                  <input className="loginInput" onChange={(e) => setEmail(e.target.value)}/>
                   <p>Password</p>
-                  <input type="password" onChange={(e) => setPassword(e.target.value)}/>
+                  <input className="loginInput" type="password" onChange={(e) => setPassword(e.target.value)}/>
                   <br/>
                   <button className="loginButton" onClick={() => email && password ? 
                     //console.log("email: " + email +" , password: " + password)
