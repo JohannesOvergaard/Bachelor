@@ -7,9 +7,9 @@ import { getContent } from "../../services/ContentService";
 import allActions from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
+import { firebaseLogout } from "../../firebase";
 
-export function SettingsPage(props) {
-  const [title] = useState(props.location.state.title);
+export function SettingsPage() {
   const [settings, setSettings] = useState({});
   const currentUser = useSelector(state => state.userState.user);
   const loggedIn = useSelector(state => state.userState.loggedIn);
@@ -23,9 +23,14 @@ export function SettingsPage(props) {
   }, []);
 
   const loadSettings = async () => {
-    const data = await getContent(title);
+    const data = await getContent("settings");
     setSettings(data);
   };
+
+  function logout() {
+    firebaseLogout();
+    dispatch(allActions.userActions.logOut())
+  }
 
   function generateSettings() {
     return (
@@ -47,22 +52,20 @@ export function SettingsPage(props) {
 
   return (
     <div>
-      <NavBar state={{ title: title }}></NavBar>
+      <NavBar state={{ title: "Settings" }}></NavBar>
       <HomeButton />
       {generateSettings()}
       {loggedIn ? (
-        <>
+        <div>
           <p>ID: {currentUser.name}</p>
-          <button onClick={() => dispatch(allActions.userActions.logOut())}>
+          <button onClick={() => logout()}>
             Logout
           </button>
-        </>
+        </div>
       ) : (
-        <>
-          <Route>
-            <Redirect to="/" />
-          </Route>
-        </>
+        <Route>
+          <Redirect to="/" />
+        </Route>
       )}
     </div>
   );

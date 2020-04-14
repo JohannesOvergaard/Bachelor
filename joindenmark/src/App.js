@@ -6,6 +6,7 @@ import { CategoryPage } from "./pages/categorypage/CategoryPage";
 import { SubTilePage } from "./pages/subtilepage/SubTilePage";
 import { JoinDenmarkPage } from "./pages/joindkpage/JoinDenmarkPage";
 import { SettingsPage } from "./pages/settingspage/SettingsPage";
+import { LoginPage } from "./pages/loginpage/LoginPage"; 
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/culture" component={CategoryPage} />
         <Route path="/jobmarket" component={CategoryPage} />
         <Route path="/settings" component={SettingsPage} />
+        <Route path="/login" component={LoginPage} />
         <Route exact path="/publicsector" component={SubTilePage} />
 
         {/* Routes from Public sector */}
