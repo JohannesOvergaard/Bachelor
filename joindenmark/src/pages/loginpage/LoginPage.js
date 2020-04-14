@@ -64,7 +64,7 @@ export function LoginPage(){
                     onLogin(["EMAIL",email,password]) : 
                     alert("Please write an email and a password")}
                   >
-                    login
+                    Login
                   </button>
               </div>
           ) : (
