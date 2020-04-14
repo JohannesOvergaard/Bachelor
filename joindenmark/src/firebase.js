@@ -85,7 +85,6 @@ export async function emailLogin(email,password) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorCode)
     if(errorCode === "auth/user-not-found"){
       if (window.confirm("The user was not found. \n Do you want to create a new user?")) {
         //Create new user

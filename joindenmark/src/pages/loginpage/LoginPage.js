@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Redirect, Route } from "react-router-dom";
+import "./LoginPage.css";
 import { googleLogin, emailLogin } from "../../firebase";
 import allActions from "../../actions";
 import { getQuery } from "../../services/ContentService";
@@ -48,36 +49,38 @@ export function LoginPage(){
     <div>
         <NavBar state={{ title: "Login" }}/>
         <HomeButton/>
-        <p>Here you can login to the Join Denmark application</p>
-        <p>By logging in you will be able to track your proccess of joining Denmark and disable categories you don't wanna see</p>
-        {loggingInWithEmail ? (
-            <div>
-                <p>Email</p>
-                <input onChange={(e) => setEmail(e.target.value)}/>
-                <p>Password</p>
-                <input onChange={(e) => setPassword(e.target.value)}/>
-                <br/>
-                <button onClick={() => email && password ? 
-                  //console.log("email: " + email +" , password: " + password)
-                  onLogin(["EMAIL",email,password]) : 
-                  alert("Please write an email and a password")}
-                >
-                  login
-                </button>
-            </div>
+        <div className="loginPageContainer">
+          <p>Here you can login to the Join Denmark application</p>
+          <p>By logging in you will be able to track your proccess of joining Denmark and disable categories you do not want to see</p>
+          {loggingInWithEmail ? (
+              <div>
+                  <p>Email</p>
+                  <input onChange={(e) => setEmail(e.target.value)}/>
+                  <p>Password</p>
+                  <input type="password" onChange={(e) => setPassword(e.target.value)}/>
+                  <br/>
+                  <button className="loginButton" onClick={() => email && password ? 
+                    //console.log("email: " + email +" , password: " + password)
+                    onLogin(["EMAIL",email,password]) : 
+                    alert("Please write an email and a password")}
+                  >
+                    login
+                  </button>
+              </div>
+          ) : (
+              <div>
+                  <button className="loginButton" onClick={()=>onLogin(["GOOGLE"])}>Login with Google</button>
+                  <button className="loginButton" onClick={()=>{setLoggingInWithEmail(!loggingInWithEmail)}}>Login with Email</button>
+              </div>
+          )}
+          {isLoggedIn ? (
+          <Route>
+            <Redirect to="/settings"/>
+          </Route>
         ) : (
-            <div>
-                <button onClick={()=>onLogin(["GOOGLE"])}>Login with Google</button>
-                <button onClick={()=>{setLoggingInWithEmail(!loggingInWithEmail)}}>Login with Email</button>
-            </div>
+            <div></div>
         )}
-        {isLoggedIn ? (
-        <Route>
-          <Redirect to="/settings"/>
-        </Route>
-      ) : (
-          <div></div>
-      )}
+      </div>
     </div>
     );
 }
