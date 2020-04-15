@@ -1,21 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import allActions from "../../actions";
-import { updateJoinDkChecks } from "../../services/ContentService";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { updateArray } from "../../Util/Helpers";
+import { CheckBox } from "./CheckBox";
 
 export function StepTile(props) {
   const [stepId] = useState(props.state.id);
   const [showSteps, setShowSteps] = useState(false);
   const [showFullArticle, setShowFullArticle] = useState(false);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
-  const currentUser = useSelector((state) => state.userState.user);
   const loggedIn = useSelector((state) => state.userState.loggedIn);
-  const checkMarks = useSelector((state) => state.userState.checkmarks);
-  const [checked, setChecked] = useState(checkMarks.includes(stepId));
-  const dispatch = useDispatch();
 
   let readMore;
   const headline = props.state.headline;
@@ -55,25 +49,11 @@ export function StepTile(props) {
     setShowSteps(!showSteps);
   }
 
-  function onCheckBoxChange(checked) {
-    console.log(props.state.id);
-    const checkmarksArr = updateArray(!checked, checkMarks, stepId);
-    updateJoinDkChecks(currentUser.name, checkmarksArr);
-    dispatch(allActions.userActions.setCheckmarks({ checkmarks: checkMarks }));
-    setChecked(checked);
-  }
-
   return (
     <div className="dropTile">
       {loggedIn && (
         <div>
-          {" "}
-          <input
-            type="checkbox"
-            onChange={() => onCheckBoxChange(!checked)}
-            checked={checked}
-            className="form-check-input"
-          />
+          <CheckBox state={{ id: stepId }} />
         </div>
       )}
 
