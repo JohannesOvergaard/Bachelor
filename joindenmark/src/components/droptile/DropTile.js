@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./DropTile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 export function DropTile(props) {
   const [showSubHeading, setSubHeading] = useState(false);
@@ -36,21 +36,26 @@ export function DropTile(props) {
   }
 
   return (
-      <div className="dropTile">
-        <h3 className="dropTileHeadline" onClick={() => onTileClick()}>{headline}</h3>
-        <div className="dropTileIcon" onClick={() => onTileClick()}>
-          {showSubHeading && <FontAwesomeIcon icon={faChevronUp}/>}
-          {!showSubHeading && <FontAwesomeIcon icon={faChevronDown}/>}
-        </div>
-        {showSubHeading && (
-          <div className="dropTileBody">
-            <h4 key={headline}>
-              <i>by {props.state.author}</i>
-            </h4>
-            {props.state.subheading} {readMore}
-          </div>
+    <div className="dropTile">
+      <h3 className="dropTileHeadline" onClick={() => onTileClick()}>
+        {headline}
+      </h3>
+      <div className="dropTileIcon" onClick={() => onTileClick()}>
+        {showSubHeading ? (
+          <FontAwesomeIcon icon={faChevronUp} />
+        ) : (
+          <FontAwesomeIcon icon={faChevronDown} />
         )}
-      <hr/>
       </div>
+      {showSubHeading && (
+        <div className="dropTileBody">
+          <h4 key={headline}>
+            <i>by {props.state.author}</i>
+          </h4>
+          {props.state.subheading} {readMore}
+        </div>
+      )}
+      <hr />
+    </div>
   );
 }

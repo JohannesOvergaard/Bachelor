@@ -61,8 +61,11 @@ export function StepTile(props) {
         {headline}
       </h3>
       <div className="dropTileIcon" onClick={() => onTileClick()}>
-        {showSteps && <FontAwesomeIcon icon={faChevronUp} />}
-        {!showSteps && <FontAwesomeIcon icon={faChevronDown} />}
+        {showSteps ? (
+          <FontAwesomeIcon icon={faChevronUp} />
+        ) : (
+          <FontAwesomeIcon icon={faChevronDown} />
+        )}
       </div>
       {showSteps && (
         <div className="dropTileBody">
