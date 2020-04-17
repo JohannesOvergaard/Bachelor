@@ -1,4 +1,9 @@
-const INITIAL_STATE = { user: {}, loggedIn: false, settings: [] };
+const INITIAL_STATE = {
+  user: {},
+  loggedIn: false,
+  settings: [],
+  checkmarks: [],
+};
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -7,12 +12,18 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         user: action.payload,
         loggedIn: true,
-        settings: []
+        settings: [],
+        checkmarks: [],
       };
     case "SET_SETTINGS":
       return {
         ...state,
-        settings: action.payload.settings
+        settings: action.payload.settings,
+      };
+    case "SET_CHECKMARKS":
+      return {
+        ...state,
+        checkmarks: action.payload.checkmarks,
       };
     case "LOG_OUT":
     default:

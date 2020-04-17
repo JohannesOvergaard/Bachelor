@@ -7,7 +7,9 @@ import { useSelector } from "react-redux";
 
 export function NavbarContainer() {
   const [showSearch, setShowSearch] = useState();
-  const [isLoggedIn, setIsLoggedIn] = useState(useSelector(state => state.userState.loggedIn));
+  const [isLoggedIn] = useState(
+    useSelector((state) => state.userState.loggedIn)
+  );
 
   return (
     <div>

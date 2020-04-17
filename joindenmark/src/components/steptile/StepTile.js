@@ -1,15 +1,25 @@
 import React, { useState } from "react";
-import "./DropTile.css";
+import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { CheckBox } from "./CheckBox";
 
-export function DropTile(props) {
-  const [showSubHeading, setSubHeading] = useState(false);
+export function StepTile(props) {
+  const [stepId] = useState(props.state.id);
+  const [showSteps, setShowSteps] = useState(false);
   const [showFullArticle, setShowFullArticle] = useState(false);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
+  const loggedIn = useSelector((state) => state.userState.loggedIn);
+
   let readMore;
   const headline = props.state.headline;
 
+  function generateList(documents) {
+    const arr = documents.split(",");
+    return arr.map((doc) => {
+      return <li key={doc}> {doc} </li>;
+    });
+  }
   if (!isReadMoreClicked) {
     readMore = (
       <div className="inlinediv">
@@ -25,34 +35,42 @@ export function DropTile(props) {
       </div>
     );
   } else {
-    readMore = <div>{props.state.body}</div>;
+    readMore = (
+      <div>
+        {props.state.body} <ul>{generateList(props.state.documents)}</ul>
+      </div>
+    );
   }
 
   function onTileClick() {
     if (isReadMoreClicked === true) {
       setIsReadMoreClicked(!isReadMoreClicked);
     }
-    setSubHeading(!showSubHeading);
+    setShowSteps(!showSteps);
   }
 
   return (
     <div className="dropTile">
+      {loggedIn && (
+        <div>
+          <CheckBox state={{ id: stepId }} />
+        </div>
+      )}
+
       <h3 className="dropTileHeadline" onClick={() => onTileClick()}>
         {headline}
       </h3>
       <div className="dropTileIcon" onClick={() => onTileClick()}>
-        {showSubHeading ? (
+        {showSteps ? (
           <FontAwesomeIcon icon={faChevronUp} />
         ) : (
           <FontAwesomeIcon icon={faChevronDown} />
         )}
       </div>
-      {showSubHeading && (
+      {showSteps && (
         <div className="dropTileBody">
-          <h4 key={headline}>
-            <i>by {props.state.author}</i>
-          </h4>
-          {props.state.subheading} {readMore}
+          <h4 key={headline}></h4>
+          {props.state.steps} {readMore}
         </div>
       )}
       <hr />

@@ -7,7 +7,7 @@ const firebaseApp = firebase.initializeApp({
   projectId: "joindenmark",
   storageBucket: "joindenmark.appspot.com",
   messagingSenderId: "408739921787",
-  appId: "1:408739921787:web:dc596021cca7e6cb4b47de"
+  appId: "1:408739921787:web:dc596021cca7e6cb4b47de",
 });
 
 export const db = firebaseApp.firestore();
@@ -17,17 +17,18 @@ function addNewUserToDB(userid) {
   db.collection("users")
     .doc(userid)
     .set({
-      settingsDisabled: ""
+      settingsDisabled: "",
+      joindkfields: "",
     })
-    .then(function() {
+    .then(function () {
       console.log("Document successfully written with value: ");
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.error("Error writing document: ", error);
     });
 }
 
-function onLogin(result){
+function onLogin(result) {
   // The signed-in user info.
   var userID = result.user.uid;
   if (result.additionalUserInfo.isNewUser) {
@@ -42,10 +43,10 @@ export async function googleLogin() {
   return await firebase
     .auth()
     .signInWithPopup(provider)
-    .then(function(result){
+    .then(function (result) {
       return onLogin(result);
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -58,48 +59,56 @@ export async function googleLogin() {
     });
 }
 
-async function createEmailUser(email,password){
+async function createEmailUser(email, password) {
   return await firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then(function(result){
+    .then(function (result) {
       return onLogin(result);
     })
-    .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  });
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
 }
 
-export async function emailLogin(email,password) {
+export async function emailLogin(email, password) {
   return await firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .then(function(result){
-      if (!result.isNewUser){
+    .then(function (result) {
+      if (!result.isNewUser) {
         return onLogin(result);
       }
     })
-    .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    if(errorCode === "auth/user-not-found"){
-      if (window.confirm("The user was not found. \n Do you want to create a new user?")) {
-        //Create new user
-        return createEmailUser(email,password);
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode === "auth/user-not-found") {
+        if (
+          window.confirm(
+            "The user was not found. \n Do you want to create a new user?"
+          )
+        ) {
+          //Create new user
+          return createEmailUser(email, password);
+        }
+      } else {
+        throw errorMessage;
       }
-    } else {
-      throw errorMessage
-    }
-  });
+    });
 }
 
-export async function firebaseLogout(){
-  firebase.auth().signOut().then(function() {
-    // Sign-out successful.
-  }).catch(function(error) {
-    // An error happened.
-  });
+export async function firebaseLogout() {
+  firebase
+    .auth()
+    .signOut()
+    .then(function () {
+      // Sign-out successful.
+    })
+    .catch(function (error) {
+      // An error happened.
+    });
 }
