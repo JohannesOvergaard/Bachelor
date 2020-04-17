@@ -24,16 +24,19 @@ export function JoinDenmarkPage(props) {
       articles.docs.map((article) => {
         const data = article.data();
         return (
-          <StepTile
-            key={article.id}
-            state={{
-              headline: formatHeadline(article.id, data.headline),
-              subheading: data.subheading,
-              documents: data.documents,
-              steps: data.steps,
-              id: article.id,
-            }}
-          />
+          <div>
+            <StepTile
+              key={article.id}
+              state={{
+                headline: formatHeadline(article.id, data.headline),
+                subheading: data.subheading,
+                documents: data.documents,
+                steps: data.steps,
+                id: article.id,
+              }}
+            />
+            <hr/>
+          </div>
         );
       })
     );
