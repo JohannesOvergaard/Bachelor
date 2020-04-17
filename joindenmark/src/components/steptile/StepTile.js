@@ -29,7 +29,7 @@ export function StepTile(props) {
             () => setIsReadMoreClicked(!isReadMoreClicked))
           }
         >
-          Read more
+          List of documents needed:
         </span>
         {showFullArticle && <div>{props.state.body}</div>}
       </div>
