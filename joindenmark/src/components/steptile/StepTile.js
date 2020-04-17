@@ -42,6 +42,13 @@ export function StepTile(props) {
     );
   }
 
+  function generateSteps() {
+    const arr = props.state.steps.split(",");
+    return arr.map((doc) => {
+      return <li key={doc}> {doc} </li>;
+    });
+  }
+
   function onTileClick() {
     if (isReadMoreClicked === true) {
       setIsReadMoreClicked(!isReadMoreClicked);
@@ -70,7 +77,8 @@ export function StepTile(props) {
       {showSteps && (
         <div className="dropTileBody">
           <h4 key={headline}></h4>
-          {props.state.steps} {readMore}
+          <ol>{generateSteps()}</ol>
+          {readMore}
         </div>
       )}
       <hr />
