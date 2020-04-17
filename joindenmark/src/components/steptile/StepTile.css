@@ -1,0 +1,28 @@
+.stepTile{
+    padding-top: 1vw;
+  }
+  
+  .stepTileHeadline{
+    float: left;
+    margin-top: 4vw;
+    width: 64vw;
+    font-size: large;
+  }
+  
+  .stepTileIcon{
+    float: left;
+    width: 8vw;
+    margin: 6vw;
+    height: 8vw;
+  }
+  
+  .stepTileBody{
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .checkBox{
+      float: left;
+      margin: 6vw;
+      width: 4vw;
+  }

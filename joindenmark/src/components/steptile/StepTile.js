@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./StepTile.css";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
@@ -57,17 +58,17 @@ export function StepTile(props) {
   }
 
   return (
-    <div className="dropTile">
+    <div className="stepTile">
       {loggedIn && (
         <div>
           <CheckBox state={{ id: stepId }} />
         </div>
       )}
 
-      <h3 className="dropTileHeadline" onClick={() => onTileClick()}>
+      <h3 className="stepTileHeadline" onClick={() => onTileClick()}>
         {headline}
       </h3>
-      <div className="dropTileIcon" onClick={() => onTileClick()}>
+      <div className="stepTileIcon" onClick={() => onTileClick()}>
         {showSteps ? (
           <FontAwesomeIcon icon={faChevronUp} />
         ) : (
@@ -75,7 +76,7 @@ export function StepTile(props) {
         )}
       </div>
       {showSteps && (
-        <div className="dropTileBody">
+        <div className="stepTileBody">
           <h4 key={headline}></h4>
           <ol>{generateSteps()}</ol>
           {readMore}

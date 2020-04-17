@@ -25,7 +25,7 @@ export function CheckBox(props) {
         type="checkbox"
         onChange={() => onCheckBoxChange(!checked)}
         checked={checked}
-        className="form-check-input"
+        className="checkBox"
       />
     </div>
   );

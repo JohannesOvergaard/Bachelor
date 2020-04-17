@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./SettingsPage.css";
 import { NavBar } from "../../components/navbar/NavBar";
 import { HomeButton } from "../../components/homebutton/HomeButton";
 import { Setting } from "../../components/setting/Setting";
