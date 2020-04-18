@@ -43,10 +43,9 @@ export function StepTile(props) {
   }
 
   function formatStepWithLink(str) {
-    const text = str.replace(/(?:https?|ftp):\/\/[\n\S]+/g, "");
     const matches = str.match(/\bhttps?:\/\/\S+/gi);
-    console.log(matches);
     if (matches != null) {
+      const text = str.replace(/(?:https?|ftp):\/\/[\n\S]+/g, "");
       return (
         <li key={str}>
           {text}{" "}
@@ -62,8 +61,6 @@ export function StepTile(props) {
   function generateSteps() {
     const arr = props.state.steps.split(",");
     return arr.map((doc) => {
-      //console.log(formatStepWithLink(doc));
-      //return <li key={doc}> {doc} </li>;
       return formatStepWithLink(doc);
     });
   }
