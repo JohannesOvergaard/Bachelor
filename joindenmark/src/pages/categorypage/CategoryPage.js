@@ -35,7 +35,7 @@ export function CategoryPage(props) {
   }
 
   return (
-    <div>
+    <div className="CategoryPageContainer">
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
       <img className="pagePicture" src={props.location.state.picture} alt="" />
