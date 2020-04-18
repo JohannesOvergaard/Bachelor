@@ -43,10 +43,26 @@ export function StepTile(props) {
     );
   }
 
+  function formatStepWithLink(str) {
+    const matches = str.match(/\bhttps?:\/\/\S+/gi);
+    if (matches != null) {
+      const text = str.replace(/(?:https?|ftp):\/\/[\n\S]+/g, "");
+      return (
+        <li key={str}>
+          {text}{" "}
+          <a href={matches[0]} target="_blank">
+            {matches[0]}
+          </a>
+        </li>
+      );
+    } else {
+      return <li key={str}> {str} </li>;
+    }
+  }
   function generateSteps() {
     const arr = props.state.steps.split(",");
     return arr.map((doc) => {
-      return <li key={doc}> {doc} </li>;
+      return formatStepWithLink(doc);
     });
   }
 
