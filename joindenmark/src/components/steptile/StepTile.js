@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./StepTile.css";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
@@ -57,31 +58,30 @@ export function StepTile(props) {
   }
 
   return (
-    <div className="dropTile">
-      {loggedIn && (
-        <div>
-          <CheckBox state={{ id: stepId }} />
-        </div>
-      )}
-
-      <h3 className="dropTileHeadline" onClick={() => onTileClick()}>
-        {headline}
-      </h3>
-      <div className="dropTileIcon" onClick={() => onTileClick()}>
-        {showSteps ? (
-          <FontAwesomeIcon icon={faChevronUp} />
-        ) : (
-          <FontAwesomeIcon icon={faChevronDown} />
+    <div className="stepTile">
+        {loggedIn && (
+          <div>
+            <CheckBox state={{ id: stepId }} />
+          </div>
         )}
-      </div>
-      {showSteps && (
-        <div className="dropTileBody">
-          <h4 key={headline}></h4>
-          <ol>{generateSteps()}</ol>
-          {readMore}
+
+        <h3 className="stepTileHeadline" onClick={() => onTileClick()}>
+          {headline}
+        </h3>
+        <div className="stepTileIcon" onClick={() => onTileClick()}>
+          {showSteps ? (
+            <FontAwesomeIcon icon={faChevronUp} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronDown} />
+          )}
         </div>
-      )}
-      <hr />
+        {showSteps && (
+          <div className="stepTileBody">
+            <h4 key={headline}></h4>
+            <ol>{generateSteps()}</ol>
+            {readMore}
+          </div>
+        )}
     </div>
   );
 }
