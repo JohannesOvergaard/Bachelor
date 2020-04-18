@@ -7,20 +7,20 @@
 
 .back {
   float: left;
-  width: 22.33vw;
+  width: 12.33vw;
   padding: 4vw;
   text-align: left;
 }
 
 .title {
   float: left;
-  width: 39.33vw;
+  width: 59.33vw;
   text-align: center;
 }
 
 .find {
   float: left;
-  width: 22.33vw;
+  width: 12.33vw;
   padding: 4vw;
   text-align: right;
 }
