@@ -76,13 +76,11 @@ export function StepTile(props) {
     <div className="dropTile">
       {loggedIn && (
         <div>
-          <CheckBox state={{ id: stepId }} />
+          <CheckBox state={{ id: stepId, step: headline }} />
         </div>
       )}
 
-      <h3 className="dropTileHeadline" onClick={() => onTileClick()}>
-        {headline}
-      </h3>
+      <h3 className="dropTileHeadline" onClick={() => onTileClick()}></h3>
       <div className="dropTileIcon" onClick={() => onTileClick()}>
         {showSteps ? (
           <FontAwesomeIcon icon={faChevronUp} />
