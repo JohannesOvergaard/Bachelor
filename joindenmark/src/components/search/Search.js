@@ -8,6 +8,18 @@ import { convertToPath } from "../../Util/Helpers";
 
 export function Search({setShowSearch}){
     const [searchResults, setSearchResults] = useState([]);
+
+    function addPublicSectorToPath(str){
+        if (str === "su" ||
+            str === "residencepermit" ||
+            str === "taxes" ||
+            str === "cpr") {
+                return "publicsector/"+str
+            }
+        else {
+            return str
+        }
+    }
     
     const searchInAccommodation = async (search) => {
         const snapshot = await db.collection('search')
@@ -15,13 +27,13 @@ export function Search({setShowSearch}){
             .get();
         setSearchResults(
             snapshot.docs.reduce((acc, doc) => {
-                const data = doc.data();
+                const collection = doc.data().collection;
                 return acc.concat(
                     <div key={doc.id}>
                         <Link
                             to={{
-                                pathname: convertToPath(data.collection),
-                                state: { title: data.collection, picture: ""}
+                                pathname: convertToPath(addPublicSectorToPath(collection)),
+                                state: { title: collection, picture: "/images/"+collection+".jpg"}
                             }}
                         >
                             <p className="searchResultText">
