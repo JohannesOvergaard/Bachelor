@@ -20,15 +20,17 @@ export function CategoryPage(props) {
       articles.docs.map(article => {
         const data = article.data();
         return (
-          <DropTile
-            key={article.id}
-            state={{
-              headline: data.headline,
-              author: data.author,
-              subheading: data.subheading,
-              body: data.body
-            }}
-          />
+          <div key={article.id}>
+            <DropTile
+              state={{
+                headline: data.headline,
+                author: data.author,
+                subheading: data.subheading,
+                body: data.body
+              }}
+            />
+            <hr/>
+          </div>
         );
       })
     );

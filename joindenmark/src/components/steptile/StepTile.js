@@ -30,7 +30,7 @@ export function StepTile(props) {
             () => setIsDocumentsClicked(!isDocumentsClicked))
           }
         >
-          List of documents needed:
+          <p className="documents">Click here to see documents needed ></p>
         </span>
         {showFullArticle && <div>{props.state.body}</div>}
       </div>

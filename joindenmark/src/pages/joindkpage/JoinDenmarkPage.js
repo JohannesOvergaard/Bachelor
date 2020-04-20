@@ -42,7 +42,7 @@ export function JoinDenmarkPage(props) {
   }
 
   return (
-    <div>
+    <div className="joinDenmarkContainer">
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
       <div className=".stepTiles">{generateStepTiles()}</div>

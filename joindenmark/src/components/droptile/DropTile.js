@@ -19,7 +19,7 @@ export function DropTile(props) {
             () => setIsReadMoreClicked(!isReadMoreClicked))
           }
         >
-          Read more
+          <span className="readMore">read more</span>
         </span>
         {showFullArticle && <div>{props.state.body}</div>}
       </div>
@@ -55,7 +55,6 @@ export function DropTile(props) {
           {props.state.subheading} {readMore}
         </div>
       )}
-      <hr />
     </div>
   );
 }
