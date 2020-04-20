@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./SettingsPage.css"
 import { NavBar } from "../../components/navbar/NavBar";
 import { HomeButton } from "../../components/homebutton/HomeButton";
 import { Setting } from "../../components/setting/Setting";
@@ -10,7 +11,6 @@ import { firebaseLogout } from "../../firebase";
 
 export function SettingsPage() {
   const [settings, setSettings] = useState({});
-  const currentUser = useSelector(state => state.userState.user);
   const loggedIn = useSelector(state => state.userState.loggedIn);
   const userSettings = useSelector(state => {
     return state.userState.settings;
@@ -56,8 +56,7 @@ export function SettingsPage() {
       {generateSettings()}
       {loggedIn ? (
         <div>
-          <p>ID: {currentUser.name}</p>
-          <button onClick={() => logout()}>
+          <button className="logoutButton" onClick={() => logout()}>
             Logout
           </button>
         </div>
