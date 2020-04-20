@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 export function SubTilePage(props) {
   const [title] = useState(props.location.state.title);
   const [tileTitles, setTileTitles] = useState({});
-  const settings = useSelector(state => {
+  const settings = useSelector((state) => {
     return state.userState.settings;
   });
   const processTiles = async () => {
@@ -26,8 +26,8 @@ export function SubTilePage(props) {
 
   return (
     <div>
-      <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
+      <NavBar state={{ title: title }}></NavBar>
       <TilesContainer tiles={tileTitles} pathPrefix={title} />
     </div>
   );
