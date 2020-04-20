@@ -24,9 +24,8 @@ export function JoinDenmarkPage(props) {
       articles.docs.map((article) => {
         const data = article.data();
         return (
-          <div>
+          <div key={article.id}>
             <StepTile
-              key={article.id}
               state={{
                 headline: formatHeadline(article.id, data.headline),
                 subheading: data.subheading,
@@ -35,7 +34,7 @@ export function JoinDenmarkPage(props) {
                 id: article.id,
               }}
             />
-            <hr/>
+            <hr />
           </div>
         );
       })

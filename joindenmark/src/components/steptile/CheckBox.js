@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
 import { updateJoinDkChecks } from "../../services/ContentService";
 import { updateArray } from "../../Util/Helpers";
+import "./CheckBox.css";
 
 export function CheckBox(props) {
   const [stepId] = useState(props.state.id);
@@ -20,13 +21,15 @@ export function CheckBox(props) {
   }
   return (
     <div>
-      {" "}
-      <input
-        type="checkbox"
-        onChange={() => onCheckBoxChange(!checked)}
-        checked={checked}
-        className="checkBox"
-      />
+      <label className="container">
+        <input
+          type="checkbox"
+          onChange={() => onCheckBoxChange(!checked)}
+          checked={checked}
+          className="checkBox"
+        />
+        <span className="checkmark"></span>
+      </label>{" "}
     </div>
   );
 }

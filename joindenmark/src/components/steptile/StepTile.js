@@ -9,10 +9,10 @@ export function StepTile(props) {
   const [stepId] = useState(props.state.id);
   const [showSteps, setShowSteps] = useState(false);
   const [showFullArticle, setShowFullArticle] = useState(false);
-  const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
+  const [isDocumentsClicked, setIsDocumentsClicked] = useState(false);
   const loggedIn = useSelector((state) => state.userState.loggedIn);
 
-  let readMore;
+  let documents;
   const headline = props.state.headline;
 
   function generateList(documents) {
@@ -21,13 +21,13 @@ export function StepTile(props) {
       return <li key={doc}> {doc} </li>;
     });
   }
-  if (!isReadMoreClicked) {
-    readMore = (
+  if (!isDocumentsClicked) {
+    documents = (
       <div className="inlinediv">
         <span
           onClick={
             (() => setShowFullArticle(!showFullArticle),
-            () => setIsReadMoreClicked(!isReadMoreClicked))
+            () => setIsDocumentsClicked(!isDocumentsClicked))
           }
         >
           List of documents needed:
@@ -36,7 +36,7 @@ export function StepTile(props) {
       </div>
     );
   } else {
-    readMore = (
+    documents = (
       <div>
         {props.state.body} <ul>{generateList(props.state.documents)}</ul>
       </div>
@@ -67,37 +67,36 @@ export function StepTile(props) {
   }
 
   function onTileClick() {
-    if (isReadMoreClicked === true) {
-      setIsReadMoreClicked(!isReadMoreClicked);
+    if (isDocumentsClicked === true) {
+      setIsDocumentsClicked(!isDocumentsClicked);
     }
     setShowSteps(!showSteps);
   }
 
   return (
     <div className="stepTile">
-        {loggedIn && (
-          <div>
-            <CheckBox state={{ id: stepId }} />
-          </div>
-        )}
-
-        <h3 className="stepTileHeadline" onClick={() => onTileClick()}>
-          {headline}
-        </h3>
-        <div className="stepTileIcon" onClick={() => onTileClick()}>
-          {showSteps ? (
-            <FontAwesomeIcon icon={faChevronUp} />
-          ) : (
-            <FontAwesomeIcon icon={faChevronDown} />
-          )}
+      {loggedIn && (
+        <div>
+          <CheckBox state={{ id: stepId }} />
         </div>
-        {showSteps && (
-          <div className="stepTileBody">
-            <h4 key={headline}></h4>
-            <ol>{generateSteps()}</ol>
-            {readMore}
-          </div>
+      )}
+      <h3 className="stepTileHeadline" onClick={() => onTileClick()}>
+        {headline}
+      </h3>
+      <div className="stepTileIcon" onClick={() => onTileClick()}>
+        {showSteps ? (
+          <FontAwesomeIcon icon={faChevronUp} />
+        ) : (
+          <FontAwesomeIcon icon={faChevronDown} />
         )}
+      </div>
+      {showSteps && (
+        <div className="stepTileBody">
+          <h4 key={headline}></h4>
+          <ol>{generateSteps()}</ol>
+          {documents}
+        </div>
+      )}
     </div>
   );
 }
