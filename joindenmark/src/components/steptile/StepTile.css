@@ -1,0 +1,30 @@
+.stepTile {
+  padding-bottom: 2vw;
+  width: 100vw;
+  float: left;
+}
+
+.stepTileHeadline {
+  float: left;
+  margin-top: 5vw;
+  margin-left: 6vw;
+  width: 64vw;
+  font-size: large;
+  margin-bottom: 2vw;
+}
+
+.stepTileIcon {
+  float: right;
+  width: 8vw;
+  margin: 6vw;
+  margin-bottom: 0vw;
+  height: 8vw;
+}
+
+.stepTileBody {
+  float: left;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-bottom: 4vw;
+  width: 90vw;
+}

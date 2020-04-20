@@ -1,26 +1,26 @@
 .navbar {
   background: white;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   font-size: 18px;
 }
 
 .back {
   float: left;
-  width: 27.33%;
-  padding: 4%;
+  width: 12.33vw;
+  padding: 4vw;
   text-align: left;
 }
 
 .title {
   float: left;
-  width: 29.33%;
+  width: 59.33vw;
   text-align: center;
 }
 
 .find {
   float: left;
-  width: 27.33%;
-  padding: 4%;
+  width: 12.33vw;
+  padding: 4vw;
   text-align: right;
 }

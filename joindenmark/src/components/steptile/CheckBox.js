@@ -22,12 +22,11 @@ export function CheckBox(props) {
   return (
     <div>
       <label className="container">
-        {props.state.step}
         <input
           type="checkbox"
           onChange={() => onCheckBoxChange(!checked)}
           checked={checked}
-          className="form-check-input"
+          className="checkBox"
         />
         <span className="checkmark"></span>
       </label>{" "}
