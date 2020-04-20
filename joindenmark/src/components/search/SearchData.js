@@ -1,6 +1,6 @@
 import { db } from '../../firebase';
 
-const collections = ["accommodation", "culture", "jobmarket", "residencepermit", "su", "taxes"];
+const collections = ["accommodation", "culture", "jobmarket", "residencepermit", "su", "taxes", "cpr"];
 
 function getAllSubstrings(str) {
     let i, j, result = [];
