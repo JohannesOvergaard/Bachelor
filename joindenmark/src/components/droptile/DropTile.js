@@ -5,7 +5,6 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 export function DropTile(props) {
   const [showSubHeading, setSubHeading] = useState(false);
-  const [showFullArticle, setShowFullArticle] = useState(false);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
   let readMore;
   const headline = props.state.headline;
@@ -13,19 +12,20 @@ export function DropTile(props) {
   if (!isReadMoreClicked) {
     readMore = (
       <div className="inlinediv">
-        <span
-          onClick={
-            (() => setShowFullArticle(!showFullArticle),
-            () => setIsReadMoreClicked(!isReadMoreClicked))
-          }
-        >
+        <span onClick={() => setIsReadMoreClicked(!isReadMoreClicked)}>
           <span className="readMore">read more</span>
         </span>
-        {showFullArticle && <div>{props.state.body}</div>}
       </div>
     );
   } else {
-    readMore = <div>{props.state.body}</div>;
+    readMore = <div>{formatText(props.state.body)}</div>;
+  }
+
+  function formatText(documents) {
+    const arr = documents.split("#");
+    return arr.map((doc) => {
+      return <p key={doc}>{doc}</p>;
+    });
   }
 
   function onTileClick() {

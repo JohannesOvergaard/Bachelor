@@ -8,7 +8,6 @@ import { CheckBox } from "./CheckBox";
 export function StepTile(props) {
   const [stepId] = useState(props.state.id);
   const [showSteps, setShowSteps] = useState(false);
-  const [showFullArticle, setShowFullArticle] = useState(false);
   const [isDocumentsClicked, setIsDocumentsClicked] = useState(false);
   const loggedIn = useSelector((state) => state.userState.loggedIn);
 
@@ -24,15 +23,9 @@ export function StepTile(props) {
   if (!isDocumentsClicked) {
     documents = (
       <div className="inlinediv">
-        <span
-          onClick={
-            (() => setShowFullArticle(!showFullArticle),
-            () => setIsDocumentsClicked(!isDocumentsClicked))
-          }
-        >
+        <span onClick={() => setIsDocumentsClicked(!isDocumentsClicked)}>
           <p className="documents">Click here to see documents needed ></p>
         </span>
-        {showFullArticle && <div>{props.state.body}</div>}
       </div>
     );
   } else {
