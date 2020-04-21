@@ -26,7 +26,7 @@ Goes to puclic sector a read artivles, does not click on read more
 
 No headline on documents needed after clicking the text
 
-Has to be guided aroind in the app
+Has to be guided around in the app
 
 ### On login:
 - What do you see?
@@ -41,7 +41,7 @@ Has to be guided aroind in the app
 ### Overall
 - What is your overall impression?
 
-He thinks that we need something like this , not all content is coverred (We know)
+He thinks that we need something like this , not all content is covered (We know)
 
 He would use when he come to denmark and even know becuause he still not understand some aspects of taxes
 
@@ -53,7 +53,7 @@ Like the overview with the tiles
 
 - What did you not like? (follow up how can we improve)
 
-The design
+The design (Thought tiles would be smaller if there was more)
 
 On join denmark it would be nice to have and explanation of the page/ the steps
 
