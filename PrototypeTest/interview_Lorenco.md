@@ -4,6 +4,8 @@
 
 - Age, country of origin, occupation and time in Denmark?
 
+34, Brazil, phd at itu and post doc, 7 years
+
 ## Briefing 
 
 - Is it okay if we record this interview?
@@ -15,6 +17,17 @@
 - You are more than welcome to ask questions during the test. Is it clear what we want from you? Any questions?
 
 ## Follow up during test
+
+### Test
+
+Starts goin into join Denmark,  Does not click on se documents
+
+Goes to puclic sector a read artivles, does not click on read more
+
+No headline on documents needed after clicking the text
+
+Has to be guided aroind in the app
+
 ### On login:
 - What do you see?
 - What do you understand of this page?
@@ -27,25 +40,61 @@
 ## Questions
 ### Overall
 - What is your overall impression?
+
+He thinks that we need something like this , not all content is coverred (We know)
+
+He would use when he come to denmark and even know becuause he still not understand some aspects of taxes
+
 - What features did you like?
+
+Like Join Denmark , would like more steps
+
+Like the overview with the tiles
+
 - What did you not like? (follow up how can we improve)
+
+The design
+
+On join denmark it would be nice to have and explanation of the page/ the steps
+
 - When would you be most likely to use this app? (follow up can we improve this)
+
+As a newcommer in Denmark
+
+But if we add more steps, about everydaylife, he would still use it as a guide today
+
 - What did you think was missing?
+
+More information
 
 ### Personalization
 - What did you think of the login feature? 
+
+Did not saw the loginlogo because it was small 
+
 - What did you think about the personalization?
 	- Settings
+	
+	If we have much more categories it would make sense , but instead he would like favorite button
+	
 	- joinDk
+	
+	Understands that it is a checklist
+	
+	Like it espeacally in the begining, but he would not use the Join Denmark category.
 
 ### Search
 - What did you think of the search feature?
 
+When he clicked it he would like to see favorite asked questions
+
 ### Navigation
 - How did you find the navigation? (did it make sense, was it intuitive)
+
+Quite intuitive how to use the app.
+
+Navigation was simple
 
 ## Notes to self:
 - Do they read on the login site
 - Do they look confused about the settings
-
-

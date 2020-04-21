@@ -4,6 +4,8 @@
 
 - Age, country of origin, occupation and time in Denmark?
 
+  22, Brazilian, 7 years in Denmark, softwaredeveloper for 10 years
+
 ## Briefing 
 
 - Is it okay if we record this interview?
@@ -19,6 +21,14 @@
 - What do you see?
 - What do you understand of this page?
 
+After reading the why he can login to the application he still don't understand the purpose of loggin in.
+
+Login with google does not working 
+
+Email login: The password has to be longer and the user does not get that message
+
+Settingspage: Does not understand what happens.
+
 ### In case they did not login:
 - make them login
 - questions:
@@ -27,8 +37,23 @@
 ## Questions
 ### Overall
 - What is your overall impression?
+
+goes to accomodation and reads more, uses search
+
+The pictures made the app more friendly
+
 - What features did you like?
+
+Join denmark seems funny
+
 - What did you not like? (follow up how can we improve)
+
+Hard to read the titles on tiles, search confusing that he gets every topic in accommodation (gets the whole category)
+
+Join Denmark, ignoring that he needs to click see more to gets documents
+
+Drop down / step tiles only opens when clicking on the text?
+
 - When would you be most likely to use this app? (follow up can we improve this)
 - What did you think was missing?
 
@@ -41,8 +66,16 @@
 ### Search
 - What did you think of the search feature?
 
+Gave him the impression that it was broken 
+
+Unclear that the search function is for the whole app. He understand it as a filter function on the page he is at. 
+
+The search function should also search for tiles (and other words that are displayes on the screen)
+
 ### Navigation
 - How did you find the navigation? (did it make sense, was it intuitive)
+
+Is fine , ingnoring that search function zoom
 
 ## Notes to self:
 - Do they read on the login site
