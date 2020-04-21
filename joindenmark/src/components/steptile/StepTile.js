@@ -10,7 +10,7 @@ export function StepTile(props) {
   const [showSteps, setShowSteps] = useState(false);
   const [isDocumentsClicked, setIsDocumentsClicked] = useState(false);
   const loggedIn = useSelector((state) => state.userState.loggedIn);
-
+  const [docs, setDocs] = useState(props.state.documents.split(","));
   let documents;
   const headline = props.state.headline;
 
@@ -20,7 +20,7 @@ export function StepTile(props) {
       return <li key={doc}> {doc} </li>;
     });
   }
-  if (!isDocumentsClicked) {
+  if (!isDocumentsClicked && docs.length > 3) {
     documents = (
       <div className="inlinediv">
         <span onClick={() => setIsDocumentsClicked(!isDocumentsClicked)}>
@@ -31,6 +31,7 @@ export function StepTile(props) {
   } else {
     documents = (
       <div>
+        <p>Documents needed:</p>
         {props.state.body} <ul>{generateList(props.state.documents)}</ul>
       </div>
     );
