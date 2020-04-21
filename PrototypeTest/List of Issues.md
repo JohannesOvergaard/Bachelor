@@ -5,7 +5,7 @@ List of Issues:
 - On join Denmark page "see documents required" dosn't make sence when there only is one or two required documents.
 - On login with email, no error message is shown if you try to create an account with a to weak password √
 - Hard to read text on tiles because the shadowing doesn't work on the phone √
-- Search does not work if you already are on a contentPage
+- Search does not work if you already are on a contentPage√
 - The search function should also search for tiles (and other words that are displayes on the screen)
 - No one found the profilepage them self
 

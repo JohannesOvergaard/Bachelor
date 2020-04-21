@@ -1,10 +1,11 @@
 import React, {useState} from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 import "./Search.css";
 import {db} from "../../firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle, faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import { convertToPath } from "../../Util/Helpers";
+import { CategoryPage } from "../../pages/categorypage/CategoryPage";
 
 export function Search({setShowSearch}){
     const [searchResults, setSearchResults] = useState([]);
@@ -29,7 +30,7 @@ export function Search({setShowSearch}){
             snapshot.docs.reduce((acc, doc) => {
                 const collection = doc.data().collection;
                 return acc.concat(
-                    <div key={doc.id}>
+                    <div key={doc.id} onClick={() => setShowSearch(false)}>
                         <Link
                             to={{
                                 pathname: convertToPath(addPublicSectorToPath(collection)),

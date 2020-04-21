@@ -6,12 +6,11 @@ import { DropTile } from "../../components/droptile/DropTile";
 import { getContentSnapShot } from "../../services/ContentService";
 
 export function CategoryPage(props) {
-  const [title] = useState(props.location.state.title);
   const [articles, setArticles] = useState({});
 
   useEffect(() => {
-    getContentSnapShot(title.toLowerCase()).then(setArticles);
-  }, []);
+    getContentSnapShot(props.location.state.title.toLowerCase()).then(setArticles);
+  });
 
   function generateDropTiles() {
     return (
@@ -38,7 +37,7 @@ export function CategoryPage(props) {
 
   return (
     <div className="CategoryPageContainer">
-      <NavBar state={{ title: title }}></NavBar>
+      <NavBar state={{ title: props.location.state.title }}></NavBar>
       <HomeButton />
       <img className="pagePicture" src={props.location.state.picture} alt="" />
       {generateDropTiles()}
