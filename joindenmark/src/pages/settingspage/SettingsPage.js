@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./SettingsPage.css"
+import "./SettingsPage.css";
 import { NavBar } from "../../components/navbar/NavBar";
 import { HomeButton } from "../../components/homebutton/HomeButton";
 import { Setting } from "../../components/setting/Setting";
@@ -11,8 +11,8 @@ import { firebaseLogout } from "../../firebase";
 
 export function SettingsPage() {
   const [settings, setSettings] = useState({});
-  const loggedIn = useSelector(state => state.userState.loggedIn);
-  const userSettings = useSelector(state => {
+  const loggedIn = useSelector((state) => state.userState.loggedIn);
+  const userSettings = useSelector((state) => {
     return state.userState.settings;
   });
   const dispatch = useDispatch();
@@ -28,20 +28,20 @@ export function SettingsPage() {
 
   function logout() {
     firebaseLogout();
-    dispatch(allActions.userActions.logOut())
+    dispatch(allActions.userActions.logOut());
   }
 
   function generateSettings() {
     return (
       settings.docs &&
       settings.docs.length > 0 &&
-      settings.docs.map(setting => {
+      settings.docs.map((setting) => {
         return (
           <Setting
             key={setting.id}
             state={{
               checked: !userSettings.includes(setting.id),
-              settingId: setting.id
+              settingId: setting.id,
             }}
           />
         );
@@ -53,6 +53,15 @@ export function SettingsPage() {
     <div>
       <NavBar state={{ title: "Settings" }}></NavBar>
       <HomeButton />
+      <p>
+        On this page you can customize what categories are shown on the
+        homepage, you can disable the subjects you are not interested in.
+      </p>
+      <p>
+        For example: if you no longer wish to see the Join Denmark Step by step
+        guide you simply disable Joindk and it will not longer show on the
+        homepage.
+      </p>
       {generateSettings()}
       {loggedIn ? (
         <div>

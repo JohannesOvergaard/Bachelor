@@ -68,8 +68,7 @@ async function createEmailUser(email, password) {
     })
     .catch(function (error) {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      throw error.message;;
     });
 }
 
@@ -93,7 +92,11 @@ export async function emailLogin(email, password) {
           )
         ) {
           //Create new user
-          return createEmailUser(email, password);
+          try {
+            return createEmailUser(email, password);
+          } catch(err){
+            throw err;
+          }
         }
       } else {
         throw errorMessage;

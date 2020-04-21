@@ -1,6 +1,7 @@
 .loginPageContainer{
     margin: 10vw;
     text-align: center;
+    padding-bottom: 17vw;
 }
 
 .loginButton{
@@ -15,4 +16,5 @@
     width: 50vw;
     height: 5vw;
     text-align: center;
+    font-size: 16px;
 }

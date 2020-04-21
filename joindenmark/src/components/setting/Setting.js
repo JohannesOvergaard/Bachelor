@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Setting.css"
+import "./Setting.css";
 import Switch from "react-switch";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";

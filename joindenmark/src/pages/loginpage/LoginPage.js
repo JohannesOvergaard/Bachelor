@@ -62,6 +62,9 @@ export function LoginPage() {
           By logging in you will be able to track your proccess of joining
           Denmark and disable categories you do not want to see
         </p>
+        <button className="loginButton" onClick={() => onLogin(["GOOGLE"])}>
+          Login with Google
+        </button>
         {loggingInWithEmail ? (
           <div>
             <p>Email</p>
@@ -89,19 +92,14 @@ export function LoginPage() {
             </button>
           </div>
         ) : (
-          <div>
-            <button className="loginButton" onClick={() => onLogin(["GOOGLE"])}>
-              Login with Google
-            </button>
-            <button
-              className="loginButton"
-              onClick={() => {
-                setLoggingInWithEmail(!loggingInWithEmail);
-              }}
-            >
-              Login with Email
-            </button>
-          </div>
+          <button
+            className="loginButton"
+            onClick={() => {
+              setLoggingInWithEmail(!loggingInWithEmail);
+            }}
+          >
+            Login with Email
+          </button>
         )}
         {isLoggedIn ? (
           <Route>
