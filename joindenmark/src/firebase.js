@@ -68,10 +68,7 @@ async function createEmailUser(email, password) {
     })
     .catch(function (error) {
       // Handle Errors here.
-      var errorMessage = error.message;
-      var errorCode = error.code;
-      console.log("Code: " , errorCode , "message:" , errorMessage);
-      throw errorMessage;
+      throw error.message;;
     });
 }
 
