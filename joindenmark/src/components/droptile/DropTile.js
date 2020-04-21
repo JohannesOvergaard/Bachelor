@@ -49,7 +49,7 @@ export function DropTile(props) {
       </div>
       {showSubHeading && (
         <div className="dropTileBody">
-          <h4 key={headline}>
+          <h4 >
             <i>by {props.state.author}</i>
           </h4>
           {props.state.subheading} {readMore}
