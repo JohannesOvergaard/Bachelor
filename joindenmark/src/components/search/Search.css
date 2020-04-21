@@ -12,14 +12,13 @@
     top: 5vw;
 }
 
-.searchResult{
+.searchResultContainer{
     position: absolute;
     z-index: 1;
     background-color: #EAE8E5;
 }
 
 .searchResultText{
-    margin-top: 5vw;
     padding-left: 5vw;
     width: 77vw;
     color: black;
@@ -29,6 +28,8 @@
 .searchLinkIcon{
     float: left;
     width: 8vw;
-    margin: 5vw;
+    padding: 5vw;
+    padding-top: 7;
+    padding-bottom: 9vw;
     color: black;
 }

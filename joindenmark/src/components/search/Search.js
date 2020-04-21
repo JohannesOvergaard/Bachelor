@@ -61,7 +61,7 @@ export function Search({setShowSearch}){
             <div className="searchCloseIcon" onClick={() => setShowSearch(false)}>
                 <FontAwesomeIcon icon={faTimesCircle}/>
             </div>
-            <div className="searchResult">
+            <div className="searchResultContainer">
                 {searchResults}
             </div>
         </div>
