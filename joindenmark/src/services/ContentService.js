@@ -3,21 +3,6 @@ import { memoize } from "../Util/memoized";
 import { trim } from "../Util/Helpers";
 import { isEmpty } from "lodash";
 
-export const getContentFilterBySettings = async (title, disabledSettings) => {
-  const contentByTitle = await getContent(title);
-  if (!isEmpty(disabledSettings)) {
-    const getSettings = await getContent("settings");
-    const settings = getSettings.docs
-      .filter((doc) => disabledSettings.includes(doc.id))
-      .reduce((acc, itr) => acc.concat(itr.data().related), []);
-    return contentByTitle.docs.filter(
-      (p) => !settings.includes(p.data().title.toLowerCase())
-    );
-  } else {
-    return contentByTitle.docs;
-  }
-};
-
 export const getContentSnapShot = memoize(async (title) => {
   const dataFromDB = db.collection(trim(title)).get();
   return dataFromDB;
@@ -28,13 +13,13 @@ export const getContent = async (title) => {
   return dataFromDB;
 };
 
-export const getQuery = async (collection, docId) => {
+export const getSettingsQuery = async (collection, docId) => {
   const docRef = await db.collection(collection).doc(docId).get();
 
   return docRef.data().settingsDisabled;
 };
 
-export const getQuerySteps = async (collection, docId) => {
+export const getStepsQuery = async (collection, docId) => {
   const docRef = await db.collection(collection).doc(docId).get();
 
   return docRef.data().joindkfields;
@@ -72,4 +57,19 @@ export const updateJoinDkChecks = async (docid, update) => {
       console.error("Error writing document: ", error);
       return false;
     });
+};
+
+export const getContentFilterBySettings = async (title, disabledSettings) => {
+  const contentByTitle = await getContent(title);
+  if (!isEmpty(disabledSettings)) {
+    const getSettings = await getContent("settings");
+    const settings = getSettings.docs
+      .filter((setting) => disabledSettings.includes(setting.id)) //if disabled settings contains setting (doc) then (next line)
+      .reduce((acc, itr) => acc.concat(itr.data().related), []); // reduce accumulates related titles
+    return contentByTitle.docs.filter(
+      (tile) => !settings.includes(tile.data().title.toLowerCase()) //filter the titles, if settings does not include the tile title return it.
+    );
+  } else {
+    return contentByTitle.docs;
+  }
 };

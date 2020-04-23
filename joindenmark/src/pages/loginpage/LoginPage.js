@@ -3,7 +3,7 @@ import { Redirect, Route } from "react-router-dom";
 import "./LoginPage.css";
 import { googleLogin, emailLogin } from "../../firebase";
 import allActions from "../../actions";
-import { getQuery, getQuerySteps } from "../../services/ContentService";
+import { getSettingsQuery, getStepsQuery } from "../../services/ContentService";
 import { isEmpty } from "lodash";
 import { useSelector, useDispatch } from "react-redux";
 import { NavBar } from "../../components/navbar/NavBar";
@@ -47,11 +47,11 @@ export function LoginPage() {
 
   async function setUserStore(id) {
     dispatch(allActions.userActions.setUser({ name: id }));
-    const disabledUserSettings = await getQuery("users", id);
+    const disabledUserSettings = await getSettingsQuery("users", id);
     const settings = disabledUserSettings.split(",");
     dispatch(allActions.userActions.setSettings({ settings }));
 
-    const checkBoxes = await getQuerySteps("users", id);
+    const checkBoxes = await getStepsQuery("users", id);
     const checkmarks = checkBoxes.split(",");
     dispatch(allActions.userActions.setCheckmarks({ checkmarks: checkmarks }));
   }
