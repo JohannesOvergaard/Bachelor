@@ -7,39 +7,30 @@ import { CheckBox } from "../checkbox/CheckBox";
 
 export function StepTile(props) {
   const [stepId] = useState(props.state.id);
+  const [docs] = useState(props.state.documents.split(","));
   const [showSteps, setShowSteps] = useState(false);
   const [isDocumentsClicked, setIsDocumentsClicked] = useState(false);
   const loggedIn = useSelector((state) => state.userState.loggedIn);
-  const [docs] = useState(props.state.documents.split(","));
-  let documents;
-  const headline = props.state.headline;
 
-  function generateList(documents) {
-    const arr = documents.split(",");
+  function onTileClick() {
+    if (isDocumentsClicked) {
+      setIsDocumentsClicked(!isDocumentsClicked);
+    }
+    setShowSteps(!showSteps);
+  }
+
+  function generateSteps() {
+    const arr = props.state.steps.split(",");
     return arr.map((doc) => {
-      return <li key={doc}> {doc} </li>;
+      return formatStep(doc);
     });
   }
-  if (!isDocumentsClicked && docs.length > 3) {
-    documents = (
-      <div className="inlinediv">
-        <span onClick={() => setIsDocumentsClicked(!isDocumentsClicked)}>
-          <p className="documents">Click here to see documents needed ></p>
-        </span>
-      </div>
-    );
-  } else {
-    documents = (
-      <div>
-        <p>Documents needed:</p>
-        {props.state.body} <ul>{generateList(props.state.documents)}</ul>
-      </div>
-    );
-  }
 
-  function formatStepWithLink(str) {
+  function formatStep(str) {
+    //Find https links in string using regex
     const matches = str.match(/\bhttps?:\/\/\S+/gi);
     if (matches != null) {
+      //Filter link from text
       const text = str.replace(/(?:https?|ftp):\/\/[\n\S]+/g, "");
       return (
         <li key={str}>
@@ -47,21 +38,16 @@ export function StepTile(props) {
         </li>
       );
     } else {
+      //If there is no link return string as is
       return <li key={str}> {str} </li>;
     }
   }
-  function generateSteps() {
-    const arr = props.state.steps.split(",");
-    return arr.map((doc) => {
-      return formatStepWithLink(doc);
-    });
-  }
 
-  function onTileClick() {
-    if (isDocumentsClicked === true) {
-      setIsDocumentsClicked(!isDocumentsClicked);
-    }
-    setShowSteps(!showSteps);
+  function generateListOfDocuments() {
+    const arr = props.state.documents.split(",");
+    return arr.map((doc) => {
+      return <li key={doc}> {doc} </li>;
+    });
   }
 
   return (
@@ -72,7 +58,7 @@ export function StepTile(props) {
         </div>
       )}
       <h3 className="stepTileHeadline" onClick={() => onTileClick()}>
-        {headline}
+        {props.state.headline}
       </h3>
       <div className="stepTileIcon" onClick={() => onTileClick()}>
         {showSteps ? (
@@ -84,7 +70,20 @@ export function StepTile(props) {
       {showSteps && (
         <div className="stepTileBody">
           <ol>{generateSteps()}</ol>
-          {documents}
+          {!isDocumentsClicked && docs.length > 3 ? (
+            <div className="inlinediv">
+              <span onClick={() => setIsDocumentsClicked(!isDocumentsClicked)}>
+                <p className="documents">
+                  Click here to see documents needed >
+                </p>
+              </span>
+            </div>
+          ) : (
+            <div>
+              <p>Documents needed:</p>
+              {props.state.body} <ul>{generateListOfDocuments()}</ul>
+            </div>
+          )}
         </div>
       )}
     </div>
