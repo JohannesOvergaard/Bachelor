@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Search.css";
-import { db } from "../../firebase";
+import { db } from "../../services/firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { convertToPath } from "../../Util/Helpers";

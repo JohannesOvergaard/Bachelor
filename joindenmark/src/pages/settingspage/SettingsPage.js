@@ -7,7 +7,7 @@ import { getContent } from "../../services/ContentService";
 import allActions from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
-import { firebaseLogout } from "../../firebase";
+import { firebaseLogout } from "../../services/firebase";
 
 export function SettingsPage() {
   const [settings, setSettings] = useState({});

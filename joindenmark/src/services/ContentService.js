@@ -1,4 +1,4 @@
-import { db } from "../firebase";
+import { db } from "../services/firebase";
 import { memoize } from "../Util/memoized";
 import { trim } from "../Util/Helpers";
 import { isEmpty } from "lodash";

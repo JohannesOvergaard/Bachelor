@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect, Route } from "react-router-dom";
 import "./LoginPage.css";
-import { googleLogin, emailLogin } from "../../firebase";
+import { googleLogin, emailLogin } from "../../services/firebase";
 import allActions from "../../actions";
 import { getSettingsQuery, getStepsQuery } from "../../services/ContentService";
 import { isEmpty } from "lodash";
