@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./HomePage.css";
 import { getContentFilterBySettings } from "../../services/ContentService";
 import { TilesContainer } from "../../components/tilesContainer/TilesContainer";
-import { NavbarContainer } from "../../components/navbarcontainer/NavBarContainer";
+import { HomePageNavbar } from "../../components/homepagenavbar/HomePageNavBar";
 import { useSelector } from "react-redux";
 
 export function HomePage() {
   const [tiles, setTiles] = useState({});
-  const settings = useSelector(state => {
-    return state.userState.settings;
-  });
+  const settings = useSelector((state) => state.userState.settings);
 
   const processTiles = async () => {
     const tiles = await getContentFilterBySettings("tile", settings);
@@ -18,13 +15,13 @@ export function HomePage() {
 
   useEffect(() => {
     processTiles();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [settings]);
 
   return (
     <div>
-      <NavbarContainer />
-      <br />
-      <TilesContainer tiles={tiles} pathPrefix=""></TilesContainer>
+      <HomePageNavbar />
+      <TilesContainer state={{ tiles: tiles, pathPrefix: "" }}></TilesContainer>
     </div>
   );
 }

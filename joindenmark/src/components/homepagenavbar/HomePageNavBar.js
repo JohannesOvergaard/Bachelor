@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search } from "../search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
+import "./HomePageNavBar.css";
 
-export function NavbarContainer() {
+export function HomePageNavbar() {
   const [showSearch, setShowSearch] = useState();
   const [isLoggedIn] = useState(
     useSelector((state) => state.userState.loggedIn)
@@ -13,15 +14,14 @@ export function NavbarContainer() {
 
   return (
     <div>
-      {!showSearch && (
+      {!showSearch ? (
         <div>
           <div className="settings">
-            {isLoggedIn && (
+            {isLoggedIn ? (
               <Link to="/settings">
                 <FontAwesomeIcon icon={faCog} />
               </Link>
-            )}
-            {!isLoggedIn && (
+            ) : (
               <Link to="/login">
                 <FontAwesomeIcon icon={faUser} />
               </Link>
@@ -31,8 +31,7 @@ export function NavbarContainer() {
             {!showSearch && <FontAwesomeIcon icon={faSearch} />}
           </div>
         </div>
-      )}
-      {showSearch && (
+      ) : (
         <div>
           <Search setShowSearch={setShowSearch} />
         </div>

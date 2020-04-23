@@ -1,13 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Tile } from "../tile/Tile";
 import { trim, convertToPath } from "../../Util/Helpers";
 import { JoinDkTile } from "../joindktile/JoinDkTile";
 
-export const TilesContainer = ({ tiles, pathPrefix }) => {
-  var retTiles = [];
+export const TilesContainer = (props) => {
+  let retTiles = [];
+  const tiles = props.state.tiles;
   if (tiles.length > 0) {
-    tiles.map(tile => {
+    tiles.map((tile) => {
       const data = tile.data();
       if (data.title === "Join Denmark") {
         const tempRetTiles = retTiles;
@@ -16,23 +17,25 @@ export const TilesContainer = ({ tiles, pathPrefix }) => {
             key={trim(data.title)}
             to={{
               pathname: convertToPath(data.title),
-              state: { title: data.title }
+              state: { title: data.title },
             }}
           >
             <JoinDkTile state={{ title: data.title }} />
-          </Link>]
-          retTiles.push([tempRetTiles]);
+          </Link>,
+        ];
+        retTiles.push([tempRetTiles]);
       } else {
         retTiles.push(
           <Link
             key={tile.id}
             to={{
-              pathname: convertToPath(data.title, pathPrefix),
-              state: { title: data.title, picture: data.picture }
+              pathname: convertToPath(data.title, props.state.pathPrefix),
+              state: { title: data.title, picture: data.picture },
             }}
           >
             <Tile state={{ title: data.title, picture: data.picture }} />
-          </Link>);
+          </Link>
+        );
       }
     });
   }

@@ -6,20 +6,7 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 export function DropTile(props) {
   const [showSubHeading, setSubHeading] = useState(false);
   const [isReadMoreClicked, setIsReadMoreClicked] = useState(false);
-  let readMore;
   const headline = props.state.headline;
-
-  if (!isReadMoreClicked) {
-    readMore = (
-      <div className="inlinediv">
-        <span onClick={() => setIsReadMoreClicked(!isReadMoreClicked)}>
-          <span className="readMore">read more</span>
-        </span>
-      </div>
-    );
-  } else {
-    readMore = <div>{formatText(props.state.body)}</div>;
-  }
 
   function formatText(documents) {
     const arr = documents.split("#");
@@ -29,7 +16,7 @@ export function DropTile(props) {
   }
 
   function onTileClick() {
-    if (isReadMoreClicked === true) {
+    if (isReadMoreClicked) {
       setIsReadMoreClicked(!isReadMoreClicked);
     }
     setSubHeading(!showSubHeading);
@@ -49,10 +36,19 @@ export function DropTile(props) {
       </div>
       {showSubHeading && (
         <div className="dropTileBody">
-          <h4 >
+          <h4>
             <i>by {props.state.author}</i>
           </h4>
-          {props.state.subheading} {readMore}
+          {props.state.subheading}
+          {!isReadMoreClicked ? (
+            <div className="inlinediv">
+              <span onClick={() => setIsReadMoreClicked(!isReadMoreClicked)}>
+                <span className="readMore">read more</span>
+              </span>
+            </div>
+          ) : (
+            <div>{formatText(props.state.body)}</div>
+          )}
         </div>
       )}
     </div>

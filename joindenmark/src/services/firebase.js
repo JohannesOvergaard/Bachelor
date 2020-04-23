@@ -21,7 +21,7 @@ function addNewUserToDB(userid) {
       joindkfields: "",
     })
     .then(function () {
-      console.log("Document successfully written with value: ");
+      console.log("New user successfully created in db.");
     })
     .catch(function (error) {
       console.error("Error writing document: ", error);
@@ -47,14 +47,6 @@ export async function googleLogin() {
       return onLogin(result);
     })
     .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
       return false;
     });
 }
@@ -67,8 +59,7 @@ async function createEmailUser(email, password) {
       return onLogin(result);
     })
     .catch(function (error) {
-      // Handle Errors here.
-      throw error.message;;
+      throw error.message;
     });
 }
 
@@ -82,7 +73,6 @@ export async function emailLogin(email, password) {
       }
     })
     .catch(function (error) {
-      // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       if (errorCode === "auth/user-not-found") {
@@ -94,7 +84,7 @@ export async function emailLogin(email, password) {
           //Create new user
           try {
             return createEmailUser(email, password);
-          } catch(err){
+          } catch (err) {
             throw err;
           }
         }
@@ -109,9 +99,9 @@ export async function firebaseLogout() {
     .auth()
     .signOut()
     .then(function () {
-      // Sign-out successful.
+      console.log("User successfully signed out.");
     })
     .catch(function (error) {
-      // An error happened.
+      console.error("Error logging out user, error was:", error);
     });
 }

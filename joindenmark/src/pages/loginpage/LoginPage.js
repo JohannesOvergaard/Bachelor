@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Redirect, Route } from "react-router-dom";
 import "./LoginPage.css";
-import { googleLogin, emailLogin } from "../../firebase";
+import { googleLogin, emailLogin } from "../../services/firebase";
 import allActions from "../../actions";
-import { getQuery, getQuerySteps } from "../../services/ContentService";
+import { getSettingsQuery, getStepsQuery } from "../../services/ContentService";
 import { isEmpty } from "lodash";
 import { useSelector, useDispatch } from "react-redux";
 import { NavBar } from "../../components/navbar/NavBar";
@@ -32,35 +32,41 @@ export function LoginPage() {
           case "EMAIL":
             id = await emailLogin(loginService[1], loginService[2]);
             break;
+          default:
+            break;
         }
       }
       if (id) {
-        dispatch(allActions.userActions.setUser({ name: id }));
+        setUserStore(id);
         setIsLoggedIn(id);
-        const disabledUserSettings = await getQuery("users", id);
-        const settings = disabledUserSettings.split(",");
-        dispatch(allActions.userActions.setSettings({ settings }));
-
-        const checkBoxes = await getQuerySteps("users", id);
-        const checkmarks = checkBoxes.split(",");
-        dispatch(
-          allActions.userActions.setCheckmarks({ checkmarks: checkmarks })
-        );
       }
     } catch (err) {
       return alert(err);
     }
   };
 
+  async function setUserStore(id) {
+    dispatch(allActions.userActions.setUser({ name: id }));
+    const disabledUserSettings = await getSettingsQuery("users", id);
+    const settings = disabledUserSettings.split(",");
+    dispatch(allActions.userActions.setSettings({ settings }));
+
+    const checkBoxes = await getStepsQuery("users", id);
+    const checkmarks = checkBoxes.split(",");
+    dispatch(allActions.userActions.setCheckmarks({ checkmarks: checkmarks }));
+  }
+
   return (
     <div>
       <NavBar state={{ title: "Login" }} />
       <HomeButton />
       <div className="loginPageContainer">
-        <p>Here you can login to the Join Denmark application</p>
+        <p>Here you can login to the Join Denmark app</p>
         <p>
-          By logging in you will be able to track your proccess of joining
-          Denmark and disable categories you do not want to see
+          The content is always available but by logging in you can personalize
+          the app according to your own preferences. You can track the progress
+          of Joining Denmark and filter what categories are shown on the
+          homepage.
         </p>
         <button className="loginButton" onClick={() => onLogin(["GOOGLE"])}>
           Login with Google
@@ -83,8 +89,7 @@ export function LoginPage() {
               className="loginButton"
               onClick={() =>
                 email && password
-                  ? //console.log("email: " + email +" , password: " + password)
-                    onLogin(["EMAIL", email, password])
+                  ? onLogin(["EMAIL", email, password])
                   : alert("Please write an email and a password")
               }
             >
@@ -101,12 +106,10 @@ export function LoginPage() {
             Login with Email
           </button>
         )}
-        {isLoggedIn ? (
+        {isLoggedIn && (
           <Route>
             <Redirect to="/settings" />
           </Route>
-        ) : (
-          <div></div>
         )}
       </div>
     </div>

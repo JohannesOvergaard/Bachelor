@@ -9,14 +9,16 @@ export function CategoryPage(props) {
   const [articles, setArticles] = useState({});
 
   useEffect(() => {
-    getContentSnapShot(props.location.state.title.toLowerCase()).then(setArticles);
-  });
+    getContentSnapShot(props.location.state.title.toLowerCase()).then(
+      setArticles
+    );
+  }, [props.location.state.title]);
 
   function generateDropTiles() {
     return (
       articles.docs &&
       articles.docs.length > 0 &&
-      articles.docs.map(article => {
+      articles.docs.map((article) => {
         const data = article.data();
         return (
           <div key={article.id}>
@@ -25,10 +27,10 @@ export function CategoryPage(props) {
                 headline: data.headline,
                 author: data.author,
                 subheading: data.subheading,
-                body: data.body
+                body: data.body,
               }}
             />
-            <hr/>
+            <hr />
           </div>
         );
       })

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
 import { updateJoinDkChecks } from "../../services/ContentService";
@@ -12,24 +12,21 @@ export function CheckBox(props) {
   const currentUser = useSelector((state) => state.userState.user);
   const dispatch = useDispatch();
 
-  function onCheckBoxChange(checked) {
-    console.log(props.state.id);
-    const checkmarksArr = updateArray(!checked, checkMarks, stepId);
+  function onCheckBoxChange() {
+    const checkmarksArr = updateArray(checked, checkMarks, stepId);
     updateJoinDkChecks(currentUser.name, checkmarksArr);
     dispatch(allActions.userActions.setCheckmarks({ checkmarks: checkMarks }));
-    setChecked(checked);
+    setChecked(!checked);
   }
   return (
-    <div>
-      <label className="container">
-        <input
-          type="checkbox"
-          onChange={() => onCheckBoxChange(!checked)}
-          checked={checked}
-          className="checkBox"
-        />
-        <span className="checkmark"></span>
-      </label>{" "}
-    </div>
+    <label className="container">
+      <input
+        type="checkbox"
+        onChange={() => onCheckBoxChange()}
+        checked={checked}
+        className="checkBox"
+      />
+      <span className="checkmark"></span>
+    </label>
   );
 }

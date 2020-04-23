@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./SubTilePage.css";
 import { NavBar } from "../../components/navbar/NavBar";
 import { HomeButton } from "../../components/homebutton/HomeButton";
 import { getContentFilterBySettings } from "../../services/ContentService";
@@ -9,9 +8,13 @@ import { useSelector } from "react-redux";
 export function SubTilePage(props) {
   const [title] = useState(props.location.state.title);
   const [tileTitles, setTileTitles] = useState({});
-  const settings = useSelector((state) => {
-    return state.userState.settings;
-  });
+  const settings = useSelector((state) => state.userState.settings);
+
+  useEffect(() => {
+    processTiles();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const processTiles = async () => {
     const tiles = await getContentFilterBySettings(
       title.toLowerCase(),
@@ -20,15 +23,11 @@ export function SubTilePage(props) {
     setTileTitles(tiles);
   };
 
-  useEffect(() => {
-    processTiles();
-  }, []);
-
   return (
     <div>
       <HomeButton />
       <NavBar state={{ title: title }}></NavBar>
-      <TilesContainer tiles={tileTitles} pathPrefix={title} />
+      <TilesContainer state={{ tiles: tileTitles, pathPrefix: title }} />
     </div>
   );
 }

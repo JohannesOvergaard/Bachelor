@@ -7,14 +7,12 @@ import { getContent } from "../../services/ContentService";
 import allActions from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
-import { firebaseLogout } from "../../firebase";
+import { firebaseLogout } from "../../services/firebase";
 
 export function SettingsPage() {
   const [settings, setSettings] = useState({});
   const loggedIn = useSelector((state) => state.userState.loggedIn);
-  const userSettings = useSelector((state) => {
-    return state.userState.settings;
-  });
+  const userSettings = useSelector((state) => state.userState.settings);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -53,11 +51,11 @@ export function SettingsPage() {
     <div>
       <NavBar state={{ title: "Settings" }}></NavBar>
       <HomeButton />
-      <p>
+      <p className="informaionText">
         On this page you can customize what categories are shown on the
         homepage, you can disable the subjects you are not interested in.
       </p>
-      <p>
+      <p className="informaionText">
         For example: if you no longer wish to see the Join Denmark Step by step
         guide you simply disable Joindk and it will not longer show on the
         homepage.

@@ -13,16 +13,10 @@ export function Setting(props) {
   const settings = useSelector((state) => state.userState.settings);
   const dispatch = useDispatch();
 
-  function updateSettings(enabled) {
-    const settingsArr = updateArray(enabled, settings, settingId);
-    updateUserSettings("users", currentUser.name, settingsArr);
-
-    dispatch(allActions.userActions.setSettings({ settings }));
-  }
-
   function changeSetting() {
-    console.log(currentUser);
-    updateSettings(!checked);
+    const settingsArr = updateArray(!checked, settings, settingId);
+    updateUserSettings(currentUser.name, settingsArr);
+    dispatch(allActions.userActions.setSettings({ settings }));
     setChecked(!checked);
   }
 
