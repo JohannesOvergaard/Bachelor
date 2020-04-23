@@ -1,27 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import "./Setting.css";
 import Switch from "react-switch";
-import { db } from "../../firebase";
+import { useSelector, useDispatch } from "react-redux";
+import allActions from "../../actions";
+import { updateUserSettings } from "../../services/ContentService";
+import { updateArray } from "../../Util/Helpers";
 
 export function Setting(props) {
   const [checked, setChecked] = useState(props.state.checked);
   const [settingId] = useState(props.state.settingId);
-
-  function writeSettingToDb(enabled) {
-    db.collection("settings")
-      .doc(settingId)
-      .set({
-        enabled: enabled
-      })
-      .then(function() {
-        console.log("Document successfully written with value: ", enabled);
-      })
-      .catch(function(error) {
-        console.error("Error writing document: ", error);
-      });
-  }
+  const currentUser = useSelector((state) => state.userState.user);
+  const settings = useSelector((state) => state.userState.settings);
+  const dispatch = useDispatch();
 
   function changeSetting() {
-    writeSettingToDb(!checked);
+    const settingsArr = updateArray(!checked, settings, settingId);
+    updateUserSettings(currentUser.name, settingsArr);
+    dispatch(allActions.userActions.setSettings({ settings }));
     setChecked(!checked);
   }
 

@@ -1,0 +1,19 @@
+.loginPageContainer {
+  margin: 5vw;
+  text-align: center;
+  padding-bottom: 17vw;
+}
+
+.loginButton {
+  margin: 1vw;
+  margin-top: 5vw;
+  font-weight: 700;
+}
+
+.loginInput {
+  border: #7b297d solid 0.2vw;
+  width: 50vw;
+  height: 5vw;
+  text-align: center;
+  font-size: 16px;
+}

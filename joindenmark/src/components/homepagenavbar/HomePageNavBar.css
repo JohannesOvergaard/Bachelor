@@ -1,0 +1,17 @@
+.settings {
+  float: left;
+  width: 42vw;
+  padding: 4vw;
+  text-align: left;
+  font-size: 18px;
+  color: #7b297d;
+}
+
+.search {
+  float: left;
+  width: 42vw;
+  padding: 4vw;
+  text-align: right;
+  font-size: 18px;
+  color: #7b297d;
+}

@@ -1,11 +1,12 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
-import { HomePage } from "./homepage/HomePage";
-import { Page } from "./page/Page";
-import { SubTilePage } from "./subtilepage/SubTilePage";
-import { JoinDenmarkPage } from "./joindkpage/JoinDenmarkPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { SettingsPage } from "./settingspage/SettingsPage";
+import { HomePage } from "./pages/homepage/HomePage";
+import { CategoryPage } from "./pages/categorypage/CategoryPage";
+import { SubTilePage } from "./pages/subtilepage/SubTilePage";
+import { JoinDenmarkPage } from "./pages/joindkpage/JoinDenmarkPage";
+import { SettingsPage } from "./pages/settingspage/SettingsPage";
+import { LoginPage } from "./pages/loginpage/LoginPage";
 
 function App() {
   return (
@@ -15,17 +16,18 @@ function App() {
 
         {/* Routes from Home page */}
         <Route path="/joindenmark" component={JoinDenmarkPage} />
-        <Route path="/accommodation" component={Page} />
-        <Route path="/culture" component={Page} />
-        <Route path="/jobmarket" component={Page} />
+        <Route path="/accommodation" component={CategoryPage} />
+        <Route path="/culture" component={CategoryPage} />
+        <Route path="/jobmarket" component={CategoryPage} />
         <Route path="/settings" component={SettingsPage} />
+        <Route path="/login" component={LoginPage} />
         <Route exact path="/publicsector" component={SubTilePage} />
 
         {/* Routes from Public sector */}
-        <Route path="/publicsector/taxes" component={Page} />
-        <Route path="/publicsector/su" component={Page} />
-        <Route path="/publicsector/cpr" component={Page} />
-        <Route path="/publicsector/residencepermit" component={Page} />
+        <Route path="/publicsector/taxes" component={CategoryPage} />
+        <Route path="/publicsector/su" component={CategoryPage} />
+        <Route path="/publicsector/cpr" component={CategoryPage} />
+        <Route path="/publicsector/residencepermit" component={CategoryPage} />
       </Switch>
     </div>
   );
