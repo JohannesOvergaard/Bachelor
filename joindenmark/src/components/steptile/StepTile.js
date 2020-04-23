@@ -10,7 +10,7 @@ export function StepTile(props) {
   const [showSteps, setShowSteps] = useState(false);
   const [isDocumentsClicked, setIsDocumentsClicked] = useState(false);
   const loggedIn = useSelector((state) => state.userState.loggedIn);
-  const [docs, setDocs] = useState(props.state.documents.split(","));
+  const [docs] = useState(props.state.documents.split(","));
   let documents;
   const headline = props.state.headline;
 
@@ -43,10 +43,7 @@ export function StepTile(props) {
       const text = str.replace(/(?:https?|ftp):\/\/[\n\S]+/g, "");
       return (
         <li key={str}>
-          {text}{" "}
-          <a href={matches[0]} target="_blank">
-            {matches[0]}
-          </a>
+          {text} <a href={matches[0]}>{matches[0]}</a>
         </li>
       );
     } else {
@@ -86,7 +83,6 @@ export function StepTile(props) {
       </div>
       {showSteps && (
         <div className="stepTileBody">
-          <h4 key={headline}></h4>
           <ol>{generateSteps()}</ol>
           {documents}
         </div>

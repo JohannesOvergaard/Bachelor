@@ -32,6 +32,8 @@ export function LoginPage() {
           case "EMAIL":
             id = await emailLogin(loginService[1], loginService[2]);
             break;
+          default:
+            break;
         }
       }
       if (id) {

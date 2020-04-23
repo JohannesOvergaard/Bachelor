@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./JoinDenmarkPage.css";
 import { NavBar } from "../../components/navbar/NavBar";
 import { HomeButton } from "../../components/homebutton/HomeButton";
@@ -14,6 +14,7 @@ export function JoinDenmarkPage(props) {
 
   useEffect(() => {
     getContent(title.toLowerCase()).then(setArticles);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function formatHeadline(step, headline) {

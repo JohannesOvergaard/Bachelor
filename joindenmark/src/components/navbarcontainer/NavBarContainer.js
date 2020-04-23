@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search } from "../search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";

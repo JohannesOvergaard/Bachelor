@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../actions";
 import { updateJoinDkChecks } from "../../services/ContentService";

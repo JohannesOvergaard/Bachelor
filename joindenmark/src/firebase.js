@@ -47,14 +47,6 @@ export async function googleLogin() {
       return onLogin(result);
     })
     .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
       return false;
     });
 }
@@ -68,7 +60,7 @@ async function createEmailUser(email, password) {
     })
     .catch(function (error) {
       // Handle Errors here.
-      throw error.message;;
+      throw error.message;
     });
 }
 
@@ -94,7 +86,7 @@ export async function emailLogin(email, password) {
           //Create new user
           try {
             return createEmailUser(email, password);
-          } catch(err){
+          } catch (err) {
             throw err;
           }
         }

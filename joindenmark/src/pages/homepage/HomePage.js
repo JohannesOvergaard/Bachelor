@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 export function HomePage() {
   const [tiles, setTiles] = useState({});
-  const settings = useSelector(state => {
+  const settings = useSelector((state) => {
     return state.userState.settings;
   });
 
@@ -18,6 +18,7 @@ export function HomePage() {
 
   useEffect(() => {
     processTiles();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [settings]);
 
   return (
