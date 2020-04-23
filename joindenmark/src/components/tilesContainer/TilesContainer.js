@@ -4,8 +4,9 @@ import { Tile } from "../tile/Tile";
 import { trim, convertToPath } from "../../Util/Helpers";
 import { JoinDkTile } from "../joindktile/JoinDkTile";
 
-export const TilesContainer = ({ tiles, pathPrefix }) => {
-  var retTiles = [];
+export const TilesContainer = (props) => {
+  let retTiles = [];
+  const tiles = props.state.tiles;
   if (tiles.length > 0) {
     tiles.map((tile) => {
       const data = tile.data();
@@ -28,7 +29,7 @@ export const TilesContainer = ({ tiles, pathPrefix }) => {
           <Link
             key={tile.id}
             to={{
-              pathname: convertToPath(data.title, pathPrefix),
+              pathname: convertToPath(data.title, props.state.pathPrefix),
               state: { title: data.title, picture: data.picture },
             }}
           >

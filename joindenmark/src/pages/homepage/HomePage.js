@@ -25,7 +25,7 @@ export function HomePage() {
     <div>
       <HomePageNavbar />
       <br />
-      <TilesContainer tiles={tiles} pathPrefix=""></TilesContainer>
+      <TilesContainer state={{ tiles: tiles, pathPrefix: "" }}></TilesContainer>
     </div>
   );
 }
