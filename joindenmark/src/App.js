@@ -10,7 +10,7 @@ import { LoginPage } from "./pages/loginpage/LoginPage";
 
 function App() {
   return (
-    <div>
+    <div className="appContainer">
       <Switch>
         <Route exact path="/" component={HomePage} />
 

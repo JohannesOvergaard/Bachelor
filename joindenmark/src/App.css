@@ -1,10 +1,10 @@
-body{
-  background-color: #EAE8E5;
+body {
+  background-color: #eae8e5;
 }
 
-button{
+button {
   background-color: #7b297d;
-  color: #EAE8E5;
+  color: #eae8e5;
   padding: 3vw;
   border-radius: 3vw;
 }
@@ -27,4 +27,8 @@ a:hover {
 
 a:active {
   text-decoration: none;
+}
+
+.appContainer {
+  padding-bottom: 17vw;
 }

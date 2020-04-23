@@ -45,7 +45,7 @@ export function JoinDenmarkPage(props) {
   }
 
   return (
-    <div className="joinDenmarkContainer">
+    <div>
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
       <p className="informationText">
