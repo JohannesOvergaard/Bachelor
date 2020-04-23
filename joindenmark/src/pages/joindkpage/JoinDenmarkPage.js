@@ -48,13 +48,12 @@ export function JoinDenmarkPage(props) {
     <div className="joinDenmarkContainer">
       <NavBar state={{ title: title }}></NavBar>
       <HomeButton />
-      <p className="information">
+      <p className="informationText">
         This is a guide through some of the pracitcal aspects you need to solve
         when coming to Denmark.
       </p>
       {!loggedIn ? (
-        <div className="information">
-          {" "}
+        <div className="informationText">
           If you log in you can track your progress by ticking off the steps you
           have completed.
           <Link
@@ -66,7 +65,7 @@ export function JoinDenmarkPage(props) {
           </Link>
         </div>
       ) : (
-        <div className="information">
+        <div className="informationText">
           You can tick off the steps as you have completed them. Your progress
           will be saved.
         </div>
