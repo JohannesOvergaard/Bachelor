@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./HomePage.css";
 import { getContentFilterBySettings } from "../../services/ContentService";
 import { TilesContainer } from "../../components/tilesContainer/TilesContainer";
-import { HomePageNavbar } from "../../components/navbar/HomePageNavBar";
+import { HomePageNavbar } from "../../components/homepagenavbar/HomePageNavBar";
 import { useSelector } from "react-redux";
 
 export function HomePage() {
   const [tiles, setTiles] = useState({});
-  const settings = useSelector((state) => {
-    return state.userState.settings;
-  });
+  const settings = useSelector((state) => state.userState.settings);
 
   const processTiles = async () => {
     const tiles = await getContentFilterBySettings("tile", settings);
@@ -24,7 +21,6 @@ export function HomePage() {
   return (
     <div>
       <HomePageNavbar />
-      <br />
       <TilesContainer state={{ tiles: tiles, pathPrefix: "" }}></TilesContainer>
     </div>
   );

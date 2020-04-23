@@ -4,6 +4,7 @@ import { Search } from "../search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
+import "./HomePageNavBar.css";
 
 export function HomePageNavbar() {
   const [showSearch, setShowSearch] = useState();
