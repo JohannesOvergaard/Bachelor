@@ -22,7 +22,7 @@ export function Search({ setShowSearch }) {
     }
   }
 
-  const searchInAccommodation = async (search) => {
+  const searchContent = async (search) => {
     const snapshot = await db
       .collection("search")
       .where("keywords", "array-contains", search.toLowerCase())
@@ -32,6 +32,7 @@ export function Search({ setShowSearch }) {
         (acc, doc) => {
           const collection = doc.data().collection;
           return acc.concat(
+            //Hide search when user clicks on search result
             <div key={doc.id} onClick={() => setShowSearch(false)}>
               <Link
                 to={{
@@ -61,7 +62,7 @@ export function Search({ setShowSearch }) {
       <input
         className="searchInput"
         type="text"
-        onChange={(e) => searchInAccommodation(e.target.value)}
+        onChange={(e) => searchContent(e.target.value)}
       />
       <div className="searchCloseIcon" onClick={() => setShowSearch(false)}>
         <FontAwesomeIcon icon={faTimesCircle} />
