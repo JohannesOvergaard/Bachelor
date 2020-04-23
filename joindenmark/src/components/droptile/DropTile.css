@@ -1,10 +1,10 @@
-.dropTile{
+.dropTile {
   padding-bottom: 2vw;
   width: 100vw;
   float: left;
 }
 
-.dropTileHeadline{
+.dropTileHeadline {
   float: left;
   margin-top: 6vw;
   margin-left: 6vw;
@@ -13,7 +13,7 @@
   font-size: large;
 }
 
-.dropTileIcon{
+.dropTileIcon {
   float: right;
   width: 8vw;
   margin: 6vw;
@@ -21,12 +21,12 @@
   height: 8vw;
 }
 
-.dropTileBody{
+.dropTileBody {
   float: left;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-bottom: 4vw;
-    width: 90vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-bottom: 4vw;
+  width: 90vw;
 }
 
 .inlinediv {
@@ -34,7 +34,7 @@
   padding-left: 0vw;
 }
 
-.readMore{
-  color: #5864BA;
+.readMore {
+  color: #5864ba;
   font-weight: bold;
 }
