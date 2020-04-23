@@ -40,9 +40,9 @@ export const getQuerySteps = async (collection, docId) => {
   return docRef.data().joindkfields;
 };
 
-export const updateUserSettings = async (collection, docid, update) => {
+export const updateUserSettings = async (docid, update) => {
   return db
-    .collection(collection)
+    .collection("users")
     .doc(docid)
     .update({
       settingsDisabled: update.join(),

@@ -15,7 +15,7 @@ export function Setting(props) {
 
   function changeSetting() {
     const settingsArr = updateArray(!checked, settings, settingId);
-    updateUserSettings("users", currentUser.name, settingsArr);
+    updateUserSettings(currentUser.name, settingsArr);
     dispatch(allActions.userActions.setSettings({ settings }));
     setChecked(!checked);
   }

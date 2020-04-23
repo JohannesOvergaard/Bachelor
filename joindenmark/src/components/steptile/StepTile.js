@@ -3,7 +3,7 @@ import "./StepTile.css";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { CheckBox } from "./CheckBox";
+import { CheckBox } from "../checkbox/CheckBox";
 
 export function StepTile(props) {
   const [stepId] = useState(props.state.id);
