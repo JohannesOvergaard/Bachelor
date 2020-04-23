@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 import { getContentFilterBySettings } from "../../services/ContentService";
 import { TilesContainer } from "../../components/tilesContainer/TilesContainer";
-import { NavbarContainer } from "../../components/navbarcontainer/NavBarContainer";
+import { HomePageNavbar } from "../../components/navbar/HomePageNavBar";
 import { useSelector } from "react-redux";
 
 export function HomePage() {
@@ -23,7 +23,7 @@ export function HomePage() {
 
   return (
     <div>
-      <NavbarContainer />
+      <HomePageNavbar />
       <br />
       <TilesContainer tiles={tiles} pathPrefix=""></TilesContainer>
     </div>
