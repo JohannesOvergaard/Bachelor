@@ -82,7 +82,7 @@ export function StepTile(props) {
           ) : (
             <div>
               <p>Documents needed:</p>
-              {props.state.body} <ul>{generateListOfDocuments()}</ul>
+              <ul>{generateListOfDocuments()}</ul>
             </div>
           )}
         </div>
