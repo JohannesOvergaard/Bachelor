@@ -69,6 +69,7 @@ export function StepTile(props) {
       </div>
       {showSteps && (
         <div className="stepTileBody">
+          <p>{props.state.body}</p>
           <ol>{generateSteps()}</ol>
           {!isDocumentsClicked && docs.length > 3 ? (
             <div className="inlinediv">
