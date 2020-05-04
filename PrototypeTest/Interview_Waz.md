@@ -17,13 +17,20 @@
 - You are more than welcome to ask questions during the test. Is it clear what we want from you? Any questions?
 
 ## Follow up during test
+### Test:
+
+Text unclear on pictures, easy to se things, like organisation of menues in category-age 
+
+zoom on search
+
 ### On login:
+
 - What do you see?
 - What do you understand of this page?
 
 After reading the why he can login to the application he still don't understand the purpose of loggin in.
 
-Login with google does not working 
+ 
 
 Email login: The password has to be longer and the user does not get that message
 
@@ -50,7 +57,7 @@ Join denmark seems funny
 
 Hard to read the titles on tiles, search confusing that he gets every topic in accommodation (gets the whole category)
 
-Join Denmark, ignoring that he needs to click see more to gets documents
+Join Denmark,  ignoring that he needs to click see more to gets documents
 
 Drop down / step tiles only opens when clicking on the text?
 
@@ -92,8 +99,38 @@ The search function should also search for tiles (and other words that are displ
 
 Is fine , ingnoring that search function zoom
 
+Close icon on search bar could be bigger
+
 ## Notes to self:
 - Do they read on the login site
 - Do they look confused about the settings
 
 
+
+## Notes when listen trough it again
+
+### Positive
+
+Like the idea of the application
+Like categorypage , pictures make it friendly
+Like the navigation, easy to come around in the app, like the backarrow and the homebutten
+
+### Negative
+
+hard to read text on tiles
+ignoring that he need to click to se list of documents in join Denmark, when there is only one extra line
+Search didn't seems to work , ignoring that the screen zooms when clicking on search , he thought it was a filter function, which filters the content on the screen
+After reading the why he can login to the application he still don't understand the purpose of loggin in.
+Did not get a message that the password has to be longer than 6 chachecters when creating an account with email
+Does not understand the text i.e. EU, what happens when he clicks the checkboxes on the settingspage
+Does not understands the Join Denmark page, did not realised that it was a checklist
+did not find the purpose of loggin in, because he could already see everything
+The loggin function would only make sence, if the application grew a low.
+
+### Suggestions
+
+Suggested that we could improve our phrasing of some categories. e.g change the "step by step" of the Join Denmark to "Follow your progress", to give the user the impression that it is their checklist
+Suggested text over the settings to explain them
+Suggested a setting saying "i Am new in denmark"
+Suggested something about wheather and nature in Denmark
+Suggested that the search function search for categories too. Not only headlines
