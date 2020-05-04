@@ -121,7 +121,7 @@ hard to read text on tiles
 ignoring that he need to click to se list of documents in join Denmark, when there is only one extra line
 Search didn't seems to work , ignoring that the screen zooms when clicking on search , he thought it was a filter function, which filters the content on the screen
 After reading the why he can login to the application he still don't understand the purpose of loggin in.
-Did not get a message that the password has to be longer than 6 chachecters when creating an account with email
+Did not get a message that the password has to be longer than 6 characters when creating an account with email
 Does not understand the text i.e. EU, what happens when he clicks the checkboxes on the settingspage
 Does not understands the Join Denmark page, did not realised that it was a checklist
 did not find the purpose of loggin in, because he could already see everything
