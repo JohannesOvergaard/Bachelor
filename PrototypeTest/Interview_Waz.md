@@ -55,13 +55,28 @@ Join Denmark, ignoring that he needs to click see more to gets documents
 Drop down / step tiles only opens when clicking on the text?
 
 - When would you be most likely to use this app? (follow up can we improve this)
+
+When moving to Denmark, if someone told him about the app, would be more confident using this app rather than an relying an answer on Facebook, could use the public sector category the rest of his life.. like you never understand taxes.
+
 - What did you think was missing?
+
+Something about weather and nature in Denmark
+
+A new to Denmark category
+
+A setting saying "I am new to Denmark"
 
 ### Personalization
 - What did you think of the login feature? 
+
+Did not understood why he should login because he could see everything
+
+Din't think he would login if he was already in the application
+
 - What did you think about the personalization?
 	- Settings
 	- joinDk
+	  - Does not like the join Denmark category. Would rather like checkboxes to mark the checkboxes.
 
 ### Search
 - What did you think of the search feature?
