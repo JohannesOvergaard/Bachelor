@@ -4,7 +4,7 @@
 
 - Age, country of origin, occupation and time in Denmark?
 
-34, Brazil, phd at itu and post doc, 7 years
+34, Brazil, phd at itu and post doc, Lived in Denmak for 7 years
 
 ## Briefing 
 
@@ -22,7 +22,7 @@
 
 Starts goin into join Denmark,  Does not click on se documents
 
-Goes to puclic sector a read artivles, does not click on read more
+Goes to puclic sector a read articles, does not click on read more
 
 No headline on documents needed after clicking the text
 
@@ -43,34 +43,36 @@ Has to be guided around in the app
 
 He thinks that we need something like this , not all content is covered (We know)
 
-He would use when he come to denmark and even know becuause he still not understand some aspects of taxes
+He would use when he come to denmark and even now becuause he still not understand some aspects of taxes
 
 - What features did you like?
 
 Like Join Denmark , would like more steps
 
-Like the overview with the tiles
+Like the overview with the tiles on the frontpage
 
 - What did you not like? (follow up how can we improve)
 
 The design (Thought tiles would be smaller if there was more)
 
-On join denmark it would be nice to have and explanation of the page/ the steps
+On join denmark it would be nice to have and explanation of each steps
 
 - When would you be most likely to use this app? (follow up can we improve this)
 
-As a newcommer in Denmark
+As a newcomer in Denmark
 
 But if we add more steps, about everydaylife, he would still use it as a guide today
 
 - What did you think was missing?
 
-More information
+The explanations of each steps in Join Denmark
 
 ### Personalization
 - What did you think of the login feature? 
 
-Did not saw the loginlogo because it was small 
+Did not saw the login logo because it was small 
+
+And because he has access to everything
 
 - What did you think about the personalization?
 	- Settings
@@ -81,7 +83,7 @@ Did not saw the loginlogo because it was small
 	
 	Understands that it is a checklist
 	
-	Like it espeacally in the begining, but he would not use the Join Denmark category.
+	Like it espeacally in the begining, but today he would not use the Join Denmark category.
 
 ### Search
 - What did you think of the search feature?
@@ -95,6 +97,9 @@ Quite intuitive how to use the app.
 
 Navigation was simple
 
+The pictures on the tiles made it hard to read the name of the category.
+
 ## Notes to self:
 - Do they read on the login site
 - Do they look confused about the settings
+

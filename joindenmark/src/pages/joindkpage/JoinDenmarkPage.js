@@ -33,6 +33,7 @@ export function JoinDenmarkPage(props) {
                 headline: formatHeadline(article.id, data.headline),
                 subheading: data.subheading,
                 documents: data.documents,
+                body: data.body,
                 steps: data.steps,
                 id: article.id,
               }}
