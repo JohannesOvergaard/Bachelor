@@ -3,7 +3,7 @@
 
 This is the repository for our bachelor project.
 
-### How to run
+### How to run the project
 * Clone the project
 * In you terminal navigate to the folder Bachelor/joindenmark
 * Run yarn install
