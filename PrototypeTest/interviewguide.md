@@ -47,5 +47,3 @@
 ## Notes to self:
 - Do they read on the login site
 - Do they look confused about the settings
-
-
